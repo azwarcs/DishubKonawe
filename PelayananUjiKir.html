@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelayanan Uji Kir Kendaraan - Dishub Konawe</title>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- CSS Utama -->
+    <link rel="stylesheet" href="style-pelayanan.css">
+</head>
+<body>
+    <!-- NAVIGASI -->
+    <nav id="navbar">
+        <div class="logo">
+            <div class="logo-wrapper">
+                <div class="logo-icon">
+                    <img src="img/LOGO KONAWE.png" alt="Logo Kab. Konawe" class="logo-img" onerror="this.style.display='none'">
+                </div>
+                <div class="logo-text">
+                    <span>DISHUB KONAWE</span>
+                    <span>Pelayanan Uji Kir</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <ul id="navMenu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="index.html#layanan" class="active"><i class="fas fa-cogs"></i> Layanan</a></li>
+            <li><a href="#aduan"><i class="fas fa-phone-alt"></i> Pengaduan</a></li>
+            <li><a href="#daftar"><i class="fas fa-truck"></i> Daftar KIR</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER HALAMAN -->
+    <header class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-clipboard-check"></i> Pelayanan Uji Kir Kendaraan</h1>
+            <p>Informasi lengkap tentang layanan pengujian kendaraan bermotor (Uji Kir) di Kabupaten Konawe</p>
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <main class="pelayanan-content">
+        <div class="container">
+            <!-- TOMBOL KEMBALI KE BERANDA (DIPINDAHKAN KE BAWAH HEADER) -->
+            <div class="back-to-home">
+                <a href="index.html" class="modern-back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    <span class="btn-text">Kembali</span>
+                    <div class="btn-glow"></div>
+                </a>
+            </div>
+
+            <div class="content-wrapper">
+                <!-- ARTIKEL UTAMA -->
+                <article class="main-article" data-aos="fade-right">
+                    <div class="article-image">
+                        <img src="img/KIR.jpeg" alt="Pelayanan Uji Kir" onerror="this.style.display='none'">
+                    </div>
+                    
+                    <div class="article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 15 Februari 2026</span>
+                        <span><i class="fas fa-user"></i> Admin Dishub</span>
+                        <span><i class="fas fa-tag"></i> Pelayanan Uji Kir</span>
+                        <span><i class="fas fa-eye"></i> 1.8K views</span>
+                    </div>
+
+                    <h2><i class="fas fa-newspaper"></i> Pelayanan Uji Kir Kini Bisa Diakses Secara Online</h2>
+                    
+                    <div class="article-body">
+                        <p>Dinas Perhubungan Kabupaten Konawe secara resmi meluncurkan sistem pelayanan uji kir berbasis online. Langkah ini diambil untuk memudahkan masyarakat dalam mengakses layanan pengujian kendaraan bermotor tanpa harus datang ke kantor secara langsung. Inovasi ini merupakan bagian dari program transformasi digital pelayanan publik.</p>
+                        
+                        <h3><i class="fas fa-star"></i> Fitur Layanan Online</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Pendaftaran uji kir secara online</li>
+                            <li><i class="fas fa-check-circle"></i> Hasil uji kir digital terintegrasi</li>
+                            <li><i class="fas fa-check-circle"></i> Pengaduan layanan interaktif</li>
+                        </ul>
+
+                        <h3><i class="fas fa-file-alt"></i> Persyaratan Uji Kir</h3>
+                        <p>Untuk melakukan uji kir, pemohon perlu menyiapkan dokumen berikut:</p>
+                        <ol>
+                            <li>Fotokopi STNK (2 lembar)</li>
+                            <li>Fotokopi KTP pemilik kendaraan (2 lembar)</li>
+                            <li>Buku uji kir sebelumnya (jika ada)</li>
+                            <li>Kendaraan yang akan diuji dalam kondisi siap</li>
+                            <li>Surat kuasa (jika dikuasakan)</li>
+                        </ol>
+
+                        <h3><i class="fas fa-clock"></i> Jadwal Pelayanan</h3>
+                        <table class="schedule-table">
+                            <thead>
+                                <tr>
+                                    <th>Hari</th>
+                                    <th>Jam Pelayanan</th>
+                                    <th>Keterangan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="fas fa-calendar-day"></i> Senin - Kamis</td>
+                                    <td><i class="fas fa-clock"></i> 08.00 - 16.00 WITA</td>
+                                    <td><i class="fas fa-coffee"></i> Istirahat 12.00-13.00</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-calendar-day"></i> Jumat</td>
+                                    <td><i class="fas fa-clock"></i> 08.00 - 16.30 WITA</td>
+                                    <td><i class="fas fa-coffee"></i> Istirahat 11.30-13.00</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-calendar-day"></i> Sabtu - Minggu</td>
+                                    <td><i class="fas fa-clock"></i> -</td>
+                                    <td><i class="fas fa-umbrella-beach"></i> Libur</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3><i class="fas fa-map-marker-alt"></i> Lokasi Pelayanan</h3>
+                        <p><i class="fas fa-building"></i> Kantor Dinas Perhubungan Kabupaten Konawe<br>
+                        <i class="fas fa-map-pin"></i> Jl. Saranani Kelurahan Asinua, Kecamatan Unaaha<br>
+                        <i class="fas fa-phone"></i> Telp: (0408) 12345<br>
+                        <i class="fas fa-envelope"></i> Email: dishub@konawekab.go.id</p>
+
+                        <div class="info-box">
+                            <h4><i class="fas fa-info-circle"></i> Informasi Penting</h4>
+                            <p><i class="fas fa-exclamation-triangle"></i> Mulai 1 Maret 2026, seluruh proses uji kir akan menggunakan sistem baru. Masyarakat diharapkan melakukan pendaftaran minimal H-3 sebelum tanggal uji kir. Pendaftaran online dapat dilakukan melalui website resmi.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SIDEBAR -->
+                <aside class="sidebar" data-aos="fade-left">
+                    <div class="sidebar-widget">
+                        <h3><i class="fas fa-headset"></i> Informasi Kontak</h3>
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone-alt"></i> (0408) 21234</p>
+                            <p><i class="fab fa-whatsapp"></i> 12345678</p>
+                            <p><i class="fas fa-envelope"></i> dishub@konawekab.go.id</p>
+                            <p><i class="fas fa-globe"></i> www.dishub.konawekab.go.id</p>
+                            <p><i class="fas fa-clock"></i> Senin - Jumat, 08.00 - 16.00 WITA</p>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3><i class="fas fa-download"></i> Download Aplikasi</h3>
+                        <p><i class="fas fa-mobile-alt"></i> Unduh aplikasi Uji Kir Online untuk kemudahan akses</p>
+                        <div class="download-buttons">
+                            <a href="#" class="download-btn"><i class="fab fa-google-play"></i> Google Play</a>
+                            <a href="#" class="download-btn"><i class="fab fa-apple"></i> App Store</a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3><i class="fas fa-newspaper"></i> Berita Terkait</h3>
+                        <ul class="related-news">
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Tarif Uji Kir Resmi Diturunkan 20%</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Sosialisasi Uji Kir Keliling di 10 Kecamatan</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Peralatan Uji Kir Terbaru Mulai Dioperasikan</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Dishub Buka Layanan Uji Kir Akhir Pekan</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3><i class="fas fa-chart-bar"></i> Statistik Layanan</h3>
+                        <div class="statistik">
+                            <div class="stat-item">
+                                <i class="fas fa-truck"></i>
+                                <div class="stat-number">3.255</div>
+                                <div class="stat-label">Angkutan Umum</div>
+                            </div>
+                            <hr>
+                            <div class="stat-item">
+                                <i class="fas fa-clipboard-check"></i>
+                                <div class="stat-number">2.450</div>
+                                <div class="stat-label">Kendaraan Laik Jalan</div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- ===== FORM PENGADUAN MASYARAKAT ===== -->
+            <section id="aduan" class="bg-light" style="margin-top: 4rem;">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="text-center">KONTAK & PENGADUAN</h2>
+                    <p class="section-subtitle">Hubungi kami untuk pelayanan Uji Kir, pengaduan masyarakat, dan informasi transportasi</p>
+                </div>
+
+                <div class="contact-wrapper" data-aos="zoom-in">
+                    <!-- Informasi Kontak -->
+                    <div class="contact-info-panel">
+                        <h3>Kantor Pengujian Kendaraan Bermotor</h3>
+                        <p class="contact-desc">Kantor PKB Dishub Konawe melayani Senin - Jumat, 08.00 - 16.00 WITA</p>
+                        
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <p class="contact-label">Alamat</p>
+                                <p class="contact-value">Jl. Supu Yusuf Kelurahan Asinua, Kecamatan Unaaha, Kabupaten Konawe 93413</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <p class="contact-label">Telepon</p>
+                                <p class="contact-value">(0408) 21234 | 1111-2222-3333</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <p class="contact-label">Email</p>
+                                <p class="contact-value">dishub@konawekab.go.id | pengaduan.dishub@konawekab.go.id</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <i class="fas fa-globe"></i>
+                            <div>
+                                <p class="contact-label">Website & Social Media</p>
+                                <p class="contact-value">www.dishub.konawekab.go.id | @dishub_konawe</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Form Pengaduan -->
+                    <div class="contact-form-panel">
+                        <h3>Form Pengaduan Masyarakat</h3>
+                        
+                        <form id="pengaduanForm">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Nama Lengkap" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="No. Telepon/HP" required>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" required>
+                                    <option value="">Pilih Jenis Pengaduan</option>
+                                    <option>Layanan Uji KIR</option>
+                                    <option>Pengaduan Petugas</option>
+                                    <option>Lainnya</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="4" placeholder="Tuliskan laporan/keluhan Anda..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Kirim Pengaduan</button>
+                        </form>
+                        
+                        <div class="info-jam-layanan">
+                            <p><i class="fas fa-clock"></i> <span class="bold">Jam Pelayanan:</span></p>
+                            <p>Senin - Kamis: 08.00 - 16.00 WITA</p>
+                            <p>Jumat: 08.00 - 16.30 WITA</p>
+                            <p>Sabtu - Minggu: Tutup</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== FORM DAFTAR UJI BERKALA ===== -->
+                <div class="contact-form-panel" style="margin-top: 30px;">
+                    <div class="form-header">
+                        <h3 id="daftar"><i class="fas fa-truck"></i> Pendaftaran Uji KIR</h3>
+                        <p class="form-subtitle">Isi data kendaraan dengan lengkap dan benar</p>
+                    </div>
+                    
+                    <form id="pendaftaranKIRForm" class="kir-form">
+                        <!-- Baris 1: No Rangka & No Mesin -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="noRangka" class="form-label">
+                                    <i class="fas fa-barcode"></i> No. Rangka <span class="required">*</span>
+                                </label>
+                                <input type="text" class="form-control" id="noRangka" placeholder="Masukkan nomor rangka" required>
+                                <small class="form-text">Contoh: MHKF4CM14JK123456</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="noMesin" class="form-label">
+                                    <i class="fas fa-engine"></i> No. Mesin <span class="required">*</span>
+                                </label>
+                                <input type="text" class="form-control" id="noMesin" placeholder="Masukkan nomor mesin" required>
+                                <small class="form-text">Contoh: D4CB-1234567</small>
+                            </div>
+                        </div>
+                        
+                        <!-- Baris 2: No Plat & Merk -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="noPlat" class="form-label">
+                                    <i class="fas fa-id-card"></i> No. Plat Kendaraan <span class="required">*</span>
+                                </label>
+                                <input type="text" class="form-control" id="noPlat" placeholder="Contoh: DT 1234 ABC" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="merk" class="form-label">
+                                    <i class="fas fa-car"></i> Merk <span class="required">*</span>
+                                </label>
+                                <select class="form-control" id="merk" required>
+                                    <option value="">Pilih Merk Kendaraan</option>
+                                    <option>Mitsubishi</option>
+                                    <option>Hino</option>
+                                    <option>Isuzu</option>
+                                    <option>Toyota</option>
+                                    <option>Daihatsu</option>
+                                    <option>Suzuki</option>
+                                    <option>Mitsubishi Fuso</option>
+                                    <option>UD Trucks</option>
+                                    <option>Scania</option>
+                                    <option>Volvo</option>
+                                    <option>Lainnya</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Baris 3: Tipe & Isi Silinder -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tipe" class="form-label">
+                                    <i class="fas fa-tag"></i> Tipe <span class="required">*</span>
+                                </label>
+                                <input type="text" class="form-control" id="tipe" placeholder="Contoh: FE 74 HD" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="isiSilinder" class="form-label">
+                                    <i class="fas fa-chart-line"></i> Isi Silinder (cc) <span class="required">*</span>
+                                </label>
+                                <input type="number" class="form-control" id="isiSilinder" placeholder="Contoh: 3900" min="50" max="20000" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Baris 4: Tahun Pembuatan & Srut -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tahunPembuatan" class="form-label">
+                                    <i class="fas fa-calendar-alt"></i> Tahun Pembuatan <span class="required">*</span>
+                                </label>
+                                <select class="form-control" id="tahunPembuatan" required>
+                                    <option value="">Pilih Tahun</option>
+                                    <option>2025</option>
+                                    <option>2024</option>
+                                    <option>2023</option>
+                                    <option>2022</option>
+                                    <option>2021</option>
+                                    <option>2020</option>
+                                    <option>2019</option>
+                                    <option>2018</option>
+                                    <option>2017</option>
+                                    <option>2016</option>
+                                    <option>2015</option>
+                                    <option>2014</option>
+                                    <option>2013</option>
+                                    <option>2012</option>
+                                    <option>2011</option>
+                                    <option>2010</option>
+                                    <option>2009</option>
+                                    <option>2008</option>
+                                    <option>2007</option>
+                                    <option>2006</option>
+                                    <option>2005</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="srut" class="form-label">
+                                    <i class="fas fa-clipboard-list"></i> SRUT (Sertifikat Registrasi Uji Tipe) 
+                                </label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="srut" placeholder="Nomor SRUT (opsional)">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-question-circle" title="Nomor Sertifikat Registrasi Uji Tipe"></i>
+                                    </span>
+                                </div>
+                                <small class="form-text">Kosongkan jika tidak ada</small>
+                            </div>
+                        </div>
+                        
+                        <!-- Baris 5: No. Telp & Alamat -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="noTelp" class="form-label">
+                                    <i class="fas fa-phone-alt"></i> No. Telepon <span class="required">*</span>
+                                </label>
+                                <input type="tel" class="form-control" id="noTelp" placeholder="Contoh: 081234567890" required>
+                                <small class="form-text">Nomor yang dapat dihubungi</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="alamat" class="form-label">
+                                    <i class="fas fa-map-marker-alt"></i> Alamat <span class="required">*</span>
+                                </label>
+                                <textarea class="form-control" id="alamat" rows="2" placeholder="Masukkan alamat lengkap" required></textarea>
+                                <small class="form-text">Alamat sesuai KTP/domisili</small>
+                            </div>
+                        </div>
+                        
+                        <!-- Baris 6: Informasi Tambahan -->
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="catatan" class="form-label">
+                                    <i class="fas fa-pencil-alt"></i> Catatan Tambahan
+                                </label>
+                                <textarea class="form-control" id="catatan" rows="3" placeholder="Informasi tambahan (opsional)"></textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- Tombol Submit -->
+                        <div class="form-actions">
+                            <button type="reset" class="btn-reset">
+                                <i class="fas fa-undo-alt"></i> Reset
+                            </button>
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-paper-plane"></i> Daftar Uji KIR
+                            </button>
+                        </div>
+                        
+                        <!-- Informasi Penting -->
+                        <div class="info-penting">
+                            <p><i class="fas fa-info-circle"></i> <strong>Informasi Penting:</strong> Pastikan data yang diisi sesuai dengan STNK dan Buku KIR sebelumnya</p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- ===== FORM CEK STATUS ===== -->
+                <div class="status-panel" style="margin-top: 30px; background: white; border-radius: 15px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <div class="status-header" style="margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 15px;">
+                        <h3 style="color: #333; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-search" style="color: #667eea;"></i> 
+                            Cek Status Pendaftaran KIR
+                        </h3>
+                        <p style="color: #666; margin-top: 5px;">Masukkan Nomor Registrasi atau nomor plat untuk cek status</p>
+                    </div>
+                    
+                    <div class="status-form">
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 2;">
+                                <input type="text" class="form-control" id="searchInput" 
+                                    placeholder="Masukkan No. Registrasi (contoh: KIR/20250216/123456/001) atau No. Plat">
+                            </div>
+                            <div class="form-group" style="flex: 0 0 auto;">
+                                <button class="btn-submit" id="btnCekStatus" style="padding: 12px 30px;">
+                                    <i class="fas fa-search"></i> Cek Status
+                                </button>
+                            </div>
+                        </div>
+                        <small class="form-text" style="margin-top: 10px;">
+                            <i class="fas fa-info-circle"></i> 
+                            Contoh No Registrasi: KIR/20250216/123456/001 | Contoh No Plat: DT 1234 ABC
+                        </small>
+                    </div>
+                    
+                    <!-- Hasil Pencarian akan ditampilkan di sini -->
+                    <div id="hasilStatus" style="display: none; margin-top: 25px; padding: 20px; border-radius: 10px; background: #f8f9fa;"></div>
+                </div>
+                
+                <!-- PETA LOKASI -->
+                <!-- PETA LOKASI DENGAN KOORDINAT BARU -->
+                <div class="map-section" data-aos="fade-up">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.7957!2d122.068852!3d-3.851718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwNTEnMDYuMiJTIDEyMsKwMDQnMTMuMiJF!5e0!3m2!1sid!2sid!4v1700000000!5m2!1sid!2sid" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                    <!-- INFORMASI TAMBAHAN DENGAN KOORDINAT BARU -->
+                    <div class="map-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>PETA LOKASI KANTOR DISHUB KONAWE</h3>
+                            <p>Jln.Saranani Kel. Asinua Kec. Unaaha Kabupaten Konawe, Provinsi Sulawesi Tenggara</p>
+                            <div class="coordinates">
+                                <span><i class="fas fa-globe-asia"></i> Latitude: -3.851718°</span>
+                                <span><i class="fas fa-globe-asia"></i> Longitude: 122.070339°</span>
+                            </div>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-3.8517176516871916,122.07033948718686" target="_blank" class="btn-map">
+                                <i class="fas fa-directions"></i> Buka Rute ke Kantor
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>DISHUB KONAWE</h3>
+                <p class="footer-desc">Dinas Perhubungan Kabupaten Konawe berkomitmen memberikan pelayanan prima bidang transportasi untuk masyarakat.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h3>TAUTAN CEPAT</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+                    <li><a href="index.html#profil"><i class="fas fa-chevron-right"></i> Profil Dinas</a></li>
+                    <li><a href="index.html#layanan"><i class="fas fa-chevron-right"></i> Layanan Publik</a></li>
+                    <li><a href="index.html#info"><i class="fas fa-chevron-right"></i> Info Transportasi</a></li>
+                    <li><a href="#kontak"><i class="fas fa-chevron-right"></i> Pengaduan</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3>LAYANAN POPULER</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Cek Jadwal Uji KIR</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Info Izin Trayek</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Tarif Angkutan Umum</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> CCTV Lalu Lintas</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Hotline 112</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3>HUBUNGI KAMI</h3>
+                <ul class="footer-links contact-footer">
+                    <li><i class="fas fa-map-marker-alt"></i> Unaaha, Konawe, Sultra</li>
+                    <li><i class="fas fa-phone"></i> (0408) 21234</li>
+                    <li><i class="fas fa-envelope"></i> dishub@konawekab.go.id</li>
+                    <li><i class="fas fa-clock"></i> Senin - Jumat, 08.00 - 16.00</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 Dinas Perhubungan Kabupaten Konawe. All rights reserved.</p>
+            <p class="footer-credit">Pemerintah Kabupaten Konawe - Provinsi Sulawesi Tenggara</p>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Script untuk form pengaduan (MENGGUNAKAN SCRIPT DARI INDEX.HTML) -->
+    <script src="script-pengaduan.js"></script>
+</body>
+</html>
