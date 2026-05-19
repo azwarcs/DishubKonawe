@@ -1439,6 +1439,9 @@ footer {
   .galeri-caption p {
     font-size: 0.7rem;
   }
+  .galeri-link {
+  text-decoration: none;
+}
 
   /* Kontak */
   .contact-info-panel, .contact-form-panel {
