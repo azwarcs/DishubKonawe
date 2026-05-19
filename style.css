@@ -929,6 +929,10 @@ nav ul li a:hover {
   margin-right: 8px;
 }
 
+.galeri-link {
+  text-decoration: none;
+}
+
 /* ===== MAP SECTION ===== */
 .map-section {
   margin-top: 45px;
@@ -1201,6 +1205,10 @@ footer {
   .hero-stats {
     justify-content: space-between;
   }
+}
+
+.galeri-link {
+  text-decoration: none;
 }
 
 /* Mobile (max-width: 768px) */
@@ -1545,6 +1553,10 @@ footer {
   }
 }
 
+.galeri-link {
+  text-decoration: none;
+}
+
 /* Mobile Extra Small (max-width: 480px) */
 @media (max-width: 480px) {
   .layanan-grid {
@@ -1570,6 +1582,10 @@ footer {
   .hero-stat-label {
     font-size: 0.65rem;
   }
+}
+
+.galeri-link {
+  text-decoration: none;
 }
 
 /* Mobile Very Small (max-width: 380px) */
@@ -1598,4 +1614,8 @@ footer {
   .info-header h3 {
     font-size: 0.9rem;
   }
+}
+
+.galeri-link {
+  text-decoration: none;
 }
