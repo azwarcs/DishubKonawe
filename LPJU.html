@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Dishub Kab. Konawe - Informasi LPJU</title>
+    <!-- Font Awesome 6 (Free CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Poppins & Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-lpju.css">
+</head>
+<body>
+
+    <!-- HEADER dengan logo Dishub Kabupaten Konawe -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <i class="fas fa-road"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>DISHUB</h1>
+                    <p>Kabupaten Konawe</p>
+                </div>
+            </div>
+            <!-- Tombol hamburger (mobile) -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu navigasi">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Navigasi Desktop & Mobile -->
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="#lpju" class="nav-link active" data-page="lpju">LPJU</a></li>
+                    <li><a href="#galeri" class="nav-link" data-page="galeri">Dokumentasi</a></li>
+                    <li><a href="index.html#galeri" class="nav-link">Galeri</a></li>
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="container">
+            <!-- SECTION BERANDA (halaman utama) -->
+            <section id="lpju" class="page-section active-section">
+                <div class="hero-news">
+                    <div class="news-badge">
+                        <i class="fas fa-lightbulb"></i> Berita Terkini
+                    </div>
+                    <h2 class="section-title">Perbaikan Lampu Penerangan Jalan Umum (LPJU) di Wilayah Konawe</h2>
+                    <div class="news-meta">
+                        <span><i class="far fa-calendar-alt"></i> Rabu, 20 Mei 2026</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Unnamed Road, Kusimewuhu, Kec. Wawotobi</span>
+                    </div>
+                    <!-- GAMBAR UTAMA (sesuai lampiran) -->
+                    <div class="featured-image">
+                        <img src="img/PERBAIKAN PJU 3.jpeg" alt="Perbaikan LPJU oleh Dishub Konawe" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/1e3a5f/white?text=Gambar+Perbaikan+LPJU'">
+                        <div class="img-caption">Tim teknis PJU melakukan perbaikan Panel 2 PJU di ruas jalan 40 Kelurahan Asinua</div>
+                    </div>
+                    <div class="news-content">
+                        <p><strong>Dinas Perhubungan Kabupaten Konawe</strong> terus berkomitmen meningkatkan keselamatan dan kenyamanan pengguna jalan. Rabu, 20 Mei 2026, tim Unit Penerangan Jalan Umum melaksanakan <strong>perbaikan Lampu Penerangan Jalan Umum (LPJU)</strong> di area Unnamed Road, Desa Kusimewuhu, Kecamatan Wawotobi.</p>
+                        <p>Sebanyak 12 titik lampu yang sebelumnya padam atau redup kini telah berfungsi optimal. Langkah ini merespon laporan warga dan hasil monitoring rutin Dishub. “Kami pastikan seluruh LPJU di jalur strategis segera kembali terang demi mengurangi risiko kecelakaan,” ujar Kepala Dishub Konawe.</p>
+                        <p>Perbaikan menggunakan armada bucket lift dan tim teknis berpengalaman. Masyarakat diimbau untuk turut menjaga fasilitas umum serta melaporkan kerusakan lampu melalui kanal resmi Dishub.</p>
+                        <!-- <div class="info-coord">
+                            <i class="fas fa-location-dot"></i> Lokasi tepat: <strong>3.865882°S, 122.095288°E</strong> (Google Maps tersedia)
+                        </div> -->
+                    </div>
+                </div>
+
+                <!-- ringkasan progres -->
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>98%</h3>
+                        <p>Penerangan Jalan Aktif</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-tools"></i>
+                        <h3>42</h3>
+                        <p>Unit Lampu Diperbaiki (2026)</p>
+                    </div>
+                    <!-- <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>24/7</h3>
+                        <p>Layanan Pengaduan</p>
+                    </div> -->
+                </div>
+            </section>
+
+            <!-- SECTION GALERI (koleksi gambar perbaikan LPJU) -->
+            <section id="galeri" class="page-section">
+                <h2 class="section-title"><i class="fas fa-images"></i> Dokumentasi Kegiatan Perbaikan LPJU</h2>
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- gambar utama dan duplikasi untuk contoh galeri (gunakan gambar yang sama tetapi akan dikenali)
+                    <!-- Karena lampiran hanya 1 gambar, kita tampilkan beberapa varian dengan gambar yang sama + caption berbeda -->
+                    <div class="gallery-item">
+                        <img src="img/PERBAIKAN PJU 1.jpeg" alt="Perbaikan LPJU 1">
+                        <div class="gallery-caption">Proses perbaikan mcb pju jl. 40 Kel. asinua</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/PERBAIKAN PJU 2.jpg" alt="Perbaikan LPJU 2">
+                        <div class="gallery-caption">Proses penggantian lampu PJU di Inolobunggadue Central Park (ICP)</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="WhatsApp Image 2026-05-20 at 09.37.59.jpeg" alt="Perbaikan LPJU 3">
+                        <div class="gallery-caption">Lampu PJU menyala optimal setelah perbaikan</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/PERBAIKAN PJU 4.jpeg" alt="Perbaikan LPJU 4">
+                        <div class="gallery-caption">Pemeriksaan Lampu Pju Desa Kasumewuho Kec. Wawotobi</div>
+                    </div>
+                </div>
+                <!-- lightbox sederhana akan muncul saat gambar galeri diklik -->
+                <div id="lightboxModal" class="lightbox">
+                    <span class="close-lightbox">&times;</span>
+                    <img class="lightbox-img" id="lightboxImg">
+                    <div id="lightboxCaption" class="lightbox-caption"></div>
+                </div>
+            </section>
+           
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <i class="fas fa-building"></i> Dinas Perhubungan Kabupaten Konawe<br>
+                <i class="fas fa-map-pin"></i> Jl. Poros Unaaha - Wawotobi, Sulawesi Tenggara 93461<br>
+                <i class="fas fa-envelope"></i> dishub@konawekab.go.id
+            </div>
+            <div class="footer-copyright">
+                &copy; 2026 Dishub Konawe | Informasi Resmi Perbaikan LPJU
+            </div>
+        </div>
+    </footer>
+
+    <script src="script-lpju.js"></script>
+</body>
+</html>
