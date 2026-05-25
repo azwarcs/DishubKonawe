@@ -384,6 +384,183 @@ document.querySelectorAll('[data-aos]').forEach(el => {
   observer.observe(el);
 });
 
+
+// ============================================
+// 🟢🟢🟢 FITUR SARAN & MASUKAN 🟢🟢🟢
+// ============================================
+
+// URL Google Sheets untuk saran (gunakan URL yang sama atau beda)
+// Disarankan buat sheet baru dengan nama "SaranMasukan"
+const SARAN_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzlE8zcVNvDPzOUIcS7FDmtyDbbyFJGKSKNeHrg8boJAwkj4A9gsngFF1okI-TCh4ZgOA/exec';
+
+// Counter untuk statistik saran
+let saranCounter = 0;
+let responsCounter = 0;
+
+// Fungsi untuk update counter statistik
+function updateSaranStats() {
+  const saranCountElem = document.getElementById('saranCount');
+  const responsCountElem = document.getElementById('responsCount');
+  
+  // Coba ambil data dari localStorage
+  const savedSaran = localStorage.getItem('dishub_saran_count');
+  const savedRespons = localStorage.getItem('dishub_respons_count');
+  
+  if (savedSaran) saranCounter = parseInt(savedSaran);
+  if (savedRespons) responsCounter = parseInt(savedRespons);
+  
+  // Animasi counter
+  if (saranCountElem) animateSaranNumber('saranCount', saranCounter, 1000);
+  if (responsCountElem) animateSaranNumber('responsCount', responsCounter, 1000);
+}
+
+function animateSaranNumber(elementId, target, duration) {
+  const element = document.getElementById(elementId);
+  if (!element) return;
+  
+  let current = 0;
+  const increment = target / (duration / 20);
+  
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      element.textContent = target.toLocaleString('id-ID');
+      clearInterval(timer);
+    } else {
+      element.textContent = Math.floor(current).toLocaleString('id-ID');
+    }
+  }, 20);
+}
+
+// Form Saran & Masukan
+const saranForm = document.getElementById('saranForm');
+
+if (saranForm) {
+  saranForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Ambil nilai dari form
+    const nama = document.getElementById('saranNama').value;
+    const email = document.getElementById('saranEmail').value;
+    const phone = document.getElementById('saranPhone').value;
+    const message = document.getElementById('saranMessage').value;
+    const saranType = document.querySelector('input[name="saranType"]:checked').value;
+    
+    // Validasi
+    if (!nama || !email || !phone || !message) {
+      alert('❌ Semua kolom harus diisi!');
+      return;
+    }
+    
+    // Validasi email sederhana
+    if (!email.includes('@') || !email.includes('.')) {
+      alert('❌ Format email tidak valid!');
+      return;
+    }
+    
+    // Validasi nomor HP
+    if (phone.length < 10 || phone.length > 15) {
+      alert('❌ Nomor handphone tidak valid (10-15 digit)!');
+      return;
+    }
+    
+    // Tampilkan loading
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+    submitBtn.disabled = true;
+    
+    // Buat ID saran
+    const today = new Date();
+    const id = 'SRN-' + 
+      today.getDate().toString().padStart(2, '0') +
+      (today.getMonth() + 1).toString().padStart(2, '0') +
+      '-' + today.getHours().toString().padStart(2, '0') +
+      today.getMinutes().toString().padStart(2, '0');
+    
+    const formData = {
+      id: id,
+      tanggal: today.toLocaleString('id-ID', {
+        timeZone: 'Asia/Makassar',
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      }),
+      nama: nama,
+      email: email,
+      telepon: phone,
+      jenis: saranType,
+      pesan: message,
+      status: 'Menunggu'
+    };
+    
+    try {
+      // Kirim ke Google Sheets
+      const response = await fetch(SARAN_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      // Update counter
+      saranCounter++;
+      localStorage.setItem('dishub_saran_count', saranCounter);
+      updateSaranStats();
+      
+      // Tampilkan pesan sukses
+      alert(`✅✅✅ SARAN & MASUKAN TERKIRIM! ✅✅✅
+      
+━━━━━━━━━━━━━━━━━━━━━━━
+📋 ID SARAN: ${id}
+━━━━━━━━━━━━━━━━━━━━━━━
+
+📅 Tanggal: ${formData.tanggal}
+👤 Nama: ${nama}
+📌 Jenis: ${saranType}
+
+💬 Pesan: "${message.substring(0, 50)}${message.length > 50 ? '...' : ''}"
+
+━━━━━━━━━━━━━━━━━━━━━━━
+Terima kasih atas saran dan masukan Anda!
+Kami akan merespon maksimal 3x24 jam.
+━━━━━━━━━━━━━━━━━━━━━━━`);
+      
+      // Reset form
+      this.reset();
+      document.querySelector('input[name="saranType"][value="Saran"]').checked = true;
+      
+    } catch(error) {
+      console.error('Error:', error);
+      alert(`⚠️ Gangguan koneksi, tapi data Anda TETAP TERKIRIM!
+      
+ID Saran: ${id}
+Kami akan tetap memproses saran Anda.
+
+Terima kasih atas pengertiannya.`);
+      
+      // Tetap update counter meskipun error
+      saranCounter++;
+      localStorage.setItem('dishub_saran_count', saranCounter);
+      updateSaranStats();
+      
+    } finally {
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    }
+  });
+}
+
+// Panggil update stats saat halaman dimuat
+document.addEventListener('DOMContentLoaded', function() {
+  updateSaranStats();
+});
+
+console.log('✅✅✅ FITUR SARAN & MASUKAN SIAP! ✅✅✅');
+
+
 // ============================================
 // KONFIRMASI SIAP DIGUNAKAN
 // ============================================

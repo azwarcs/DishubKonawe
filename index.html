@@ -503,7 +503,7 @@
       <div class="map-info">
         <i class="fas fa-map-marker-alt"></i>
         <div>
-          <h3>PETA LOKASI KANTOR DISHUB KONAWE</h3>
+          <h3>ALAMAT KANTOR DISHUB KONAWE</h3>
           <p>Jln.Inolobungadue Kompleks Perkantoran Pemda Konawe Kelurahan Inolobunggadue Kecamatan Unaaha Kabupaten Konawe, Provinsi Sulawesi Tenggara</p>
           <div class="coordinates">
             <span><i class="fas fa-globe-asia"></i> Latitude: -3.853937°</span>
@@ -516,6 +516,108 @@
       </div>
     </div>
   </section>
+
+<!-- SARAN & MASUKAN -->
+<section id="saran" class="bg-light">
+  <div class="section-header" data-aos="fade-up">
+    <h2 class="text-center">SARAN & MASUKAN</h2>
+    <p class="section-subtitle">Kritik, saran, dan masukan Anda sangat berharga untuk peningkatan pelayanan kami</p>
+  </div>
+
+  <div class="saran-wrapper" data-aos="zoom-in">
+    <div class="saran-info-panel">
+      <div class="saran-info-icon">
+        <i class="fas fa-comment-dots"></i>
+      </div>
+      <h3>Suara Anda Penting!</h3>
+      <p>Setiap saran dan masukan yang Anda berikan akan kami jadikan bahan evaluasi dan peningkatan kualitas pelayanan publik di bidang perhubungan.</p>
+      
+      <div class="saran-testimoni">
+        <div class="testimoni-icon">
+          <i class="fas fa-quote-left"></i>
+        </div>
+        <p>"Dengan adanya fitur saran ini, masyarakat bisa lebih mudah menyampaikan aspirasi untuk kemajuan Dishub Konawe."</p>
+        <div class="testimoni-author">
+          <i class="fas fa-user-circle"></i>
+          <span>- Warga Konawe</span>
+        </div>
+      </div>
+
+      <div class="saran-stats">
+        <div class="saran-stat">
+          <span class="saran-stat-number" id="saranCount">0</span>
+          <span class="saran-stat-label">Masukan Tersampaikan</span>
+        </div>
+        <!-- <div class="saran-stat">
+          <span class="saran-stat-number" id="responsCount">0</span>
+          <span class="saran-stat-label">Telah Ditindaklanjuti</span>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="saran-form-panel">
+      <h3><i class="fas fa-pen-alt"></i> Form Saran & Masukan</h3>
+      
+      <form id="saranForm">
+        <div class="form-group">
+          <div class="input-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <input type="text" class="form-control" placeholder="Nama Lengkap" id="saranNama" required>
+        </div>
+        
+        <div class="form-row-2">
+          <div class="form-group">
+            <div class="input-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <input type="email" class="form-control" placeholder="Email" id="saranEmail" required>
+          </div>
+          
+          <div class="form-group">
+            <div class="input-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <input type="tel" class="form-control" placeholder="No. Handphone" id="saranPhone" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="input-icon">
+            <i class="fas fa-comment"></i>
+          </div>
+          <textarea class="form-control" rows="5" placeholder="Tulis saran atau masukan Anda di sini..." id="saranMessage" required></textarea>
+        </div>
+        
+        <div class="saran-type-group">
+          <label>Jenis Masukan:</label>
+          <div class="saran-type-options">
+            <label class="saran-type-option">
+              <input type="radio" name="saranType" value="Saran" checked>
+              <span><i class="fas fa-lightbulb"></i> Saran</span>
+            </label>
+            <label class="saran-type-option">
+              <input type="radio" name="saranType" value="Kritik">
+              <span><i class="fas fa-exclamation-triangle"></i> Kritik</span>
+            </label>
+            <label class="saran-type-option">
+              <input type="radio" name="saranType" value="Aspirasi">
+              <span><i class="fas fa-bullhorn"></i> Aspirasi</span>
+            </label>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-submit">
+          <i class="fas fa-paper-plane"></i> Kirim Saran & Masukan
+        </button>
+      </form>
+      
+      <div class="saran-note">
+        <p><i class="fas fa-shield-alt"></i> Data Anda aman dan tidak akan disalahgunakan. Setiap masukan akan kami respon maksimal 3x24 jam.</p>
+      </div>
+    </div>
+  </div>
+</section>  
 
   <!-- FOOTER -->
   <footer>
