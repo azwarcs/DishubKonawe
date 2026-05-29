@@ -45,6 +45,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   width: 100%;
+  max-width: 100%;
 }
 
 /* ===== TYPOGRAPHY ===== */
@@ -84,6 +85,9 @@ h2.text-center:after {
 
 section {
   padding: 70px 6%;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .bg-light {
@@ -174,6 +178,7 @@ nav {
   z-index: 1000;
   transition: var(--transition);
   border-bottom: 3px solid var(--secondary);
+  width: 100%;
 }
 
 nav.scrolled {
@@ -339,36 +344,6 @@ nav ul li a:hover {
 .hero-stat-label {
   font-size: clamp(0.65rem, 2vw, 0.85rem);
   color: rgba(255, 255, 255, 0.8);
-}
-
-.hero-image {
-  position: relative;
-}
-
-.hero-placeholder {
-  width: 100%;
-  height: 350px;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(5px);
-  border-radius: var(--radius-lg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  border: 1px solid rgba(255,255,255,0.2);
-  box-shadow: var(--shadow-lg);
-}
-
-.hero-placeholder i {
-  font-size: 5rem;
-  margin-bottom: 15px;
-  color: var(--secondary);
-}
-
-.hero-placeholder span {
-  font-size: 1.3rem;
-  font-weight: 700;
 }
 
 /* ===== PROFIL SECTION ===== */
@@ -1034,6 +1009,7 @@ footer {
   background: var(--dark);
   color: var(--white);
   padding: 50px 6% 25px;
+  width: 100%;
 }
 .footer-grid {
   display: grid;
@@ -1154,7 +1130,6 @@ footer {
   box-shadow: var(--shadow-lg);
 }
 
-/* Info Panel Kiri */
 .saran-info-panel {
   background: linear-gradient(145deg, #0B4F6C, #083b4f);
   padding: 40px 30px;
@@ -1203,7 +1178,6 @@ footer {
   line-height: 1.6;
 }
 
-/* Testimoni */
 .saran-testimoni {
   background: rgba(255,255,255,0.1);
   border-radius: var(--radius-md);
@@ -1234,7 +1208,6 @@ footer {
   opacity: 0.8;
 }
 
-/* Statistik Saran */
 .saran-stats {
   display: flex;
   gap: 20px;
@@ -1260,7 +1233,6 @@ footer {
   opacity: 0.8;
 }
 
-/* Form Panel Kanan */
 .saran-form-panel {
   padding: 35px;
   background: white;
@@ -1279,7 +1251,6 @@ footer {
   color: var(--secondary);
 }
 
-/* Input dengan icon */
 .input-icon {
   position: absolute;
   left: 12px;
@@ -1308,14 +1279,12 @@ textarea.form-control + .input-icon {
   transform: none;
 }
 
-/* Form row 2 kolom */
 .form-row-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
 }
 
-/* Tipe masukan radio */
 .saran-type-group {
   margin-bottom: 20px;
 }
@@ -1364,7 +1333,6 @@ textarea.form-control + .input-icon {
   font-weight: 500;
 }
 
-/* Note */
 .saran-note {
   margin-top: 20px;
   padding: 12px;
@@ -1476,31 +1444,36 @@ textarea.form-control + .input-icon {
     padding: 8px 15px;
   }
   
-  .struktur-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  
   .hero-stats {
     justify-content: space-between;
   }
 }
 
+/* ===== PERBAIKAN UTAMA UNTUK MOBILE FULL LAYAR ===== */
 /* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
-  /* Hero */
+  /* Pastikan tidak ada margin/padding berlebih */
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Hero section full width */
   .hero-bg {
     min-height: auto;
     background-attachment: scroll;
+    width: 100%;
   }
   
   .hero-overlay {
     position: relative;
-    padding: 80px 0 50px;
+    padding: 60px 0 50px;
+    width: 100%;
   }
   
   .hero-overlay .hero-content {
-    padding: 0 15px;
+    padding: 0 16px;
+    width: 100%;
   }
   
   .hero-text h1 {
@@ -1529,6 +1502,7 @@ textarea.form-control + .input-icon {
   
   .hero-stats {
     gap: 15px;
+    justify-content: space-between;
   }
   
   .hero-stat-number {
@@ -1539,9 +1513,10 @@ textarea.form-control + .input-icon {
     font-size: 0.7rem;
   }
 
-  /* Section */
+  /* Section padding dikurangi untuk mobile */
   section {
-    padding: 40px 4%;
+    padding: 40px 16px !important;
+    width: 100%;
   }
   
   h2 {
@@ -1556,6 +1531,7 @@ textarea.form-control + .input-icon {
   
   .section-subtitle {
     font-size: 0.85rem;
+    padding: 0 10px;
   }
 
   /* Profil */
@@ -1593,6 +1569,7 @@ textarea.form-control + .input-icon {
   
   .struktur-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
   
   .foto-wrapper {
@@ -1728,7 +1705,7 @@ textarea.form-control + .input-icon {
 
   /* Statistik */
   .statistik-section {
-    padding: 40px 4%;
+    padding: 40px 16px !important;
   }
   
   .statistik-grid {
@@ -1871,7 +1848,8 @@ textarea.form-control + .input-icon {
 
   /* Footer */
   footer {
-    padding: 40px 4% 20px;
+    padding: 40px 16px 20px !important;
+    width: 100%;
   }
   
   .footer-grid {
@@ -1924,6 +1902,10 @@ textarea.form-control + .input-icon {
     width: 38px;
     height: 38px;
   }
+  
+  section {
+    padding: 35px 14px !important;
+  }
 }
 
 /* Mobile Extra Small (max-width: 480px) */
@@ -1962,6 +1944,10 @@ textarea.form-control + .input-icon {
     flex-direction: column;
     gap: 10px;
   }
+  
+  section {
+    padding: 30px 12px !important;
+  }
 }
 
 /* Mobile Very Small (max-width: 380px) */
@@ -1995,5 +1981,9 @@ textarea.form-control + .input-icon {
   
   .info-header h3 {
     font-size: 0.9rem;
+  }
+  
+  section {
+    padding: 25px 10px !important;
   }
 }
