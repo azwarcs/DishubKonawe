@@ -264,6 +264,11 @@ nav ul li a:hover {
   background-attachment: fixed;
   display: flex;
   align-items: center;
+
+  background: var(--gradient-primary);
+  color: white;
+  padding: 60px 6%;
+
 }
 
 .hero-overlay {
