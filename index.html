@@ -2,9 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <title>Dinas Perhubungan Kabupaten Konawe - Provinsi Sulawesi Tenggara</title>
   
   <!-- Font Awesome Icons -->
@@ -19,36 +17,35 @@
   <!-- CSS Utama -->
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-      <!-- NAVIGASI DINAS PERHUBUNGAN KONAWE -->
-      <nav id="navbar">
-        <div class="logo">
-          <div class="logo-wrapper">
-            <div class="logo-icon">
-              <img src="img/LOGO KONAWE.png" alt="Logo Kab. Konawe" class="logo-img">
-            </div>
-            <div class="logo-text">
-              <span>DISHUB KONAWE</span>
-              <span>Dinas Perhubungan Kabupaten Konawe</span>
-            </div>
-          </div>
+  <!-- NAVIGASI DINAS PERHUBUNGAN KONAWE -->
+  <nav id="navbar">
+    <div class="logo">
+      <div class="logo-wrapper">
+        <div class="logo-icon">
+          <img src="img/LOGO KONAWE.png" alt="Logo Kab. Konawe" class="logo-img">
         </div>
-        
-        <div class="menu-toggle" id="menuToggle">
-          <i class="fas fa-bars"></i>
+        <div class="logo-text">
+          <span>DISHUB KONAWE</span>
+          <span>Dinas Perhubungan Kabupaten Konawe</span>
         </div>
+      </div>
+    </div>
+    
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </div>
 
-        <ul id="navMenu">
-          <li><a href="#home"><i class="fas fa-home"></i> Beranda</a></li>
-          <li><a href="#profil"><i class="fas fa-building"></i> Profil</a></li>
-          <li><a href="#layanan"><i class="fas fa-cogs"></i> Layanan</a></li>
-          <li><a href="#info"><i class="fas fa-info-circle"></i> Info</a></li>
-          <li><a href="#galeri"><i class="fas fa-images"></i> Galeri</a></li>
-          <li><a href="#kontak"><i class="fas fa-phone-alt"></i> Kontak</a></li>
-          <li><a href="#saran"><i class="fas fa-comment"></i> Saran</a></li>
-        </ul>
-      </nav>
+    <ul id="navMenu">
+      <li><a href="#home"><i class="fas fa-home"></i> Beranda</a></li>
+      <li><a href="#profil"><i class="fas fa-building"></i> Profil</a></li>
+      <li><a href="#layanan"><i class="fas fa-cogs"></i> Layanan</a></li>
+      <li><a href="#info"><i class="fas fa-info-circle"></i> Info</a></li>
+      <li><a href="#galeri"><i class="fas fa-images"></i> Galeri</a></li>
+      <li><a href="#kontak"><i class="fas fa-phone-alt"></i> Kontak</a></li>
+      <li><a href="#saran"><i class="fas fa-comment"></i> Saran</a></li>
+    </ul>
+  </nav>
 
   <!-- HERO SECTION -->
   <header id="home" class="hero-bg">
@@ -366,16 +363,16 @@
       </a>
       
       <a href="InspeksiKeselamatanAngkutan.html" class="galeri-link"> 
-          <div class="galeri-item" data-aos="flip-left" data-aos-delay="200">
-            <div class="galeri-placeholder">
-              <i class="fas fa-traffic-light"></i>
-              <span>RAMP CHECK</span>
-            </div>
-            <div class="galeri-caption">
-              <h4>Inspeksi Keselamatan Mobil Angkutan</h4>
-              <p>Mobil Angkutan Barang Antar Kota</p>
-            </div>
+        <div class="galeri-item" data-aos="flip-left" data-aos-delay="200">
+          <div class="galeri-placeholder">
+            <i class="fas fa-traffic-light"></i>
+            <span>RAMP CHECK</span>
           </div>
+          <div class="galeri-caption">
+            <h4>Inspeksi Keselamatan Mobil Angkutan</h4>
+            <p>Mobil Angkutan Barang Antar Kota</p>
+          </div>
+        </div>
       </a>
 
       <div class="galeri-item" data-aos="flip-left" data-aos-delay="300">
@@ -517,107 +514,103 @@
     </div>
   </section>
 
-<!-- SARAN & MASUKAN -->
-<section id="saran" class="bg-light">
-  <div class="section-header" data-aos="fade-up">
-    <h2 class="text-center">SARAN & MASUKAN</h2>
-    <p class="section-subtitle">Kritik, saran, dan masukan Anda sangat berharga untuk peningkatan pelayanan kami</p>
-  </div>
-
-  <div class="saran-wrapper" data-aos="zoom-in">
-    <div class="saran-info-panel">
-      <div class="saran-info-icon">
-        <i class="fas fa-comment-dots"></i>
-      </div>
-      <h3>Suara Anda Penting!</h3>
-      <p>Setiap saran dan masukan yang Anda berikan akan kami jadikan bahan evaluasi dan peningkatan kualitas pelayanan publik di bidang perhubungan.</p>
-      
-      <div class="saran-testimoni">
-        <div class="testimoni-icon">
-          <i class="fas fa-quote-left"></i>
-        </div>
-        <p>"Dengan adanya fitur saran ini, masyarakat bisa lebih mudah menyampaikan aspirasi untuk kemajuan Dishub Konawe."</p>
-        <div class="testimoni-author">
-          <i class="fas fa-user-circle"></i>
-          <span>- Warga Konawe</span>
-        </div>
-      </div>
-
-      <div class="saran-stats">
-        <div class="saran-stat">
-          <span class="saran-stat-number" id="saranCount">0</span>
-          <span class="saran-stat-label">Masukan Tersampaikan</span>
-        </div>
-        <!-- <div class="saran-stat">
-          <span class="saran-stat-number" id="responsCount">0</span>
-          <span class="saran-stat-label">Telah Ditindaklanjuti</span>
-        </div> -->
-      </div>
+  <!-- SARAN & MASUKAN -->
+  <section id="saran" class="bg-light">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="text-center">SARAN & MASUKAN</h2>
+      <p class="section-subtitle">Kritik, saran, dan masukan Anda sangat berharga untuk peningkatan pelayanan kami</p>
     </div>
 
-    <div class="saran-form-panel">
-      <h3><i class="fas fa-pen-alt"></i> Form Saran & Masukan</h3>
-      
-      <form id="saranForm">
-        <div class="form-group">
-          <div class="input-icon">
-            <i class="fas fa-user"></i>
-          </div>
-          <input type="text" class="form-control" placeholder="Nama Lengkap" id="saranNama" required>
+    <div class="saran-wrapper" data-aos="zoom-in">
+      <div class="saran-info-panel">
+        <div class="saran-info-icon">
+          <i class="fas fa-comment-dots"></i>
         </div>
+        <h3>Suara Anda Penting!</h3>
+        <p>Setiap saran dan masukan yang Anda berikan akan kami jadikan bahan evaluasi dan peningkatan kualitas pelayanan publik di bidang perhubungan.</p>
         
-        <div class="form-row-2">
+        <div class="saran-testimoni">
+          <div class="testimoni-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p>"Dengan adanya fitur saran ini, masyarakat bisa lebih mudah menyampaikan aspirasi untuk kemajuan Dishub Konawe."</p>
+          <div class="testimoni-author">
+            <i class="fas fa-user-circle"></i>
+            <span>- Warga Konawe</span>
+          </div>
+        </div>
+
+        <div class="saran-stats">
+          <div class="saran-stat">
+            <span class="saran-stat-number" id="saranCount">0</span>
+            <span class="saran-stat-label">Masukan Tersampaikan</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="saran-form-panel">
+        <h3><i class="fas fa-pen-alt"></i> Form Saran & Masukan</h3>
+        
+        <form id="saranForm">
           <div class="form-group">
             <div class="input-icon">
-              <i class="fas fa-envelope"></i>
+              <i class="fas fa-user"></i>
             </div>
-            <input type="email" class="form-control" placeholder="Email" id="saranEmail" required>
+            <input type="text" class="form-control" placeholder="Nama Lengkap" id="saranNama" required>
+          </div>
+          
+          <div class="form-row-2">
+            <div class="form-group">
+              <div class="input-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <input type="email" class="form-control" placeholder="Email" id="saranEmail" required>
+            </div>
+            
+            <div class="form-group">
+              <div class="input-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <input type="tel" class="form-control" placeholder="No. Handphone" id="saranPhone" required>
+            </div>
           </div>
           
           <div class="form-group">
             <div class="input-icon">
-              <i class="fas fa-phone"></i>
+              <i class="fas fa-comment"></i>
             </div>
-            <input type="tel" class="form-control" placeholder="No. Handphone" id="saranPhone" required>
+            <textarea class="form-control" rows="5" placeholder="Tulis saran atau masukan Anda di sini..." id="saranMessage" required></textarea>
           </div>
-        </div>
-        
-        <div class="form-group">
-          <div class="input-icon">
-            <i class="fas fa-comment"></i>
+          
+          <div class="saran-type-group">
+            <label>Jenis Masukan:</label>
+            <div class="saran-type-options">
+              <label class="saran-type-option">
+                <input type="radio" name="saranType" value="Saran" checked>
+                <span><i class="fas fa-lightbulb"></i> Saran</span>
+              </label>
+              <label class="saran-type-option">
+                <input type="radio" name="saranType" value="Kritik">
+                <span><i class="fas fa-exclamation-triangle"></i> Kritik</span>
+              </label>
+              <label class="saran-type-option">
+                <input type="radio" name="saranType" value="Aspirasi">
+                <span><i class="fas fa-bullhorn"></i> Aspirasi</span>
+              </label>
+            </div>
           </div>
-          <textarea class="form-control" rows="5" placeholder="Tulis saran atau masukan Anda di sini..." id="saranMessage" required></textarea>
-        </div>
+          
+          <button type="submit" class="btn btn-submit">
+            <i class="fas fa-paper-plane"></i> Kirim Saran & Masukan
+          </button>
+        </form>
         
-        <div class="saran-type-group">
-          <label>Jenis Masukan:</label>
-          <div class="saran-type-options">
-            <label class="saran-type-option">
-              <input type="radio" name="saranType" value="Saran" checked>
-              <span><i class="fas fa-lightbulb"></i> Saran</span>
-            </label>
-            <label class="saran-type-option">
-              <input type="radio" name="saranType" value="Kritik">
-              <span><i class="fas fa-exclamation-triangle"></i> Kritik</span>
-            </label>
-            <label class="saran-type-option">
-              <input type="radio" name="saranType" value="Aspirasi">
-              <span><i class="fas fa-bullhorn"></i> Aspirasi</span>
-            </label>
-          </div>
+        <div class="saran-note">
+          <p><i class="fas fa-shield-alt"></i> Data Anda aman dan tidak akan disalahgunakan. Setiap masukan akan kami respon maksimal 3x24 jam.</p>
         </div>
-        
-        <button type="submit" class="btn btn-submit">
-          <i class="fas fa-paper-plane"></i> Kirim Saran & Masukan
-        </button>
-      </form>
-      
-      <div class="saran-note">
-        <p><i class="fas fa-shield-alt"></i> Data Anda aman dan tidak akan disalahgunakan. Setiap masukan akan kami respon maksimal 3x24 jam.</p>
       </div>
     </div>
-  </div>
-</section>  
+  </section>  
 
   <!-- FOOTER -->
   <footer>
