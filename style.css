@@ -259,16 +259,11 @@ nav ul li a:hover {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  /* background: url('img/background6.png') no-repeat center center; */
+  background: url('img/background6.png') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   display: flex;
   align-items: center;
-
-  background: var(--gradient-primary);
-  color: white;
-  padding: 60px 6%;
-
 }
 
 .hero-overlay {
