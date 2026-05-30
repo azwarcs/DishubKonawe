@@ -1989,31 +1989,59 @@ textarea.form-control + .input-icon {
 }
 
 
-
 /* ============================================= */
-/* ===== PERBAIKAN FINAL: SCROLL CEPAT + HOVER MINIMAL ===== */
+/* ===== MOBILE: HILANGKAN EFEK LAYANAN & INFO ===== */
 /* ============================================= */
 
-/* Desktop: Efek penuh (keren) */
-@media (min-width: 769px) {
-  .layanan-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+@media (max-width: 768px) {
+  /* Hilangkan semua efek hover di Layanan Publik */
+  .layanan-card,
+  .layanan-card:hover,
+  .layanan-card:hover .layanan-icon,
+  .layanan-icon,
+  .layanan-icon:hover {
+    transform: none !important;
+    transition: none !important;
   }
   
+  /* Hilangkan semua efek hover di Info Jadwal */
+  .info-card,
+  .info-card:hover,
+  .info-list li,
+  .info-list li:hover,
+  .info-more,
+  .info-more:hover {
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  /* Kembalikan box shadow ke default */
   .layanan-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .layanan-card:hover .layanan-icon {
-    transform: rotate(360deg);
-  }
-  
-  .info-card {
-    transition: transform 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05) !important;
   }
   
   .info-card:hover {
-    transform: translateY(-3px);
+    box-shadow: 0 30px 60px rgba(0,20,50,0.3) !important;
+  }
+  
+  .info-list li:hover {
+    background: rgba(255,255,255,0.08) !important;
   }
 }
 
+/* ===== TAMBAHAN: MATIKAN SEMUA EFEK DI INFO CARD ===== */
+@media (max-width: 768px) {
+  /* Matikan semua efek di dalam info-card */
+  .info-card,
+  .info-card *,
+  .info-card:hover,
+  .info-card:hover * {
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  /* Kembalikan background hover yang benar */
+  .info-list li:hover {
+    background: rgba(255,255,255,0.08) !important;
+  }
+}
