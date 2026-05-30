@@ -1992,82 +1992,37 @@ textarea.form-control + .input-icon {
 
 
 /* ============================================= */
-/* ===== PERBAIKAN SCROLL MOBILE TANPA MENGHILANGKAN ANIMASI ===== */
+/* ===== PERBAIKAN SCROLL MOBILE (VERSI AMAN) ===== */
 /* ============================================= */
 
-/* Perbaikan untuk Layanan Publik & Info di Mobile */
 @media (max-width: 768px) {
-  /* Hanya non-aktifkan hover effect yang menyebabkan repaint berat */
-  .layanan-card {
-    margin-bottom: 15px;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  /* Hover effect di mobile tetap ada tapi lebih ringan (tanpa translateY) */
+  /* Hanya non-aktifkan efek berat, AOS tetap jalan */
   .layanan-card:hover {
     transform: translateY(0) !important;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1) !important;
   }
   
-  /* Non-aktifkan rotasi icon di mobile (penyebab utama lag) */
   .layanan-card:hover .layanan-icon {
     transform: none !important;
   }
   
-  /* Hover effect info card lebih ringan */
   .info-card:hover {
     transform: translateY(0) !important;
   }
   
-  /* Optimasi list item untuk scroll mulus */
-  .info-list li {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-  }
-  
-  /* Perbaikan teks panjang di trayek bus */
-  .info-title {
-    word-break: break-word;
-    white-space: normal;
-    font-size: 0.75rem;
-    line-height: 1.4;
-  }
-  
-  /* Kurangi padding pada list item */
-  .info-list li {
-    padding: 10px;
-  }
-  
-  /* Pastikan body bisa scroll dengan lancar */
+  /* Optimasi scroll */
   body {
     -webkit-overflow-scrolling: touch;
   }
   
-  /* AOS TETAP BERJALAN, hanya dipercepat/diringankan */
-  [data-aos] {
-    transition-duration: 0.4s !important;
-    animation-duration: 0.4s !important;
+  .info-title {
+    word-break: break-word;
+    font-size: 0.75rem;
   }
   
-  /* Perbaikan untuk elemen yang mungkin menyebabkan scroll lag */
-  .layanan-grid, 
-  .info-grid {
-    overflow-x: visible;
+  .info-list li {
+    padding: 10px;
   }
   
-  #layanan, #info {
-    overflow-x: visible;
-  }
-}
-
-/* Perbaikan untuk tablet (768px - 1024px) - animasi tetap berjalan normal */
-@media (min-width: 769px) and (max-width: 1024px) {
-  /* Tablet tetap pakai animasi ringan */
-  .layanan-card:hover {
-    transform: translateY(-3px) !important;
-  }
-  
-  .info-card:hover {
-    transform: translateY(-2px) !important;
-  }
+  /* JANGAN sentuh [data-aos] biar animasi tetap jalan */
+  /* JANGAN sentuh .back-to-top biar tetap muncul */
 }
