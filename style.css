@@ -1989,3 +1989,40 @@ textarea.form-control + .input-icon {
 }
 
 
+
+/* Desktop: Efek penuh (lebih lambat scroll tapi keren) */
+@media (min-width: 769px) {
+  .layanan-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .layanan-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .layanan-card:hover .layanan-icon {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile: Efek minimal (scroll super cepat) */
+@media (max-width: 768px) {
+  .layanan-card {
+    transition: box-shadow 0.2s ease; /* Hanya shadow, tanpa transform */
+  }
+  
+  .layanan-card:hover {
+    transform: none; /* Tidak ada gerakan */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  .layanan-card:hover .layanan-icon {
+    transform: none; /* Tidak ada rotasi */
+  }
+  
+  /* AOS tetap jalan tapi lebih cepat */
+  [data-aos] {
+    transition-duration: 0.3s !important;
+  }
+}
+
