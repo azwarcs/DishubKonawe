@@ -1987,3 +1987,109 @@ textarea.form-control + .input-icon {
     padding: 25px 10px !important;
   }
 }
+
+
+
+
+/* ============================================= */
+/* ===== PERBAIKAN SCROLL MOBILE ===== */
+/* ============================================= */
+
+/* Perbaikan untuk Layanan Publik & Info di Mobile */
+@media (max-width: 768px) {
+  /* Matikan semua efek hover dan transform yang menyebabkan lag */
+  .layanan-card {
+    transform: none !important;
+    margin-bottom: 15px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .layanan-card:hover {
+    transform: none !important;
+  }
+  
+  .layanan-card:hover .layanan-icon {
+    transform: none !important;
+  }
+  
+  .layanan-icon {
+    transition: none !important;
+  }
+  
+  /* Matikan efek hover pada info card */
+  .info-card {
+    transform: none !important;
+  }
+  
+  .info-card:hover {
+    transform: none !important;
+  }
+  
+  /* Optimasi list item agar scroll mulus */
+  .info-list li {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: auto;
+  }
+  
+  /* Pastikan tidak ada overflow tersembunyi yang menghambat scroll */
+  .layanan-grid, 
+  .info-grid {
+    overflow-x: visible;
+    overflow-y: visible;
+  }
+  
+  /* Perbaikan teks panjang di trayek bus */
+  .info-title {
+    word-break: break-word;
+    white-space: normal;
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+  
+  /* Kurangi padding pada list item */
+  .info-list li {
+    padding: 10px;
+  }
+  
+  /* Perbaikan untuk container yang panjang */
+  .info-list {
+    max-height: none;
+    overflow-y: visible;
+  }
+  
+  /* Matikan animasi AOS sementara untuk menghilangkan lag */
+  [data-aos] {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  /* Pastikan body bisa scroll dengan lancar */
+  body {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Optimasi scroll untuk section */
+  #layanan, #info {
+    overflow-x: visible;
+    overflow-y: visible;
+  }
+}
+
+/* Perbaikan tambahan untuk tablet (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .layanan-card {
+    transition: none !important;
+  }
+  
+  .layanan-card:hover {
+    transform: translateY(-3px) !important;
+  }
+  
+  .info-card:hover {
+    transform: translateY(-2px) !important;
+  }
+}

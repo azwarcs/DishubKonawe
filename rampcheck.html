@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Inspeksi Keselamatan - Dinas Perhubungan Kabupaten Konawe</title>
+    <!-- Link ke CSS eksternal -->
+    <link rel="stylesheet" href="style-rampcheck.css">
+    <!-- Font Awesome 6 (Free Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <!-- Tempat logo Kab. Konawe (Anda isi sendiri) -->
+                <img src="img/LOGO KONAWE.png" alt="Logo Kab. Konawe" class="logo-konawe" id="logoKonawe">
+                <div class="brand-text">
+                    <span class="dishub-title">DISHUB KONAWE</span>
+                    <span class="dishub-sub">Dinas Perhubungan Kabupaten Konawe</span>
+                </div>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Beranda</a></li>
+                <li><a href="index.html#galeri" class="nav-link"><i class="fas fa-concierge-bell"></i> Galeri</a></li>
+                <li><a href="LPJU.html" class="nav-link"><i class="fas fa-lightbulb"></i> LPJU</a></li>
+                <li><a href="rampcheck.html" class="nav-link active"><i class="fas fa-clipboard-list"></i> Ramp Check</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT: BERITA INSPEKSI KESELAMATAN -->
+    <main class="inspeksi-container">
+        <div class="hero-section">
+            <h1><i class="fas fa-shield-alt"></i> Inspeksi Keselamatan Transportasi</h1>
+            <p>Monitoring, evaluasi, dan pengawasan keselamatan sarana & prasarana perhubungan di Kabupaten Konawe</p>
+        </div>
+
+        <section class="news-grid" id="beritaGrid">
+            <!-- Berita Inspeksi 1 -->
+            <article class="news-card">
+                <div class="card-img">
+                    <img src="img/BeritaInspeksi2.jpeg" alt="Inspeksi Angkutan Barang" onerror="this.src='https://placehold.co/600x400/e2e8f0/1e293b?text=Inspeksi+Angkutan+Barang'">
+                </div>
+                <div class="card-content">
+                    <div class="date-badge"><i class="far fa-calendar-alt"></i> 18 Maret 2025</div>
+                    <h3>Inspeksi Keselamatan Angkutan Barang di Terminal Unaaha</h3>
+                    <p>Tim Dishub melakukan ramp check kelaikan jalan terhadap 12 Truck antar kota antar provinsi menjelang arus mudik. Hasil: 3 Truck dinyatakan tidak laik jalan.</p>
+                    <span class="status success"><i class="fas fa-check-circle"></i> Selesai</span>
+                </div>
+            </article>
+
+            <!-- Berita Inspeksi 2 -->
+            <article class="news-card">
+                <div class="card-img">
+                    <img src="images/inspeksi1.jpg" alt="Inspeksi Rambu" onerror="this.src='https://placehold.co/600x400/e2e8f0/1e293b?text=Inspeksi+Rambu+Lalu+Lintas'">
+                </div>
+                <div class="card-content">
+                    <div class="date-badge"><i class="far fa-calendar-alt"></i> 12 Maret 2025</div>
+                    <h3>Audit Marka Jalan & Rambu di Ruas Poros Konawe</h3>
+                    <p>Pengecekan visibilitas rambu dan kondisi marka jalan sepanjang 25 km. Ditemukan 8 rambu yang miring/rusak dan segera diperbaiki.</p>
+                    <span class="status success"><i class="fas fa-check-circle"></i> Selesai</span>
+                </div>
+            </article>
+
+            <!-- Berita Inspeksi 3 -->
+            <article class="news-card">
+                <div class="card-img">
+                    <img src="images/inspeksi3.jpg" alt="Inspeksi Pelabuhan" onerror="this.src='https://placehold.co/600x400/e2e8f0/1e293b?text=Inspeksi+Pelabuhan+Rakyat'">
+                </div>
+                <div class="card-content">
+                    <div class="date-badge"><i class="far fa-calendar-alt"></i> 8 Maret 2025</div>
+                    <h3>Inspeksi Sarana Keselamatan Pelabuhan Rakyat</h3>
+                    <p>Pemeriksaan life jacket, APAR, dan dermaga apung. Tim menemukan kekurangan alat keselamatan yang segera diusulkan pengadaannya.</p>
+                    <span class="status progress"><i class="fas fa-sync-alt"></i> Tindak Lanjut</span>
+                </div>
+            </article>
+
+            <!-- Berita Inspeksi 4 -->
+            <article class="news-card">
+                <div class="card-img">
+                    <img src="images/inspeksi4.jpg" alt="Inspeksi Truk" onerror="this.src='https://placehold.co/600x400/e2e8f0/1e293b?text=Ramp+Check+Truk+Barang'">
+                </div>
+                <div class="card-content">
+                    <div class="date-badge"><i class="far fa-calendar-alt"></i> 1 Maret 2025</div>
+                    <h3>Operasi Keselamatan Kendaraan Angkutan Barang</h3>
+                    <p>Razia terhadap truk overload dan kondisi rem tidak standar. 5 kendaraan ditilang dan diarahkan perbaikan.</p>
+                    <span class="status success"><i class="fas fa-check-circle"></i> Selesai</span>
+                </div>
+            </article>
+
+            <!-- Berita Inspeksi 5 (tambahan) -->
+            <article class="news-card">
+                <div class="card-img">
+                    <img src="images/inspeksi5.jpg" alt="Inspeksi Zebra Cross" onerror="this.src='https://placehold.co/600x400/e2e8f0/1e293b?text=Inspeksi+Zebra+Cross'">
+                </div>
+                <div class="card-content">
+                    <div class="date-badge"><i class="far fa-calendar-alt"></i> 22 Februari 2025</div>
+                    <h3>Evaluasi Fasilitas Pejalan Kaki Area Sekolah</h3>
+                    <p>Inspeksi trotoar dan zebra cross di sekitar SDN 1 Unaaha. Rekomendasi perbaikan diberikan ke Dinas PU.</p>
+                    <span class="status progress"><i class="fas fa-sync-alt"></i> Dalam Proses</span>
+                </div>
+            </article>
+
+            <!-- Berita Inspeksi 6 -->
+            <article class="news-card">
+                <div class="card-img">
+                    <img src="images/inspeksi6.jpg" alt="Inspeksi Angkutan Umum" onerror="this.src='https://placehold.co/600x400/e2e8f0/1e293b?text=Inspeksi+Angkot'">
+                </div>
+                <div class="card-content">
+                    <div class="date-badge"><i class="far fa-calendar-alt"></i> 15 Februari 2025</div>
+                    <h3>Ramp Check Angkutan Kota (Angkot) Unaaha</h3>
+                    <p>Pemeriksaan kelengkapan administrasi dan kondisi teknis 78 unit angkot. Mayoritas dalam kondisi baik.</p>
+                    <span class="status success"><i class="fas fa-check-circle"></i> Selesai</span>
+                </div>
+            </article>
+        </section>
+        
+        <!-- Info tambahan -->
+        <div class="info-banner">
+            <i class="fas fa-exclamation-triangle"></i> Laporan potensi bahaya transportasi: Hubungi Call Center 112 atau langsung ke Bidang Keselamatan Dishub Konawe.
+        </div>
+    </main>
+
+    <!-- FOOTER sederhana -->
+    <footer class="inspeksi-footer">
+        <p>&copy; 2026 Dinas Perhubungan Kabupaten Konawe - Bidang Keselamatan Transportasi</p>
+    </footer>
+
+    <!-- JavaScript Eksternal -->
+    <script src="rampcheck.js"></script>
+</body>
+</html>
