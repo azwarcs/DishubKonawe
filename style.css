@@ -1994,88 +1994,41 @@ textarea.form-control + .input-icon {
 
 
 /* ============================================= */
-/* ===== PERBAIKAN SCROLL AGAR KONTEN TIDAK TERBawa KE ATAS ===== */
+/* ===== BATASI TINGGI CARD AGAR SCROLL NORMAL ===== */
 /* ============================================= */
 
 @media (max-width: 768px) {
-  /* Pastikan section tidak menyebabkan scroll aneh */
-  section {
-    overflow-y: visible !important;
-    overflow-x: hidden !important;
-    position: relative !important;
-  }
-  
-  /* Batasi tinggi card info di mobile agar tidak terlalu panjang */
+  /* Batasi tinggi info card */
   .info-card {
-    max-height: 500px !important;
-    overflow-y: auto !important;
+    max-height: 450px;
+    overflow-y: auto;
   }
   
-  /* Buat list info bisa di-scroll internal jika terlalu panjang */
+  /* Buat list bisa di-scroll */
   .info-list {
-    max-height: 300px !important;
-    overflow-y: auto !important;
-    padding-right: 5px !important;
+    max-height: 280px;
+    overflow-y: auto;
   }
   
-  /* Scroll halus untuk list */
-  .info-list::-webkit-scrollbar {
-    width: 3px;
-  }
-  
-  .info-list::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px;
-  }
-  
-  .info-list::-webkit-scrollbar-thumb {
-    background: var(--secondary);
-    border-radius: 10px;
-  }
-  
-  /* Batasi tinggi layanan card */
-  .layanan-card {
-    max-height: 350px !important;
-    overflow-y: auto !important;
-  }
-  
-  /* Scroll halus untuk layanan card */
-  .layanan-card::-webkit-scrollbar {
-    width: 3px;
-  }
-  
-  /* Pastikan kontak section tidak overflow */
-  .contact-wrapper {
-    max-height: none !important;
-    overflow: visible !important;
-  }
-  
-  .contact-info-panel,
-  .contact-form-panel {
-    max-height: 500px !important;
-    overflow-y: auto !important;
-  }
-  
-  /* Scroll halus untuk panel kontak */
-  .contact-info-panel::-webkit-scrollbar,
-  .contact-form-panel::-webkit-scrollbar {
-    width: 3px;
-  }
-  
-  /* Perbaiki teks panjang agar tidak merusak layout */
+  /* Perkecil font teks trayek */
   .info-title {
-    word-break: break-word;
-    white-space: normal;
-    font-size: 0.7rem !important;
+    font-size: 0.7rem;
+    line-height: 1.3;
   }
   
-  /* Kurangi padding berlebih */
-  .info-card {
-    padding: 15px !important;
+  /* Perkecil font waktu */
+  .info-time {
+    font-size: 0.7rem;
   }
   
-  .info-list li {
-    padding: 8px !important;
-    margin-bottom: 8px !important;
+  /* Kurangi padding card layanan */
+  .layanan-card {
+    padding: 12px !important;
+  }
+  
+  /* Ringkas teks layanan */
+  .layanan-card p {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
   }
 }
