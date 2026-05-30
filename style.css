@@ -2017,57 +2017,254 @@ textarea.form-control + .input-icon {
   }
 }
 
-/* Mobile: Efek SANGAT MINIMAL (scroll super cepat) */
+
+/* ============================================= */
+/* ===== PERBAIKAN LAYANAN PUBLIK & INFO UNTUK SCROLL RAPI ===== */
+/* ============================================= */
+
+/* Perbaikan untuk semua layar */
+.layanan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+  align-items: stretch;
+}
+
+.layanan-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px 18px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 280px;
+}
+
+.layanan-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  min-height: 50px;
+}
+
+.layanan-card p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.layanan-footer {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+/* Perbaikan Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  align-items: stretch;
+}
+
+.info-card {
+  background: linear-gradient(145deg, #1e2b5e, #2a3f7e, #3b4f9c);
+  border-radius: 20px;
+  padding: 25px;
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.info-header i {
+  font-size: 1.5rem;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+}
+
+.info-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.info-list li {
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.info-time {
+  font-size: 0.75rem;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.info-time.morning {
+  color: #ffd700;
+}
+
+.info-time.afternoon {
+  color: #ff9800;
+}
+
+.info-title {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  display: block;
+  word-break: break-word;
+}
+
+.info-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #ffd700, #ffb347);
+  border-radius: 30px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  align-self: flex-start;
+}
+
+.call-center {
+  margin-top: 15px;
+  padding: 12px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 12px;
+}
+
+.call-center p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* ===== PERBAIKAN KHUSUS MOBILE ===== */
 @media (max-width: 768px) {
-  /* Layanan card - TANPA gerakan naik */
+  /* Layanan grid jadi 1 kolom di mobile */
+  .layanan-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 15px 0;
+  }
+  
   .layanan-card {
-    transition: box-shadow 0.2s ease;
+    padding: 18px 15px;
+    min-height: auto;
   }
   
-  .layanan-card:hover {
-    transform: none !important;           /* Tidak naik sama sekali */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Shadow sangat tipis */
+  .layanan-card h3 {
+    font-size: 1rem;
+    min-height: auto;
+    margin-bottom: 8px;
   }
   
-  .layanan-card:hover .layanan-icon {
-    transform: none !important;           /* Tidak ada rotasi */
+  .layanan-card p {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
   }
   
-  /* Info card - TANPA gerakan */
+  /* Info grid jadi 1 kolom di mobile */
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
   .info-card {
-    transition: none;
+    padding: 20px;
   }
   
-  .info-card:hover {
-    transform: none !important;
-    box-shadow: none;                     /* Tidak ada efek hover */
+  .info-header {
+    gap: 10px;
+    margin-bottom: 15px;
   }
   
-  /* AOS tetap jalan tapi lebih cepat */
-  [data-aos] {
-    transition-duration: 0.3s !important;
-    animation-duration: 0.3s !important;
+  .info-header i {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
   }
   
-  /* Optimasi scroll body */
-  body {
-    -webkit-overflow-scrolling: touch;
+  .info-header h3 {
+    font-size: 1rem;
   }
   
-  /* Perbaikan teks panjang di trayek bus */
-  .info-title {
-    word-break: break-word;
-    font-size: 0.75rem;
-  }
-  
-  /* Kurangi padding untuk menghemat ruang */
   .info-list li {
     padding: 10px;
   }
   
-  /* Pastikan back to top tetap muncul */
-  .back-to-top {
-    transition: opacity 0.3s ease;
+  .info-title {
+    font-size: 0.75rem;
+  }
+  
+  .info-time {
+    font-size: 0.7rem;
+  }
+  
+  .info-more {
+    padding: 6px 14px;
+    font-size: 0.7rem;
+  }
+  
+  .call-center p {
+    font-size: 0.75rem;
+  }
+  
+  /* Pastikan scroll lancar */
+  #layanan, #info {
+    overflow-x: visible;
+    overflow-y: visible;
+  }
+  
+  body {
+    -webkit-overflow-scrolling: touch;
   }
 }
 
+/* ===== PERBAIKAN TABLET ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .layanan-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .info-card {
+    padding: 20px;
+  }
+  
+  .info-header h3 {
+    font-size: 1rem;
+  }
+}
