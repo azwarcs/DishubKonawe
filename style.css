@@ -2058,3 +2058,19 @@ textarea.form-control + .input-icon {
   }
 }
 
+/* ===== TAMBAHAN: MATIKAN SEMUA EFEK DI INFO CARD ===== */
+@media (max-width: 768px) {
+  /* Matikan semua efek di dalam info-card */
+  .info-card,
+  .info-card *,
+  .info-card:hover,
+  .info-card:hover * {
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  /* Kembalikan background hover yang benar */
+  .info-list li:hover {
+    background: rgba(255,255,255,0.08) !important;
+  }
+}
