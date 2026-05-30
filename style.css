@@ -1990,7 +1990,11 @@ textarea.form-control + .input-icon {
 
 
 
-/* Desktop: Efek penuh (lebih lambat scroll tapi keren) */
+/* ============================================= */
+/* ===== PERBAIKAN FINAL: SCROLL CEPAT + HOVER MINIMAL ===== */
+/* ============================================= */
+
+/* Desktop: Efek penuh (keren) */
 @media (min-width: 769px) {
   .layanan-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -2003,26 +2007,67 @@ textarea.form-control + .input-icon {
   .layanan-card:hover .layanan-icon {
     transform: rotate(360deg);
   }
+  
+  .info-card {
+    transition: transform 0.3s ease;
+  }
+  
+  .info-card:hover {
+    transform: translateY(-3px);
+  }
 }
 
-/* Mobile: Efek minimal (scroll super cepat) */
+/* Mobile: Efek SANGAT MINIMAL (scroll super cepat) */
 @media (max-width: 768px) {
+  /* Layanan card - TANPA gerakan naik */
   .layanan-card {
-    transition: box-shadow 0.2s ease; /* Hanya shadow, tanpa transform */
+    transition: box-shadow 0.2s ease;
   }
   
   .layanan-card:hover {
-    transform: none; /* Tidak ada gerakan */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: none !important;           /* Tidak naik sama sekali */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Shadow sangat tipis */
   }
   
   .layanan-card:hover .layanan-icon {
-    transform: none; /* Tidak ada rotasi */
+    transform: none !important;           /* Tidak ada rotasi */
+  }
+  
+  /* Info card - TANPA gerakan */
+  .info-card {
+    transition: none;
+  }
+  
+  .info-card:hover {
+    transform: none !important;
+    box-shadow: none;                     /* Tidak ada efek hover */
   }
   
   /* AOS tetap jalan tapi lebih cepat */
   [data-aos] {
     transition-duration: 0.3s !important;
+    animation-duration: 0.3s !important;
+  }
+  
+  /* Optimasi scroll body */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Perbaikan teks panjang di trayek bus */
+  .info-title {
+    word-break: break-word;
+    font-size: 0.75rem;
+  }
+  
+  /* Kurangi padding untuk menghemat ruang */
+  .info-list li {
+    padding: 10px;
+  }
+  
+  /* Pastikan back to top tetap muncul */
+  .back-to-top {
+    transition: opacity 0.3s ease;
   }
 }
 
