@@ -1992,51 +1992,37 @@ textarea.form-control + .input-icon {
 
 
 /* ============================================= */
-/* ===== PERBAIKAN SCROLL MOBILE ===== */
+/* ===== PERBAIKAN SCROLL MOBILE TANPA MENGHILANGKAN ANIMASI ===== */
 /* ============================================= */
 
 /* Perbaikan untuk Layanan Publik & Info di Mobile */
 @media (max-width: 768px) {
-  /* Matikan semua efek hover dan transform yang menyebabkan lag */
+  /* Hanya non-aktifkan hover effect yang menyebabkan repaint berat */
   .layanan-card {
-    transform: none !important;
     margin-bottom: 15px;
     -webkit-overflow-scrolling: touch;
   }
   
+  /* Hover effect di mobile tetap ada tapi lebih ringan (tanpa translateY) */
   .layanan-card:hover {
-    transform: none !important;
+    transform: translateY(0) !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1) !important;
   }
   
+  /* Non-aktifkan rotasi icon di mobile (penyebab utama lag) */
   .layanan-card:hover .layanan-icon {
     transform: none !important;
   }
   
-  .layanan-icon {
-    transition: none !important;
-  }
-  
-  /* Matikan efek hover pada info card */
-  .info-card {
-    transform: none !important;
-  }
-  
+  /* Hover effect info card lebih ringan */
   .info-card:hover {
-    transform: none !important;
+    transform: translateY(0) !important;
   }
   
-  /* Optimasi list item agar scroll mulus */
+  /* Optimasi list item untuk scroll mulus */
   .info-list li {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
-    will-change: auto;
-  }
-  
-  /* Pastikan tidak ada overflow tersembunyi yang menghambat scroll */
-  .layanan-grid, 
-  .info-grid {
-    overflow-x: visible;
-    overflow-y: visible;
   }
   
   /* Perbaikan teks panjang di trayek bus */
@@ -2052,39 +2038,31 @@ textarea.form-control + .input-icon {
     padding: 10px;
   }
   
-  /* Perbaikan untuk container yang panjang */
-  .info-list {
-    max-height: none;
-    overflow-y: visible;
-  }
-  
-  /* Matikan animasi AOS sementara untuk menghilangkan lag */
-  [data-aos] {
-    transition-duration: 0s !important;
-    animation-duration: 0s !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  
   /* Pastikan body bisa scroll dengan lancar */
   body {
-    overflow-y: auto !important;
     -webkit-overflow-scrolling: touch;
   }
   
-  /* Optimasi scroll untuk section */
+  /* AOS TETAP BERJALAN, hanya dipercepat/diringankan */
+  [data-aos] {
+    transition-duration: 0.4s !important;
+    animation-duration: 0.4s !important;
+  }
+  
+  /* Perbaikan untuk elemen yang mungkin menyebabkan scroll lag */
+  .layanan-grid, 
+  .info-grid {
+    overflow-x: visible;
+  }
+  
   #layanan, #info {
     overflow-x: visible;
-    overflow-y: visible;
   }
 }
 
-/* Perbaikan tambahan untuk tablet (768px - 1024px) */
+/* Perbaikan untuk tablet (768px - 1024px) - animasi tetap berjalan normal */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .layanan-card {
-    transition: none !important;
-  }
-  
+  /* Tablet tetap pakai animasi ringan */
   .layanan-card:hover {
     transform: translateY(-3px) !important;
   }
