@@ -7,7 +7,7 @@ let currentLocation = {
 };
 
 // Google Apps Script Web App URL (GANTI DENGAN URL DEPLOY ANDA)
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzjFEG-JuP1ytxPwfT6ogqmuhmm_lFGsSdgIxTryRV29i7BAICzaPzHRY6ChVgb0XMOhA/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbynlx3VcxaoM0a0eykk00mPUZq9dSig6kAF40-EHNyK3v7hpsXh8QnRWLMdWFt0SfzQeg/exec';
 
 // DOM Elements
 const form = document.getElementById('laporanLPJUForm');
@@ -176,16 +176,19 @@ function openGoogleMaps() {
             const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${currentLocation.lat},${currentLocation.lng}`;
             window.open(mapsUrl, '_blank');
             
-            showToast('Silakan pilih lokasi lampu yang rusak di Google Maps, lalu salin koordinatnya', 'info');
+            showToast('Silakan pilih lokasi lampu yang rusak di Google Maps', 'info');
             
-            // Ask user to input coordinates manually
+            // Ask user to input coordinates manually after they select
             setTimeout(() => {
-                const lat = prompt('Masukkan Latitude dari Google Maps:', currentLocation.lat);
-                const lng = prompt('Masukkan Longitude dari Google Maps:', currentLocation.lng);
+                const lat = prompt('Masukkan Latitude dari Google Maps (contoh: -3.8520056):', currentLocation.lat.toFixed(7));
+                const lng = prompt('Masukkan Longitude dari Google Maps (contoh: 122.0531679):', currentLocation.lng.toFixed(7));
                 if (lat && lng) {
-                    setLocation(parseFloat(lat), parseFloat(lng));
+                    // Format koordinat dengan benar
+                    let formattedLat = formatCoordinate(lat);
+                    let formattedLng = formatCoordinate(lng);
+                    setLocation(formattedLat, formattedLng);
                 }
-            }, 1000);
+            }, 1500);
         }, function(error) {
             // If cannot get location, open default
             const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=-3.851718,122.070339';
@@ -194,10 +197,12 @@ function openGoogleMaps() {
             
             // Ask user to input coordinates manually
             setTimeout(() => {
-                const lat = prompt('Masukkan Latitude dari Google Maps:');
-                const lng = prompt('Masukkan Longitude dari Google Maps:');
+                const lat = prompt('Masukkan Latitude dari Google Maps (contoh: -3.8520056):');
+                const lng = prompt('Masukkan Longitude dari Google Maps (contoh: 122.0531679):');
                 if (lat && lng) {
-                    setLocation(parseFloat(lat), parseFloat(lng));
+                    let formattedLat = formatCoordinate(lat);
+                    let formattedLng = formatCoordinate(lng);
+                    setLocation(formattedLat, formattedLng);
                 }
             }, 1000);
         });
@@ -207,18 +212,51 @@ function openGoogleMaps() {
         
         // Ask user to input coordinates manually
         setTimeout(() => {
-            const lat = prompt('Masukkan Latitude dari Google Maps:');
-            const lng = prompt('Masukkan Longitude dari Google Maps:');
+            const lat = prompt('Masukkan Latitude dari Google Maps (contoh: -3.8520056):');
+            const lng = prompt('Masukkan Longitude dari Google Maps (contoh: 122.0531679):');
             if (lat && lng) {
-                setLocation(parseFloat(lat), parseFloat(lng));
+                let formattedLat = formatCoordinate(lat);
+                let formattedLng = formatCoordinate(lng);
+                setLocation(formattedLat, formattedLng);
             }
         }, 1000);
     }
 }
 
+// Function to format coordinate correctly
+function formatCoordinate(coord) {
+    if (!coord) return '';
+    
+    // Convert to string and trim
+    let value = String(coord).trim();
+    
+    // Replace comma with dot
+    value = value.replace(',', '.');
+    
+    // Remove any spaces
+    value = value.replace(/\s/g, '');
+    
+    // Fix format like -38.520.056 to -38.520056
+    // Hapus titik pemisah ribuan yang tidak perlu
+    const parts = value.split('.');
+    if (parts.length > 2) {
+        // Ada lebih dari satu titik, gabungkan
+        value = parts[0] + '.' + parts.slice(1).join('');
+    }
+    
+    // Convert to number and back to ensure proper format
+    const num = parseFloat(value);
+    if (!isNaN(num)) {
+        value = num.toFixed(7);
+    }
+    
+    return value;
+}
+
 function setLocation(lat, lng) {
-    currentLocation.lat = lat;
-    currentLocation.lng = lng;
+    // Format koordinat sebelum disimpan
+    currentLocation.lat = formatCoordinate(lat);
+    currentLocation.lng = formatCoordinate(lng);
     updateLocationDisplay();
 }
 
@@ -227,7 +265,8 @@ function updateLocationDisplay() {
         latitudeInput.value = currentLocation.lat;
         longitudeInput.value = currentLocation.lng;
         locationDisplay.innerHTML = `📍 Lokasi terpilih: ${currentLocation.lat}, ${currentLocation.lng}<br>
-            <a href="https://www.google.com/maps?q=${currentLocation.lat},${currentLocation.lng}" target="_blank">Lihat di Google Maps →</a>`;
+            <a href="https://www.google.com/maps?q=${currentLocation.lat},${currentLocation.lng}" target="_blank">Lihat di Google Maps →</a>
+            <br><small>Koordinat ini sudah dalam format yang benar untuk Google Maps</small>`;
         locationDisplay.style.display = 'block';
     }
 }
@@ -268,6 +307,18 @@ async function handleSubmit(event) {
         // Generate nomor registrasi
         const nomorRegistrasi = generateRegistrasiNumber();
         
+        // Format latitude dan longitude dengan benar sebelum dikirim
+        let latitude = latitudeInput.value || '';
+        let longitude = longitudeInput.value || '';
+        
+        // Clean up and format coordinates
+        if (latitude) {
+            latitude = formatCoordinate(latitude);
+        }
+        if (longitude) {
+            longitude = formatCoordinate(longitude);
+        }
+        
         // Get form data
         const formData = {
             action: 'submit',
@@ -279,13 +330,26 @@ async function handleSubmit(event) {
             namaJalan: document.getElementById('namaJalan').value,
             desa: document.getElementById('desa').value,
             kecamatan: document.getElementById('kecamatan').value,
-            latitude: latitudeInput.value || '',
-            longitude: longitudeInput.value || '',
+            latitude: latitude,
+            longitude: longitude,
             jenisKerusakan: jenisKerusakan.value,
             kerusakanLain: jenisKerusakan.value === 'Kerusakan lainnya' ? 
                 document.getElementById('kerusakanLain').value : '',
             status: 'Menunggu Verifikasi'
         };
+        
+        // Validate coordinates format
+        if (latitude && !isValidCoordinate(latitude, 'lat')) {
+            showToast('Format Latitude tidak valid! Gunakan format seperti: -3.8520056', 'error');
+            showLoading(false);
+            return;
+        }
+        
+        if (longitude && !isValidCoordinate(longitude, 'lng')) {
+            showToast('Format Longitude tidak valid! Gunakan format seperti: 122.0531679', 'error');
+            showLoading(false);
+            return;
+        }
         
         // Convert image to base64
         const base64Image = await fileToBase64(selectedFile);
@@ -297,6 +361,7 @@ async function handleSubmit(event) {
         if (response && response.success) {
             showToast(`Laporan berhasil dikirim! Nomor Registrasi: ${nomorRegistrasi}`, 'success');
             resetForm();
+            clearDraft();
             // Send WhatsApp notification
             sendWhatsAppNotification(formData);
         } else {
@@ -309,6 +374,19 @@ async function handleSubmit(event) {
     } finally {
         showLoading(false);
     }
+}
+
+// Function to validate coordinate format
+function isValidCoordinate(coord, type) {
+    const num = parseFloat(coord);
+    if (isNaN(num)) return false;
+    
+    if (type === 'lat') {
+        return num >= -90 && num <= 90;
+    } else if (type === 'lng') {
+        return num >= -180 && num <= 180;
+    }
+    return true;
 }
 
 function generateRegistrasiNumber() {
@@ -333,21 +411,24 @@ function fileToBase64(file) {
 
 async function submitToGoogleSheets(data) {
     try {
-        // Using fetch with JSONP style for no-cors mode
+        // Using fetch with mode 'cors' untuk bisa membaca response
         const response = await fetch(SCRIPT_URL, {
             method: 'POST',
-            mode: 'no-cors',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data)
         });
         
-        // Since mode: 'no-cors', we can't read response properly
-        // Store in localStorage as backup
-        saveToLocalStorage(data);
-        
-        return { success: true, message: 'Laporan berhasil dikirim', nomorRegistrasi: data.nomorRegistrasi };
+        if (response.ok) {
+            const result = await response.json();
+            return result;
+        } else {
+            // If CORS issue, store in localStorage as backup
+            saveToLocalStorage(data);
+            return { success: true, message: 'Laporan disimpan secara lokal', nomorRegistrasi: data.nomorRegistrasi };
+        }
     } catch (error) {
         console.error('Fetch error:', error);
         // Save to localStorage as fallback
@@ -375,6 +456,7 @@ Laporan kerusakan LPJU Anda telah kami terima.
 • Nomor Registrasi: ${data.nomorRegistrasi}
 • Jenis Kerusakan: ${data.jenisKerusakan}
 • Lokasi: ${data.namaJalan}, ${data.desa}, ${data.kecamatan}
+• Koordinat: ${data.latitude || '-'}, ${data.longitude || '-'}
 • Status: Menunggu Verifikasi
 
 Terima kasih atas laporannya. Tim Dishub Konawe akan segera memproses.
@@ -439,14 +521,16 @@ function showLoading(show) {
 // Auto-save draft functionality
 let autoSaveTimeout;
 const formInputs = document.querySelectorAll('#laporanLPJUForm input, #laporanLPJUForm select, #laporanLPJUForm textarea');
-formInputs.forEach(input => {
-    input.addEventListener('input', () => {
-        clearTimeout(autoSaveTimeout);
-        autoSaveTimeout = setTimeout(() => {
-            saveDraft();
-        }, 3000);
+if (formInputs.length > 0) {
+    formInputs.forEach(input => {
+        input.addEventListener('input', () => {
+            clearTimeout(autoSaveTimeout);
+            autoSaveTimeout = setTimeout(() => {
+                saveDraft();
+            }, 3000);
+        });
     });
-});
+}
 
 function saveDraft() {
     const draftData = {
@@ -457,6 +541,8 @@ function saveDraft() {
         desa: document.getElementById('desa')?.value || '',
         kecamatan: document.getElementById('kecamatan')?.value || '',
         jenisKerusakan: document.getElementById('jenisKerusakan')?.value || '',
+        latitude: latitudeInput?.value || '',
+        longitude: longitudeInput?.value || '',
         timestamp: new Date().toISOString()
     };
     localStorage.setItem('lpju_draft', JSON.stringify(draftData));
@@ -478,6 +564,9 @@ function loadDraft() {
                 kerusakanLainGroup.style.display = 'block';
             }
         }
+        if (data.latitude && data.longitude) {
+            setLocation(data.latitude, data.longitude);
+        }
         showToast('Draft form telah dimuat', 'info');
     }
 }
@@ -488,4 +577,23 @@ loadDraft();
 // Clear draft on successful submit
 function clearDraft() {
     localStorage.removeItem('lpju_draft');
+}
+
+// Fungsi untuk cek status (jika diperlukan)
+async function checkStatus(nomorRegistrasi) {
+    try {
+        const response = await fetch(`${SCRIPT_URL}?action=get&search=${encodeURIComponent(nomorRegistrasi)}`, {
+            method: 'GET',
+            mode: 'cors'
+        });
+        
+        if (response.ok) {
+            const result = await response.json();
+            return result;
+        }
+        return null;
+    } catch (error) {
+        console.error('Error checking status:', error);
+        return null;
+    }
 }
