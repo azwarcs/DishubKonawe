@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Rute Bus Sekolah Siang - Dinas Perhubungan Kabupaten Konawe</title>
+    <!-- Link ke CSS eksternal -->
+    <link rel="stylesheet" href="rute-bus-sekolah-siang.css">
+    <!-- Font Awesome 6 (Free Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Leaflet CSS untuk Peta -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <!-- Tempat logo Kab. Konawe (Anda isi sendiri) -->
+                <img src="img/LOGO KONAWE.png" alt="Logo Kab. Konawe" class="logo-konawe" id="logoKonawe">
+                <div class="brand-text">
+                    <span class="dishub-title">DISHUB KONAWE</span>
+                    <span class="dishub-sub">Dinas Perhubungan Kabupaten Konawe</span>
+                </div>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Beranda</a></li>
+                <li><a href="index.html#info" class="nav-link"><i class="fas fa-concierge-bell"></i> Informasi</a></li>
+                <li><a href="rute-bus-sekolah.html" class="nav-link"><i class="fas fa-cloud-sun"></i> Bus Pagi</a></li>
+                <li><a href="rute-bus-sekolah-siang.html" class="nav-link active"><i class="fas fa-sun"></i> Bus Siang</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT: RUTE BUS SEKOLAH SIANG -->
+    <main class="rute-container">
+        <div class="hero-section">
+            <h1><i class="fas fa-bus-alt"></i> Rute Trayek Bus Sekolah Kabupaten Konawe</h1>
+            <p>Layanan transportasi gratis untuk pelajar - Titik jemput dan antar Siang Hari Pukul 13.00 - 15.00 WITA</p>
+        </div>
+
+        <!-- Dua Kolom: Peta + Daftar Halte -->
+        <div class="rute-wrapper">
+            <!-- Kolom Kiri: Peta Interaktif -->
+            <div class="map-section">
+                <div class="section-title">
+                    <i class="fas fa-map-marked-alt"></i> Peta Rute & Titik Pemberhentian (Siang)
+                </div>
+                <div id="busMap" class="bus-map"></div>
+                <div class="map-caption">
+                    <i class="fas fa-info-circle"></i> Klik pada titik marker untuk melihat foto lokasi
+                </div>
+            </div>
+
+            <!-- Kolom Kanan: Daftar Halte -->
+            <div class="stops-section">
+                <div class="section-title">
+                    <i class="fas fa-list-ol"></i> Daftar Titik Pemberhentian (Siang)
+                </div>
+                <div class="stops-list" id="stopsList">
+                    <!-- Daftar akan diisi oleh JavaScript -->
+                </div>
+                <div class="route-info">
+                    <div class="info-header">
+                        <i class="fas fa-route"></i> Informasi Rute Siang
+                    </div>
+                    <div class="route-detail">
+                        <p><strong>🚌 Titik Keberangkatan:</strong> MTS Puosu</p>
+                        <p><strong>🏁 Titik Akhir Pengantaran:</strong> Adipura Kab. Konawe</p>
+                        <p><strong>⏰ Jam Operasional:</strong> 13.00 - 15.00 WITA (Pengantaran Pulang Sekolah)</p>
+                        <p><strong>📞 Info Lebih Lanjut:</strong> Call Center 112</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Foto Halte (Modal Popup) -->
+        <div id="photoModal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <img id="modalPhoto" src="" alt="Foto Lokasi">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDesc"></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="rute-footer">
+        <p>&copy; 2026 Dinas Perhubungan Kabupaten Konawe - Program Bus Sekolah Gratis (Rute Siang)</p>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- JavaScript Eksternal -->
+    <script src="rute-bus-sekolah-siang.js"></script>
+</body>
+</html>

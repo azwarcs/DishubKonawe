@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>LPJU - Dinas Perhubungan Kabupaten Konawe</title>
+    <!-- Link ke CSS eksternal -->
+    <link rel="stylesheet" href="style-lpju.css">
+    <!-- Font Awesome 6 (Free Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <!-- Tempat logo Kab. Konawe (Anda isi sendiri) -->
+                <img src="img/LOGO KONAWE.png" alt="Logo Kab. Konawe" class="logo-konawe" id="logoKonawe">
+                <div class="brand-text">
+                    <span class="dishub-title">DISHUB KONAWE</span>
+                    <span class="dishub-sub">Dinas Perhubungan Kabupaten Konawe</span>
+                </div>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Beranda</a></li>
+                <li><a href="index.html#galeri" class="nav-link"><i class="fas fa-concierge-bell"></i> Galeri</a></li>
+                <li><a href="rampcheck.html" class="nav-link"><i class="fas fa-clipboard-list"></i> Ramp Check</a></li>
+                <li><a href="LPJU.html" class="nav-link active"><i class="fas fa-lightbulb"></i> LPJU</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT: BERITA LPJU -->
+    <main class="lpju-container">
+        <div class="hero-section">
+            <h1><i class="fas fa-tools"></i> Aktivitas Tim LPJU</h1>
+            <p>Perbaikan Lampu Penerangan Jalan Umum (LPJU) di Kabupaten Konawe</p>
+        </div>
+
+        <section class="news-grid" id="beritaGrid">
+            <!-- Berita 1 -->
+            <!-- <article class="news-card">
+                <div class="card-img">
+                    <img src="images/perbaikan2.jpg" alt="Tim LPJU" onerror="this.src='https://placehold.co/600x400/e2e8f0/1e293b?text=Gambar+Tim+LPJU'">
+                </div>
+                <div class="card-content">
+                    <div class="date-badge"><i class="far fa-calendar-alt"></i> 10 Maret 2025</div>
+                    <h3>Rapid Response: Lampu Jalan Simpang Lima</h3>
+                    <p>Laporan warga tentang lampu padam di Simpang Lima langsung ditindaklanjuti. Kurang dari 24 jam, tim sudah melakukan perbaikan total.</p>
+                    <span class="status success"><i class="fas fa-check-circle"></i> Selesai</span>
+                </div>
+            </article> -->
+
+            <!-- Berita 2 - Bisa Anda ganti gambar -->
+            <article class="news-card">
+                <div class="card-img">
+                    <img src="img/LPJU 3.jpeg" alt="Malam hari" onerror="this.src='https://placehold.co/600x400/e2e8f0/1e293b?text=Monitoring+LPJU'">
+                </div>
+                <div class="card-content">
+                    <div class="date-badge"><i class="far fa-calendar-alt"></i> 25 Mei 2026</div>
+                    <h3>Perbaikan PJU Inolobunggadue Central Park</h3>
+                    <p>Tim PJU Dinas Perhubungan Kabupaten Konawe berhasil melaksanakan perbaikan Lampu Penerangan Jalan Umum (PJU) di kawasan Inolobunggadue Central Park. Perbaikan dilakukan sebagai upaya menjaga kualitas penerangan lingkungan agar tetap optimal demi mendukung keamanan, kenyamanan, dan aktivitas masyarakat pada malam hari.</p>
+                    <p>Kegiatan perbaikan meliputi pengecekan instalasi, perbaikan jaringan, serta penggantian komponen lampu yang mengalami kerusakan. Dengan selesainya proses perbaikan tersebut, lampu penerangan di kawasan Inolobunggadue Central Park kini kembali berfungsi dengan baik dan memberikan penerangan yang maksimal bagi masyarakat.</p>
+                    <span class="status progress"><i class="fas fa-sync-alt"></i> Berlangsung</span>
+                </div>
+            </article>
+            <!-- Berita 3 -->
+            <article class="news-card">
+                <div class="card-img">
+                    <img src="img/LPJU 1.jpeg" alt="Perbaikan LPJU" onerror="this.src='https://placehold.co/600x400/e2e8f0/1e293b?text=Gambar+LPJU'">
+                </div>
+                <div class="card-content">
+                    <div class="date-badge"><i class="far fa-calendar-alt"></i> 23 Mei 2026</div>
+                    <h3>Perbaikan Lampu Jalan Umum Jalan 40</h3>
+                    <p>Tim LPJU Dinas Perhubungan Kabupaten Konawe bersama tim PT PLN (Persero) melaksanakan kegiatan perbaikan dan pemeliharaan Lampu Penerangan Jalan Umum (LPJU) di Jalan 40. Kegiatan ini dilakukan sebagai upaya memaksimalkan seluruh titik penerangan agar dapat menyala dengan optimal demi meningkatkan keselamatan, kenyamanan, dan kelancaran aktivitas masyarakat pada malam hari.</p>
+                    <p>Perbaikan meliputi pengecekan jaringan listrik, serta penanganan gangguan pada instalasi penerangan jalan. Melalui kerja sama dan koordinasi yang baik antara tim LPJU Dishub dan tim PLN, seluruh lampu jalan di kawasan Jalan 40 dapat berfungsi secara maksimal dan memberikan manfaat bagi masyarakat pengguna jalan.</p>
+                    <span class="status success"><i class="fas fa-check-circle"></i> Selesai</span>
+                </div>
+            </article>
+            <!-- Berita 4 -->
+            <article class="news-card">
+                <div class="card-img">
+                    <img src="img/LPJU 2.jpeg" alt="Pemeliharaan" onerror="this.src='https://placehold.co/600x400/e2e8f0/1e293b?text=Pemeliharaan+LPJU'">
+                </div>
+                <div class="card-content">
+                    <div class="date-badge"><i class="far fa-calendar-alt"></i> 5 Maret 2025</div>
+                    <h3>Perbaikan Pju Kel. Lalosabila Kec. Wawotobi</h3>
+                        <p>Tim PJU Dinas Perhubungan Kabupaten Konawe berhasil melaksanakan perbaikan Lampu Penerangan Jalan Umum (PJU) 
+                        di Kelurahan Lalosabila, Kecamatan Wawotobi. Kegiatan ini dilakukan untuk memastikan penerangan jalan tetap berfungsi 
+                        optimal guna mendukung keamanan, kenyamanan, dan keselamatan masyarakat saat beraktivitas pada malam hari.</p>
+                        <p>Perbaikan meliputi pemeriksaan jaringan, penanganan gangguan instalasi, serta penggantian komponen lampu yang 
+                        mengalami kerusakan. Dengan selesainya proses perbaikan tersebut, lampu penerangan jalan di wilayah Kelurahan Lalosabila kini kembali 
+                        menyala dengan baik dan dapat dimanfaatkan oleh masyarakat pengguna jalan.</p>
+                    <span class="status success"><i class="fas fa-check-circle"></i> Selesai</span>
+                </div>
+            </article>
+        </section>
+        
+        <!-- Info tambahan -->
+        <div class="info-banner">
+            <i class="fas fa-phone-alt"></i> Laporan kerusakan LPJU: hubungi TIM LPJU Dishub 0852-2228-2083 atau 0813-4100-0559
+        </div>
+    </main>
+
+    <!-- FOOTER sederhana -->
+    <footer class="lpju-footer">
+        <p>&copy; 2025 Dinas Perhubungan Kabupaten Konawe - Unit LPJU</p>
+    </footer>
+
+    <!-- JavaScript Eksternal -->
+    <script src="script-lpju.js"></script>
+</body>
+</html>

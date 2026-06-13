@@ -1,0 +1,22 @@
+Ukuran minimal: 1920 x 1080 pixel
+
+Format: JPG atau WebP (lebih ringan)
+
+Kompres ukuran file: maksimal 500KB
+
+
+
+untuk icon https://fontawesome.com/icons
+
+<!-- Statistik Perhubungan -->
+<i class="fas fa-road"></i>         <!-- Panjang jalan -->
+<i class="fas fa-bus"></i>          <!-- Angkutan umum -->
+<i class="fas fa-terminal"></i>     <!-- Terminal -->
+<i class="fas fa-clipboard-check"></i> <!-- Uji KIR -->
+<i class="fas fa-traffic-light"></i> <!-- Lampu lalu lintas -->
+<i class="fas fa-wrench"></i>       <!-- Perbaikan/kir -->
+<i class="fas fa-parking"></i>      <!-- Parkir -->
+<i class="fas fa-map-signs"></i>    <!-- Rambu lalu lintas -->
+
+
+fas fa-road
