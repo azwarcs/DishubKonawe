@@ -7,7 +7,7 @@ let currentLocation = {
 };
 
 // Google Apps Script Web App URL (GANTI DENGAN URL DEPLOY ANDA)
-const SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzjFEG-JuP1ytxPwfT6ogqmuhmm_lFGsSdgIxTryRV29i7BAICzaPzHRY6ChVgb0XMOhA/exec';
 
 // DOM Elements
 const form = document.getElementById('laporanLPJUForm');
