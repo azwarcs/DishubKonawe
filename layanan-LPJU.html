@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Layanan Pemeliharaan & Perbaikan LPJU - Dishub Konawe</title>
+
+    <!-- Favicon / Icon Tab Browser -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo-perhubungan.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo-perhubungan.png">
+    <link rel="shortcut icon" href="img/logo-perhubungan.ico">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Utama -->
+    <link rel="stylesheet" href="style-layanan-LPJU.css">
+</head>
+<body>
+    <!-- NAVIGASI - SAMA SEPERTI PELAYANANUJIKIR.HTML -->
+    <nav id="navbar">
+        <div class="logo">
+            <div class="logo-wrapper">
+                <div class="logo-icon">
+                    <img src="img/LOGO KONAWE.png" alt="Logo Kab. Konawe" class="logo-img" onerror="this.style.display='none'">
+                </div>
+                <div class="logo-text">
+                    <span>DISHUB KONAWE</span>
+                    <span>Layanan LPJU</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <ul id="navMenu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="index.html#layanan"><i class="fas fa-cogs"></i> Layanan</a></li>
+            <li><a href="#laporan" class="active"><i class="fas fa-lightbulb"></i> Laporan LPJU</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER HALAMAN -->
+    <header class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-lightbulb"></i> Layanan Pemeliharaan & Perbaikan LPJU</h1>
+            <p>Laporkan kerusakan Lampu Penerangan Jalan Umum (LPJU) di Kabupaten Konawe dengan cepat dan mudah</p>
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <main class="lpju-content">
+        <div class="container">
+            <!-- ===== FORM LAPORAN LPJU ===== -->
+            <section id="laporan" class="form-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-clipboard-list"></i> Form Laporan Kerusakan LPJU</h2>
+                    <p class="section-subtitle">Isi formulir di bawah dengan lengkap untuk melaporkan kerusakan Lampu Penerangan Jalan Umum</p>
+                </div>
+
+                <div class="form-container">
+                    <form id="laporanLPJUForm">
+                        <!-- Nama Pelapor -->
+                        <div class="form-group">
+                            <label for="namaPelapor" class="form-label">
+                                <i class="fas fa-user"></i> 1. Nama Pelapor <span class="required">*</span>
+                            </label>
+                            <input type="text" class="form-control" id="namaPelapor" name="namaPelapor" required placeholder="Masukkan nama lengkap">
+                        </div>
+
+                        <!-- Nomor HP -->
+                        <div class="form-group">
+                            <label for="noHP" class="form-label">
+                                <i class="fab fa-whatsapp"></i> 2. Nomor HP/WhatsApp <span class="required">*</span>
+                            </label>
+                            <input type="tel" class="form-control" id="noHP" name="noHP" required placeholder="Contoh: 081234567890">
+                            <small class="form-text">Nomor yang dapat dihubungi untuk konfirmasi</small>
+                        </div>
+
+                        <!-- Alamat Pelapor -->
+                        <div class="form-group">
+                            <label for="alamatPelapor" class="form-label">
+                                <i class="fas fa-home"></i> 3. Alamat Pelapor <span class="required">*</span>
+                            </label>
+                            <textarea class="form-control" id="alamatPelapor" name="alamatPelapor" required rows="2" placeholder="Masukkan alamat lengkap pelapor"></textarea>
+                        </div>
+
+                        <!-- Lokasi Lampu Rusak -->
+                        <div class="form-subsection">
+                            <h3 class="subsection-title"><i class="fas fa-map-marker-alt"></i> 4. Lokasi Lampu Jalan yang Rusak</h3>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="namaJalan" class="form-label">a. Nama Jalan <span class="required">*</span></label>
+                                    <input type="text" class="form-control" id="namaJalan" name="namaJalan" required placeholder="Nama jalan / ruas">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="desa" class="form-label">b. Desa/Kelurahan <span class="required">*</span></label>
+                                    <input type="text" class="form-control" id="desa" name="desa" required placeholder="Desa/Kelurahan">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="kecamatan" class="form-label">c. Kecamatan <span class="required">*</span></label>
+                                    <input type="text" class="form-control" id="kecamatan" name="kecamatan" required placeholder="Kecamatan">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="titikLokasi" class="form-label">d. Titik Lokasi (Google Maps)</label>
+                                    <button type="button" class="btn-map-location" id="getLocationBtn">
+                                        <i class="fas fa-map-marker-alt"></i> Buka Google Maps & Pilih Lokasi
+                                    </button>
+                                    <input type="hidden" id="latitude" name="latitude">
+                                    <input type="hidden" id="longitude" name="longitude">
+                                    <div id="locationDisplay" class="location-display"></div>
+                                    <small class="form-text">Klik tombol untuk memilih titik lokasi lampu yang rusak di Google Maps</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Jenis Kerusakan -->
+                        <div class="form-group">
+                            <label for="jenisKerusakan" class="form-label">
+                                <i class="fas fa-tools"></i> 5. Jenis Kerusakan <span class="required">*</span>
+                            </label>
+                            <select class="form-control" id="jenisKerusakan" name="jenisKerusakan" required>
+                                <option value="">Pilih jenis kerusakan</option>
+                                <option value="Lampu mati total">💡 Lampu mati total</option>
+                                <option value="Lampu redup">🌙 Lampu redup / kurang terang</option>
+                                <option value="Lampu berkedip-kedip">✨ Lampu berkedip-kedip</option>
+                                <option value="Lampu menyala siang hari">☀️ Lampu menyala siang hari</option>
+                                <option value="Tiang lampu miring/rusak">🏗️ Tiang lampu miring/rusak</option>
+                                <option value="Kabel terputus/rusak">🔌 Kabel terputus/rusak</option>
+                                <option value="Box panel rusak">📦 Box panel rusak</option>
+                                <option value="Kerusakan lainnya">📝 Kerusakan lainnya</option>
+                            </select>
+                        </div>
+
+                        <!-- Kerusakan Lainnya (hidden by default) -->
+                        <div class="form-group" id="kerusakanLainGroup" style="display:none;">
+                            <label for="kerusakanLain" class="form-label">Jelaskan kerusakan lainnya <span class="required">*</span></label>
+                            <textarea class="form-control" id="kerusakanLain" name="kerusakanLain" rows="2" placeholder="Silakan jelaskan kerusakan yang terjadi..."></textarea>
+                        </div>
+
+                        <!-- Upload Foto -->
+                        <div class="form-group">
+                            <label for="fotoKerusakan" class="form-label">
+                                <i class="fas fa-camera"></i> 6. Unggah Foto Kerusakan <span class="required">*</span>
+                            </label>
+                            <div class="file-upload-area" id="fileUploadArea">
+                                <div class="upload-icon">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                </div>
+                                <p>Klik atau seret foto ke sini</p>
+                                <small>Maksimal 5MB (JPG, PNG)</small>
+                                <input type="file" id="fotoKerusakan" accept="image/jpeg,image/png" required>
+                            </div>
+                            <div id="previewContainer" class="preview-container"></div>
+                        </div>
+
+                        <!-- Pernyataan -->
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="pernyataan" required>
+                            <label for="pernyataan">
+                                7. Saya menyatakan bahwa informasi yang saya sampaikan benar sesuai kondisi di lapangan.
+                            </label>
+                        </div>
+
+                        <!-- Tombol Form -->
+                        <div class="form-actions">
+                            <button type="reset" class="btn-reset" id="resetBtn">
+                                <i class="fas fa-undo-alt"></i> Reset Form
+                            </button>
+                            <button type="submit" class="btn-submit" id="submitBtn">
+                                <i class="fas fa-paper-plane"></i> Kirim Laporan
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>DISHUB KONAWE</h3>
+                <p class="footer-desc">Dinas Perhubungan Kabupaten Konawe berkomitmen memberikan pelayanan prima bidang transportasi dan penerangan jalan untuk masyarakat.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h3>TAUTAN CEPAT</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+                    <li><a href="index.html#profil"><i class="fas fa-chevron-right"></i> Profil Dinas</a></li>
+                    <li><a href="index.html#layanan"><i class="fas fa-chevron-right"></i> Layanan Publik</a></li>
+                    <li><a href="#laporan"><i class="fas fa-chevron-right"></i> Laporan LPJU</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3>LAYANAN POPULER</h3>
+                <ul class="footer-links">
+                    <li><a href="#laporan"><i class="fas fa-chevron-right"></i> Laporan Kerusakan LPJU</a></li>
+                    <li><a href="PelayananUjiKir.html"><i class="fas fa-chevron-right"></i> Uji Kir Kendaraan</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Hotline 112</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3>HUBUNGI KAMI</h3>
+                <ul class="footer-links contact-footer">
+                    <li><i class="fas fa-map-marker-alt"></i> Unaaha, Konawe, Sultra</li>
+                    <li><i class="fas fa-phone"></i> 085241850211</li>
+                    <li><i class="fas fa-envelope"></i> dishub@konawekab.go.id</li>
+                    <li><i class="fas fa-clock"></i> Layanan 24 Jam</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 Dinas Perhubungan Kabupaten Konawe. All rights reserved.</p>
+            <p class="footer-credit">Pemerintah Kabupaten Konawe - Provinsi Sulawesi Tenggara</p>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="script-lpju.js"></script>
+</body>
+</html>
