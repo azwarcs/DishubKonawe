@@ -1,0 +1,795 @@
+/* ==================== RESET & GLOBAL ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #0b2b3b;
+    --primary-light: #1a4a5f;
+    --secondary: #ffb347;
+    --secondary-dark: #e5a600;
+    --accent: #dc2626;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --dark: #0f172a;
+    --gray: #64748b;
+    --light: #f8fafc;
+    --white: #ffffff;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
+    --shadow-lg: 0 16px 40px rgba(0,0,0,0.15);
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+    background: linear-gradient(135deg, #0b2b3b 0%, #1a4a5f 100%);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.logo-konawe {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+    background: white;
+    border-radius: 12px;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.dishub-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    color: #ffd966;
+}
+
+.dishub-sub {
+    font-size: 0.75rem;
+    color: #e2e8f0;
+    font-weight: 500;
+}
+
+/* NAV MENU */
+.nav-menu {
+    display: flex;
+    gap: 1.2rem;
+    list-style: none;
+    transition: all 0.3s ease;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.nav-link i {
+    font-size: 1rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: #ffb347;
+    color: #0a2f3b;
+    transform: translateY(-2px);
+}
+
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+.lokasi-container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    flex: 1;
+    width: 100%;
+}
+
+/* HERO SECTION */
+.hero-section {
+    background: linear-gradient(120deg, #e6f7ff, #ffffff);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.hero-section h1 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-section h1 i {
+    color: var(--secondary-dark);
+}
+
+.hero-section p {
+    font-size: 1.05rem;
+    color: var(--primary-light);
+    max-width: 800px;
+}
+
+/* FILTER SECTION */
+.filter-section {
+    margin-bottom: 1.5rem;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: white;
+    color: var(--primary);
+    border: 2px solid #e2e8f0;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+.filter-btn i {
+    font-size: 0.95rem;
+}
+
+.filter-btn:hover {
+    border-color: var(--secondary);
+    background: #fff8e6;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    border-color: var(--primary);
+    box-shadow: var(--shadow-sm);
+}
+
+/* DUA KOLOM WRAPPER */
+.lokasi-wrapper {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* MAP SECTION */
+.map-section {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    background: var(--primary-light);
+    color: white;
+    padding: 1rem 1.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title i {
+    color: var(--secondary);
+}
+
+.map-container {
+    flex: 1;
+    min-height: 500px;
+    width: 100%;
+    position: relative;
+    background: #e9f0f5;
+}
+
+.map-container iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.map-caption {
+    padding: 0.9rem 1.2rem;
+    background: #f1f5f9;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--gray);
+}
+
+.map-caption i {
+    color: var(--primary-light);
+    margin-right: 5px;
+}
+
+/* LIST SECTION */
+.list-section {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+}
+
+.list-section .section-title {
+    background: var(--primary);
+}
+
+.search-box {
+    position: relative;
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.search-box i {
+    position: absolute;
+    left: 1.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 12px 10px 38px;
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(26, 74, 95, 0.1);
+}
+
+.lokasi-list {
+    flex: 1;
+    max-height: 480px;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+}
+
+.lokasi-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.lokasi-list::-webkit-scrollbar-track {
+    background: #e2e8f0;
+    border-radius: 10px;
+}
+
+.lokasi-list::-webkit-scrollbar-thumb {
+    background: var(--primary-light);
+    border-radius: 10px;
+}
+
+.lokasi-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid #f1f5f9;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lokasi-item:hover {
+    background: #f8fafc;
+    transform: translateX(5px);
+}
+
+.lokasi-item.hidden {
+    display: none;
+}
+
+.lokasi-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: white;
+    font-size: 1rem;
+}
+
+.lokasi-icon.parkir { background: #3b82f6; }
+.lokasi-icon.lampu { background: #f59e0b; }
+.lokasi-icon.rawan { background: #dc2626; }
+.lokasi-icon.rambu { background: #10b981; }
+
+.lokasi-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.lokasi-name {
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.lokasi-address {
+    font-size: 0.8rem;
+    color: var(--gray);
+    line-height: 1.4;
+}
+
+.lokasi-badge {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+    align-self: flex-start;
+}
+
+.lokasi-badge.parkir { background: #dbeafe; color: #1e40af; }
+.lokasi-badge.lampu { background: #fef3c7; color: #92400e; }
+.lokasi-badge.rawan { background: #fee2e2; color: #991b1b; }
+.lokasi-badge.rambu { background: #d1fae5; color: #065f46; }
+
+.list-info {
+    padding: 0.9rem 1.2rem;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    font-size: 0.85rem;
+    color: var(--gray);
+    text-align: center;
+}
+
+.list-info i {
+    color: var(--primary-light);
+    margin-right: 5px;
+}
+
+.list-info strong {
+    color: var(--primary);
+}
+
+/* INFO BANNER */
+.info-banner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #eef2ff;
+    border-left: 6px solid var(--secondary);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    margin: 1.5rem 0;
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+.info-banner i {
+    font-size: 1.3rem;
+    color: var(--secondary-dark);
+    flex-shrink: 0;
+}
+
+/* ==================== FOOTER ==================== */
+.lokasi-footer {
+    background: var(--primary);
+    color: #cbd5e1;
+    padding: 2rem 2rem 1rem;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-logo {
+    height: 45px;
+    width: auto;
+    background: white;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.footer-brand h4 {
+    color: var(--secondary);
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.footer-brand p {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--secondary);
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+/* Tablet Landscape */
+@media screen and (max-width: 1200px) {
+    .lokasi-wrapper {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Tablet Portrait */
+@media screen and (max-width: 992px) {
+    .lokasi-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .map-container {
+        min-height: 400px;
+    }
+
+    .lokasi-list {
+        max-height: 400px;
+    }
+
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 860px) {
+    .nav-container {
+        padding: 0.8rem 1.2rem;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 73px;
+        flex-direction: column;
+        background-color: #0f3b4b;
+        width: 80%;
+        max-width: 320px;
+        height: calc(100vh - 73px);
+        padding: 2rem 1.5rem;
+        gap: 1.2rem;
+        border-radius: 0 24px 24px 0;
+        transition: left 0.3s ease;
+        box-shadow: 5px 0 20px rgba(0,0,0,0.2);
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .logo-area {
+        gap: 0.7rem;
+    }
+
+    .logo-konawe {
+        height: 45px;
+    }
+
+    .dishub-title {
+        font-size: 1.05rem;
+    }
+
+    .dishub-sub {
+        font-size: 0.65rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.7rem 1rem;
+        width: 100%;
+    }
+
+    .lokasi-container {
+        padding: 0 1rem;
+        margin: 1.5rem auto;
+    }
+
+    .hero-section {
+        padding: 1.5rem 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .hero-section h1 {
+        font-size: 1.4rem;
+    }
+
+    .hero-section p {
+        font-size: 0.9rem;
+    }
+
+    .filter-buttons {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    .filter-btn i {
+        font-size: 0.85rem;
+    }
+
+    .map-container {
+        min-height: 320px;
+    }
+
+    .section-title {
+        font-size: 1rem;
+        padding: 0.9rem 1.2rem;
+    }
+
+    .lokasi-list {
+        max-height: 350px;
+    }
+
+    .lokasi-item {
+        padding: 0.85rem 1rem;
+        gap: 0.8rem;
+    }
+
+    .lokasi-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+
+    .lokasi-name {
+        font-size: 0.9rem;
+    }
+
+    .lokasi-address {
+        font-size: 0.75rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .footer-links a {
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile Small */
+@media screen and (max-width: 520px) {
+    .lokasi-container {
+        padding: 0 0.85rem;
+    }
+
+    .hero-section {
+        padding: 1.2rem 1rem;
+    }
+
+    .hero-section h1 {
+        font-size: 1.2rem;
+    }
+
+    .hero-section h1 i {
+        font-size: 1.1rem;
+    }
+
+    .hero-section p {
+        font-size: 0.85rem;
+    }
+
+    .filter-section {
+        margin-bottom: 1rem;
+    }
+
+    .filter-buttons {
+        gap: 6px;
+    }
+
+    .filter-btn {
+        padding: 7px 12px;
+        font-size: 0.75rem;
+    }
+
+    .filter-btn i {
+        display: none;
+    }
+
+    .map-container {
+        min-height: 280px;
+    }
+
+    .lokasi-list {
+        max-height: 320px;
+    }
+
+    .info-banner {
+        font-size: 0.8rem;
+        padding: 0.85rem 1rem;
+    }
+
+    .footer-brand h4 {
+        font-size: 1rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.7rem;
+    }
+}
+
+/* Mobile Very Small */
+@media screen and (max-width: 380px) {
+    .hero-section h1 {
+        font-size: 1.05rem;
+    }
+
+    .filter-btn {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+
+    .map-container {
+        min-height: 250px;
+    }
+
+    .lokasi-item {
+        padding: 0.7rem 0.8rem;
+    }
+
+    .lokasi-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Landscape Mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .nav-menu {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .map-container {
+        min-height: 220px;
+    }
+
+    .lokasi-list {
+        max-height: 250px;
+    }
+}

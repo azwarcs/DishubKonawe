@@ -2328,3 +2328,233 @@ textarea.form-control + .input-icon {
     padding-top: 15px;
   }
 }
+
+
+/* ============================================ */
+/* ===== SECTION PETA LOKASI (CARD 4 TOMBOL) === */
+/* ============================================ */
+#peta-lokasi {
+  background: linear-gradient(135deg, #f0f4f8 0%, #e8edf3 100%);
+}
+
+.peta-lokasi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  padding: 40px 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.peta-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 35px 25px;
+  background: white;
+  border-radius: 20px;
+  text-decoration: none;
+  color: var(--dark);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.peta-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--primary);
+  transition: height 0.3s ease;
+}
+
+.peta-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.peta-card:hover::before {
+  height: 100%;
+  opacity: 0.08;
+}
+
+/* Icon */
+.peta-card-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  z-index: 1;
+}
+
+.peta-card-icon i {
+  font-size: 2.2rem;
+  color: white;
+  transition: transform 0.4s ease;
+}
+
+.peta-card:hover .peta-card-icon {
+  transform: scale(1.15) rotate(8deg);
+}
+
+.peta-card:hover .peta-card-icon i {
+  transform: scale(1.1);
+}
+
+/* Warna icon per kategori */
+.peta-card-parkir .peta-card-icon {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.35);
+}
+
+.peta-card-lampu .peta-card-icon {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.35);
+}
+
+.peta-card-rawan .peta-card-icon {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.35);
+}
+
+.peta-card-rambu .peta-card-icon {
+  background: linear-gradient(135deg, #10b981, #047857);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);
+}
+
+/* Garis atas warna per kategori */
+.peta-card-parkir::before { background: #3b82f6; }
+.peta-card-lampu::before { background: #f59e0b; }
+.peta-card-rawan::before { background: #dc2626; }
+.peta-card-rambu::before { background: #10b981; }
+
+/* Judul */
+.peta-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Deskripsi */
+.peta-card p {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* Tombol */
+.peta-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.peta-card-parkir .peta-card-btn { background: #3b82f6; }
+.peta-card-lampu .peta-card-btn { background: #f59e0b; }
+.peta-card-rawan .peta-card-btn { background: #dc2626; }
+.peta-card-rambu .peta-card-btn { background: #10b981; }
+
+.peta-card:hover .peta-card-btn {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .peta-lokasi-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .peta-lokasi-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 25px 0 10px;
+  }
+
+  .peta-card {
+    padding: 25px 20px;
+    flex-direction: row;
+    text-align: left;
+    gap: 18px;
+  }
+
+  .peta-card-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .peta-card-icon i {
+    font-size: 1.6rem;
+  }
+
+  .peta-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+
+  .peta-card p {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+  }
+
+  .peta-card-btn {
+    padding: 8px 16px;
+    font-size: 0.75rem;
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .peta-card {
+    padding: 20px 16px;
+    gap: 14px;
+  }
+
+  .peta-card-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .peta-card-icon i {
+    font-size: 1.4rem;
+  }
+
+  .peta-card h3 {
+    font-size: 1rem;
+  }
+
+  .peta-card p {
+    font-size: 0.75rem;
+  }
+}
