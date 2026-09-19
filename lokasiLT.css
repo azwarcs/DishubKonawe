@@ -548,78 +548,27 @@ body {
     flex-shrink: 0;
 }
 
+
 /* ==================== FOOTER ==================== */
 .lokasi-footer {
-    background: var(--primary);
+    background-color: #0b2b3b;
     color: #cbd5e1;
-    padding: 2rem 2rem 1rem;
-    margin-top: auto;
-}
-
-.footer-content {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.footer-logo {
-    height: 45px;
-    width: auto;
-    background: white;
-    border-radius: 10px;
-    padding: 4px;
-}
-
-.footer-brand h4 {
-    color: var(--secondary);
-    font-size: 1.1rem;
-    margin-bottom: 0.2rem;
-}
-
-.footer-brand p {
-    font-size: 0.8rem;
-    opacity: 0.8;
-}
-
-.footer-links {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.footer-links a {
-    color: #cbd5e1;
-    text-decoration: none;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: var(--transition);
-}
-
-.footer-links a:hover {
-    color: var(--secondary);
-}
-
-.footer-bottom {
-    max-width: 1400px;
-    margin: 0 auto;
     text-align: center;
-    padding-top: 1rem;
-    font-size: 0.8rem;
-    opacity: 0.7;
+    padding: 1.5rem;
+    margin-top: auto;
+    font-size: 0.85rem;
+}
+
+.lokasi-footer p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 520px) {
+    .lokasi-footer {
+        padding: 1.2rem 1rem;
+        font-size: 0.75rem;
+    }
 }
 
 /* ==================== RESPONSIVE ==================== */
