@@ -450,3 +450,70 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================
 console.log('✅✅✅ WEBSITE DISHUB KONAWE SIAP! ✅✅✅');
 console.log('📊 Form pengaduan terhubung ke Google Sheets');
+
+
+// ============================================
+// MODAL PREVIEW FOTO PEJABAT
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+  const fotoModal = document.getElementById('fotoModal');
+  const fotoModalImg = document.getElementById('fotoModalImg');
+  const fotoModalCaption = document.getElementById('fotoModalCaption');
+  const fotoModalClose = document.getElementById('fotoModalClose');
+
+  if (!fotoModal || !fotoModalImg) return;
+
+  // Klik foto pejabat → tampilkan modal
+  document.querySelectorAll('.foto-pejabat').forEach(function(foto) {
+    foto.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const src = this.getAttribute('src');
+      const alt = this.getAttribute('alt') || 'Foto Pejabat';
+
+      // Ambil nama & jabatan dari struktur-item
+      const strukturItem = this.closest('.struktur-item');
+      let caption = alt;
+      if (strukturItem) {
+        const jabatan = strukturItem.querySelector('.jabatan')?.textContent || '';
+        const nama = strukturItem.querySelector('.nama')?.textContent || '';
+        caption = nama ? `${nama} — ${jabatan}` : alt;
+      }
+
+      fotoModalImg.setAttribute('src', src);
+      fotoModalImg.setAttribute('alt', alt);
+      fotoModalCaption.textContent = caption;
+      fotoModal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // lock scroll
+    });
+  });
+
+  // Fungsi tutup modal
+  function closeModal() {
+    fotoModal.classList.remove('active');
+    document.body.style.overflow = '';
+    // Kosongkan src setelah animasi selesai
+    setTimeout(function() {
+      fotoModalImg.setAttribute('src', '');
+    }, 300);
+  }
+
+  // Tombol close
+  if (fotoModalClose) {
+    fotoModalClose.addEventListener('click', function(e) {
+      e.stopPropagation();
+      closeModal();
+    });
+  }
+
+  // Klik area gelap di luar gambar → tutup
+  fotoModal.addEventListener('click', function(e) {
+    if (e.target === fotoModal) closeModal();
+  });
+
+  // Tekan tombol ESC → tutup
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && fotoModal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+});

@@ -2034,3 +2034,147 @@ footer {
     font-size: 0.8rem;
   }
 }
+
+/* ============================================ */
+/* ===== MODAL PREVIEW FOTO PEJABAT =========== */
+/* ============================================ */
+.foto-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: zoom-out;
+}
+
+.foto-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.foto-modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: zoomIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: default;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#fotoModalImg {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  border: 4px solid white;
+  background: white;
+  display: block;
+}
+
+.foto-modal-caption {
+  margin-top: 18px;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 10px 24px;
+  background: rgba(253, 185, 19, 0.95);
+  color: #0B4F6C;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+}
+
+.foto-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10000;
+  backdrop-filter: blur(4px);
+}
+
+.foto-modal-close:hover {
+  background: #D32F2F;
+  border-color: #D32F2F;
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 0 25px rgba(211, 47, 47, 0.6);
+}
+
+.foto-modal-close i {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+/* Cursor zoom pada foto pejabat */
+.foto-pejabat,
+.foto-wrapper {
+  cursor: zoom-in;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .foto-modal-close {
+    top: 12px;
+    right: 12px;
+    width: 42px;
+    height: 42px;
+  }
+  .foto-modal-close i {
+    font-size: 1.2rem;
+  }
+  #fotoModalImg {
+    max-height: 70vh;
+  }
+  .foto-modal-caption {
+    font-size: 0.85rem;
+    padding: 8px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .foto-modal-close {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+  .foto-modal-caption {
+    font-size: 0.75rem;
+  }
+}
