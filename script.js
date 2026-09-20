@@ -2,19 +2,13 @@
 // WEBSITE DISHUB KONAWE - DENGAN GOOGLE SHEETS
 // ============================================
 
-// ============================================
-// 🔴 YANG INI WAJIB DIGANTI DENGAN URL ANDA!
-// ============================================
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzX1QNPfk_TbTSbeXyyvb7YY96EUMNBjjR88OlQb3HNL7J-F-29eXlq5eVoArghD5klig/exec';
+const SARAN_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzlE8zcVNvDPzOUIcS7FDmtyDbbyFJGKSKNeHrg8boJAwkj4A9gsngFF1okI-TCh4ZgOA/exec';
 
 // ============================================
-// INISIALISASI AOS ANIMATION
+// INISIALISASI AOS
 // ============================================
-AOS.init({
-  duration: 1000,
-  once: true,
-  offset: 50
-});
+AOS.init({ duration: 1000, once: true, offset: 50 });
 
 // ============================================
 // ANIMASI ANGKA STATISTIK
@@ -22,10 +16,8 @@ AOS.init({
 function animateNumber(elementId, target, duration) {
   const element = document.getElementById(elementId);
   if (!element) return;
-  
   let current = 0;
   const increment = target / (duration / 20);
-  
   const timer = setInterval(() => {
     current += increment;
     if (current >= target) {
@@ -37,7 +29,6 @@ function animateNumber(elementId, target, duration) {
   }, 20);
 }
 
-// ===== JALANKAN ANIMASI STATISTIK =====
 document.addEventListener('DOMContentLoaded', function() {
   animateNumber('panjangJalan', 427, 3500);
   animateNumber('angkutanUmum', 3255, 3500);
@@ -49,41 +40,77 @@ document.addEventListener('DOMContentLoaded', function() {
 // NAVBAR SCROLL EFFECT
 // ============================================
 window.addEventListener('scroll', function() {
-  const navbar = document.getElementById('navbar');
+  const navbar = document.querySelector('.navbar');
   const backToTop = document.getElementById('backToTop');
-  
   if (window.scrollY > 100) {
-    navbar.classList.add('scrolled');
-    backToTop.style.opacity = '1';
-    backToTop.style.visibility = 'visible';
+    if (navbar) navbar.classList.add('scrolled');
+    if (backToTop) {
+      backToTop.style.opacity = '1';
+      backToTop.style.visibility = 'visible';
+    }
   } else {
-    navbar.classList.remove('scrolled');
-    backToTop.style.opacity = '0';
-    backToTop.style.visibility = 'hidden';
+    if (navbar) navbar.classList.remove('scrolled');
+    if (backToTop) {
+      backToTop.style.opacity = '0';
+      backToTop.style.visibility = 'hidden';
+    }
   }
 });
 
-// Klik event (TAMBAHKAN INI)
-document.getElementById('backToTop').addEventListener('click', function(e) {
-  e.preventDefault();
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
+// Back to top click
+const backToTopBtn = document.getElementById('backToTop');
+if (backToTopBtn) {
+  backToTopBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-});
+}
 
 // ============================================
-// MOBILE MENU TOGGLE
+// MOBILE MENU TOGGLE (STYLE LPJU)
 // ============================================
-const menuToggle = document.getElementById('menuToggle');
+const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 
-if (menuToggle) {
-  menuToggle.addEventListener('click', function() {
+if (navToggle && navMenu) {
+  navToggle.addEventListener('click', function() {
     navMenu.classList.toggle('active');
-    menuToggle.innerHTML = navMenu.classList.contains('active') 
-      ? '<i class="fas fa-times"></i>' 
-      : '<i class="fas fa-bars"></i>';
+    const icon = navToggle.querySelector('i');
+    if (navMenu.classList.contains('active')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    } else {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  });
+
+  // Tutup menu saat klik link
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function() {
+      if (window.innerWidth <= 992) {
+        navMenu.classList.remove('active');
+        const icon = navToggle.querySelector('i');
+        if (icon) {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      }
+    });
+  });
+
+  // Tutup menu saat klik di luar
+  document.addEventListener('click', function(e) {
+    if (window.innerWidth <= 992 && navMenu.classList.contains('active')) {
+      if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+        const icon = navToggle.querySelector('i');
+        if (icon) {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      }
+    }
   });
 }
 
@@ -92,63 +119,51 @@ if (menuToggle) {
 // ============================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    
     const targetId = this.getAttribute('href');
     if (targetId === '#' || targetId === '') return;
-    
+
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-    
-    // Tutup menu mobile setelah klik
-    if (navMenu && navMenu.classList.contains('active')) {
-      navMenu.classList.remove('active');
-      menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+      e.preventDefault();
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      // Tutup menu mobile setelah klik
+      if (navMenu && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        if (navToggle) {
+          navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+      }
     }
   });
 });
 
 // ============================================
-// 🟢🟢🟢 FORM PENGADUAN DENGAN GOOGLE SHEETS 🟢🟢🟢
+// FORM PENGADUAN
 // ============================================
 const pengaduanForm = document.getElementById('pengaduanForm');
 
 if (pengaduanForm) {
   pengaduanForm.addEventListener('submit', async function(e) {
     e.preventDefault();
-    
-    // === TAMPILKAN LOADING ===
     const submitBtn = this.querySelector('button[type="submit"]');
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim data...';
     submitBtn.disabled = true;
-    
-    // === AMBIL DATA DARI FORM ===
+
     const formData = {
-      // ID Pengaduan format: PGD-TANGGALBULAN-JAMMENIT
       id: (function() {
         const today = new Date();
         const tanggal = today.getDate().toString().padStart(2, '0');
         const bulan = (today.getMonth() + 1).toString().padStart(2, '0');
         const jam = today.getHours().toString().padStart(2, '0');
         const menit = today.getMinutes().toString().padStart(2, '0');
-        
         return 'PGD-' + tanggal + bulan + '-' + jam + menit;
-       })(),
-       
+      })(),
       tanggal: new Date().toLocaleString('id-ID', {
         timeZone: 'Asia/Makassar',
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
+        day: '2-digit', month: '2-digit', year: 'numeric',
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
       }),
       nama: this.querySelector('input[placeholder="Nama Lengkap"]').value,
       email: this.querySelector('input[placeholder="Email"]').value,
@@ -156,36 +171,27 @@ if (pengaduanForm) {
       jenis: this.querySelector('select').value,
       pesan: this.querySelector('textarea').value
     };
-    
-    // === VALIDASI JIKA ADA KOLOM KOSONG ===
+
     if (!formData.nama || !formData.email || !formData.telepon || !formData.jenis || !formData.pesan) {
       alert('❌ Semua kolom harus diisi!');
       submitBtn.innerHTML = originalText;
       submitBtn.disabled = false;
       return;
     }
-    
+
     try {
-      // === KIRIM KE GOOGLE SHEETS ===
-      console.log('📤 Mengirim data:', formData);
-      
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-      
-      // === TAMPILKAN PESAN SUKSES ===
-      const nomorPengaduan = formData.id;
-      
+
       alert(`✅✅✅ PENGADUAN TERKIRIM! ✅✅✅
-      
+
 ━━━━━━━━━━━━━━━━━━━━━━━
 📋 NOMOR PENGADUAN: 
-${nomorPengaduan}
+${formData.id}
 ━━━━━━━━━━━━━━━━━━━━━━━
 
 📅 Tanggal: ${formData.tanggal}
@@ -197,39 +203,18 @@ ${nomorPengaduan}
 ━━━━━━━━━━━━━━━━━━━━━━━
 📌 CATAT NOMOR PENGADUAN ANDA!
 Anda akan dihubungi maksimal 2x24 jam.
-━━━━━━━━━━━━━━━━━━━━━━━
-
-Terima kasih telah menggunakan layanan 
-Dinas Perhubungan Kabupaten Konawe.`);
-      
-      // === RESET FORM ===
+━━━━━━━━━━━━━━━━━━━━━━━`);
       this.reset();
-      
     } catch(error) {
       console.error('❌ Error:', error);
-      
-      // Meskipun error, data KEMUNGKINAN BESAR tetap terkirim!
-      alert(`⚠️⚠️⚠️ PENGADUAN TELAH TERKIRIM! ⚠️⚠️⚠️
-      
-━━━━━━━━━━━━━━━━━━━━━━━
-📋 NOMOR PENGADUAN: 
-${formData.id}
-━━━━━━━━━━━━━━━━━━━━━━━
+      alert(`⚠️ PENGADUAN TELAH TERKIRIM!
 
-📅 Tanggal: ${formData.tanggal}
-👤 Nama: ${formData.nama}
+📋 Nomor: ${formData.id}
 
-⚠️ Maaf, terjadi gangguan koneksi.
-NAMUN data Anda KEMUNGKINAN BESAR tetap tersimpan.
-
-━━━━━━━━━━━━━━━━━━━━━━━
-📞 Jika tidak dihubungi dalam 2x24 jam:
-Call Center: 085298604422
-📧 Email: dinasperhubungankonawekab@gmail.com
-━━━━━━━━━━━━━━━━━━━━━━━`);
-      
+Jika tidak dihubungi dalam 2x24 jam:
+📞 085298604422
+📧 dinasperhubungankonawekab@gmail.com`);
     } finally {
-      // === KEMBALIKAN TOMBOL ===
       submitBtn.innerHTML = originalText;
       submitBtn.disabled = false;
     }
@@ -237,78 +222,41 @@ Call Center: 085298604422
 }
 
 // ============================================
-// 🆕🆕🆕 FITUR CEK STATUS PENGADUAN (DENGAN LINK BISA DIKLIK) 🆕🆕🆕
+// CEK STATUS PENGADUAN
 // ============================================
 function cekStatusPengaduan() {
   const nomor = prompt('📋 Masukkan Nomor Pengaduan Anda:');
-  
   if (nomor && nomor.trim() !== '') {
-    // Buka spreadsheet di tab baru (LINK LANGSUNG BISA DIKLIK)
     window.open('https://docs.google.com/spreadsheets/d/147SH4xEKjpLxdIaH9N5A3F7GcbscLoWgHAdUEhL3cJE/edit?usp=sharing', '_blank');
-    
-    // Tampilkan instruksi singkat
-    alert(`🔍🔍🔍 CEK STATUS PENGADUAN 🔍🔍🔍
-    
+    alert(`🔍 Cek Status Pengaduan
+
 Nomor: ${nomor}
 
-━━━━━━━━━━━━━━━━━━━━━━━
-✅ SPREADSHEET SUDAH DIBUKA DI TAB BARU!
-
-Langkah selanjutnya:
-1️⃣ Tekan Ctrl+F di tab spreadsheet
-2️⃣ Cari nomor: ${nomor}
+✅ Spreadsheet sudah dibuka di tab baru.
+1️⃣ Tekan Ctrl+F
+2️⃣ Cari: ${nomor}
 3️⃣ Lihat kolom "Status"
-━━━━━━━━━━━━━━━━━━━━━━━
 
-📞 Call Center: 085298604422
-📧 dinasperhubungankonawekab@gmail.com
-━━━━━━━━━━━━━━━━━━━━━━━`);
+📞 Call Center: 085298604422`);
   }
 }
 
-// ============================================
-// 🆕🆕🆕 TAMBAHKAN TOMBOL CEK STATUS DI HALAMAN 🆕🆕🆕
-// ============================================
+// Tambah tombol cek status
 document.addEventListener('DOMContentLoaded', function() {
-  // Tambahkan link cek status di bawah form
   const formPanel = document.querySelector('.contact-form-panel');
-  
   if (formPanel) {
     const cekStatusDiv = document.createElement('div');
-    cekStatusDiv.style.marginTop = '30px';
-    cekStatusDiv.style.padding = '25px';
-    cekStatusDiv.style.background = 'linear-gradient(145deg, #f8f9fc, #ffffff)';
-    cekStatusDiv.style.borderRadius = '16px';
-    cekStatusDiv.style.textAlign = 'center';
-    cekStatusDiv.style.border = '2px dashed #0B4F6C';
-    cekStatusDiv.style.boxShadow = '0 8px 20px rgba(0,0,0,0.05)';
-    
+    cekStatusDiv.style.cssText = 'margin-top: 30px; padding: 25px; background: linear-gradient(145deg, #f8f9fc, #ffffff); border-radius: 16px; text-align: center; border: 2px dashed #0B4F6C; box-shadow: 0 8px 20px rgba(0,0,0,0.05);';
+
     cekStatusDiv.innerHTML = `
       <div style="margin-bottom: 15px;">
         <span style="background: #0B4F6C; color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: 600;">
           <i class="fas fa-check-circle"></i> SUDAH MENGIRIM?
         </span>
       </div>
-      <h4 style="color: #0B4F6C; margin-bottom: 15px; font-size: 1.3rem;">
-        CEK STATUS PENGADUAN
-      </h4>
-      <p style="margin-bottom: 20px; color: #555;">
-        Klik tombol di bawah untuk cek status pengaduan Anda
-      </p>
-      <button onclick="cekStatusPengaduan()" 
-              style="background: linear-gradient(145deg, #FDB913, #e5a600); 
-                     color: #1a1e24;
-                     border: none;
-                     padding: 14px 35px;
-                     border-radius: 50px;
-                     font-weight: 700;
-                     font-size: 1rem;
-                     cursor: pointer;
-                     transition: all 0.3s;
-                     box-shadow: 0 8px 20px rgba(253, 185, 19, 0.3);
-                     border: 1px solid rgba(255,255,255,0.3);"
-              onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 25px rgba(253,185,19,0.4)';"
-              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(253,185,19,0.3)';">
+      <h4 style="color: #0B4F6C; margin-bottom: 15px; font-size: 1.3rem;">CEK STATUS PENGADUAN</h4>
+      <p style="margin-bottom: 20px; color: #555;">Klik tombol di bawah untuk cek status pengaduan Anda</p>
+      <button onclick="cekStatusPengaduan()" style="background: linear-gradient(145deg, #FDB913, #e5a600); color: #1a1e24; border: none; padding: 14px 35px; border-radius: 50px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.3s; box-shadow: 0 8px 20px rgba(253, 185, 19, 0.3); border: 1px solid rgba(255,255,255,0.3);">
         <i class="fas fa-search" style="margin-right: 8px;"></i> CEK STATUS SEKARANG
       </button>
       <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #e9ecef;">
@@ -320,7 +268,6 @@ document.addEventListener('DOMContentLoaded', function() {
         </p>
       </div>
     `;
-    
     formPanel.appendChild(cekStatusDiv);
   }
 });
@@ -338,20 +285,18 @@ if (footerYear) {
 // ============================================
 function setActiveNavLink() {
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('nav a');
-  
+  const navLinks = document.querySelectorAll('.nav-link');
   let currentSection = '';
-  
+
   sections.forEach(section => {
     const sectionTop = section.offsetTop - 150;
     const sectionHeight = section.clientHeight;
     const scrollY = window.scrollY;
-    
     if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
       currentSection = section.getAttribute('id');
     }
   });
-  
+
   navLinks.forEach(link => {
     link.classList.remove('active');
     const href = link.getAttribute('href');
@@ -365,13 +310,9 @@ window.addEventListener('scroll', setActiveNavLink);
 window.addEventListener('load', setActiveNavLink);
 
 // ============================================
-// INTERSECTION OBSERVER UNTUK AOS MANUAL
+// INTERSECTION OBSERVER
 // ============================================
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px'
-};
-
+const observerOptions = { threshold: 0.1, rootMargin: '0px' };
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -380,47 +321,25 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-document.querySelectorAll('[data-aos]').forEach(el => {
-  observer.observe(el);
-});
-
+document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
 
 // ============================================
-// 🟢🟢🟢 FITUR SARAN & MASUKAN 🟢🟢🟢
+// FITUR SARAN & MASUKAN
 // ============================================
-
-// URL Google Sheets untuk saran (gunakan URL yang sama atau beda)
-// Disarankan buat sheet baru dengan nama "SaranMasukan"
-const SARAN_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzlE8zcVNvDPzOUIcS7FDmtyDbbyFJGKSKNeHrg8boJAwkj4A9gsngFF1okI-TCh4ZgOA/exec';
-
-// Counter untuk statistik saran
 let saranCounter = 0;
-let responsCounter = 0;
 
-// Fungsi untuk update counter statistik
 function updateSaranStats() {
   const saranCountElem = document.getElementById('saranCount');
-  const responsCountElem = document.getElementById('responsCount');
-  
-  // Coba ambil data dari localStorage
   const savedSaran = localStorage.getItem('dishub_saran_count');
-  const savedRespons = localStorage.getItem('dishub_respons_count');
-  
   if (savedSaran) saranCounter = parseInt(savedSaran);
-  if (savedRespons) responsCounter = parseInt(savedRespons);
-  
-  // Animasi counter
   if (saranCountElem) animateSaranNumber('saranCount', saranCounter, 1000);
-  if (responsCountElem) animateSaranNumber('responsCount', responsCounter, 1000);
 }
 
 function animateSaranNumber(elementId, target, duration) {
   const element = document.getElementById(elementId);
   if (!element) return;
-  
   let current = 0;
   const increment = target / (duration / 20);
-  
   const timer = setInterval(() => {
     current += increment;
     if (current >= target) {
@@ -432,61 +351,48 @@ function animateSaranNumber(elementId, target, duration) {
   }, 20);
 }
 
-// Form Saran & Masukan
 const saranForm = document.getElementById('saranForm');
-
 if (saranForm) {
   saranForm.addEventListener('submit', async function(e) {
     e.preventDefault();
-    
-    // Ambil nilai dari form
+
     const nama = document.getElementById('saranNama').value;
     const email = document.getElementById('saranEmail').value;
     const phone = document.getElementById('saranPhone').value;
     const message = document.getElementById('saranMessage').value;
     const saranType = document.querySelector('input[name="saranType"]:checked').value;
-    
-    // Validasi
+
     if (!nama || !email || !phone || !message) {
       alert('❌ Semua kolom harus diisi!');
       return;
     }
-    
-    // Validasi email sederhana
     if (!email.includes('@') || !email.includes('.')) {
       alert('❌ Format email tidak valid!');
       return;
     }
-    
-    // Validasi nomor HP
     if (phone.length < 10 || phone.length > 15) {
       alert('❌ Nomor handphone tidak valid (10-15 digit)!');
       return;
     }
-    
-    // Tampilkan loading
+
     const submitBtn = this.querySelector('button[type="submit"]');
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
     submitBtn.disabled = true;
-    
-    // Buat ID saran
+
     const today = new Date();
-    const id = 'SRN-' + 
+    const id = 'SRN-' +
       today.getDate().toString().padStart(2, '0') +
       (today.getMonth() + 1).toString().padStart(2, '0') +
       '-' + today.getHours().toString().padStart(2, '0') +
       today.getMinutes().toString().padStart(2, '0');
-    
+
     const formData = {
       id: id,
       tanggal: today.toLocaleString('id-ID', {
         timeZone: 'Asia/Makassar',
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
+        day: '2-digit', month: '2-digit', year: 'numeric',
+        hour: '2-digit', minute: '2-digit'
       }),
       nama: nama,
       email: email,
@@ -495,57 +401,39 @@ if (saranForm) {
       pesan: message,
       status: 'Menunggu'
     };
-    
+
     try {
-      // Kirim ke Google Sheets
-      const response = await fetch(SARAN_SCRIPT_URL, {
+      await fetch(SARAN_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-      
-      // Update counter
+
       saranCounter++;
       localStorage.setItem('dishub_saran_count', saranCounter);
       updateSaranStats();
-      
-      // Tampilkan pesan sukses
-      alert(`✅✅✅ SARAN & MASUKAN TERKIRIM! ✅✅✅
-      
-━━━━━━━━━━━━━━━━━━━━━━━
-📋 ID SARAN: ${id}
-━━━━━━━━━━━━━━━━━━━━━━━
 
+      alert(`✅ SARAN & MASUKAN TERKIRIM!
+
+📋 ID SARAN: ${id}
 📅 Tanggal: ${formData.tanggal}
 👤 Nama: ${nama}
 📌 Jenis: ${saranType}
 
-💬 Pesan: "${message.substring(0, 50)}${message.length > 50 ? '...' : ''}"
+Terima kasih! Kami akan merespon maksimal 3x24 jam.`);
 
-━━━━━━━━━━━━━━━━━━━━━━━
-Terima kasih atas saran dan masukan Anda!
-Kami akan merespon maksimal 3x24 jam.
-━━━━━━━━━━━━━━━━━━━━━━━`);
-      
-      // Reset form
       this.reset();
-      document.querySelector('input[name="saranType"][value="Saran"]').checked = true;
-      
+      const defaultRadio = document.querySelector('input[name="saranType"][value="Saran"]');
+      if (defaultRadio) defaultRadio.checked = true;
     } catch(error) {
       console.error('Error:', error);
       alert(`⚠️ Gangguan koneksi, tapi data Anda TETAP TERKIRIM!
-      
-ID Saran: ${id}
-Kami akan tetap memproses saran Anda.
 
-Terima kasih atas pengertiannya.`);
-      
-      // Tetap update counter meskipun error
+ID Saran: ${id}`);
       saranCounter++;
       localStorage.setItem('dishub_saran_count', saranCounter);
       updateSaranStats();
-      
     } finally {
       submitBtn.innerHTML = originalText;
       submitBtn.disabled = false;
@@ -553,19 +441,12 @@ Terima kasih atas pengertiannya.`);
   });
 }
 
-// Panggil update stats saat halaman dimuat
 document.addEventListener('DOMContentLoaded', function() {
   updateSaranStats();
 });
 
-console.log('✅✅✅ FITUR SARAN & MASUKAN SIAP! ✅✅✅');
-
-
 // ============================================
-// KONFIRMASI SIAP DIGUNAKAN
+// KONFIRMASI
 // ============================================
 console.log('✅✅✅ WEBSITE DISHUB KONAWE SIAP! ✅✅✅');
 console.log('📊 Form pengaduan terhubung ke Google Sheets');
-console.log('🔗 URL Google Script:', GOOGLE_SCRIPT_URL);
-console.log('🔗 Link spreadsheet bisa langsung diklik!');
-
