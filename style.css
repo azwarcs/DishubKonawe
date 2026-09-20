@@ -642,7 +642,12 @@ section {
   color: white;
 }
 
-.struktur-card h3 { color: white; margin-bottom: 25px; font-size: 1.3rem; }
+.struktur-card h3 {
+  color: white;
+  margin-bottom: 25px;
+  font-size: 1.3rem;
+  text-align: center; /* ✅ TAMBAHAN: rata tengah di desktop */
+}
 
 .struktur-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 
