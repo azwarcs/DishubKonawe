@@ -140,7 +140,6 @@ section {
   gap: 1rem;
 }
 
-/* Logo Area */
 .logo-area {
   display: flex;
   align-items: center;
@@ -178,7 +177,6 @@ section {
   font-weight: 500;
 }
 
-/* Nav Menu */
 .nav-menu {
   display: flex;
   align-items: center;
@@ -316,7 +314,6 @@ section {
 }
 
 .social-nav-icons .social-icon:hover::after { opacity: 0.5; }
-
 .social-nav-icons .social-icon#fbIcon:hover::after { background: #1877f2; }
 .social-nav-icons .social-icon#igIcon:hover::after { background: #dc2743; }
 .social-nav-icons .social-icon#ttIcon:hover::after { background: #25f4ee; }
@@ -375,71 +372,232 @@ section {
 .social-nav-icons .social-icon:active { animation: pulseSocial 0.3s ease; }
 
 /* ============================================ */
-/* ============ HERO SECTION ================== */
+/* ===== HERO SECTION (BUPATI & WAKIL) ======== */
 /* ============================================ */
 .hero-bg {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  background: url('img/background8.png') no-repeat center top;
-  background-size: cover;
-  background-attachment: fixed;
+  min-height: calc(100vh - 80px);
+  background: linear-gradient(135deg, #f0f6ff 0%, #ffffff 50%, #f8fafc 100%);
   display: flex;
   align-items: center;
+  padding: 60px 6%;
+  overflow: hidden;
 }
 
-.hero-overlay {
+/* Ornamen dekoratif */
+.hero-bg::before {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%);
-  display: flex;
-  align-items: center;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(11, 79, 108, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-.hero-overlay .hero-content {
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(253, 185, 19, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-container {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
-}
-
-.hero-content {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
   align-items: center;
 }
 
-.hero-text h1 {
-  font-size: clamp(1.5rem, 5vw, 2.8rem);
-  line-height: 1.2;
-  margin-bottom: 20px;
+.hero-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #0B4F6C, #1a759f);
   color: white;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: fit-content;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(11, 79, 108, 0.25);
+}
+
+.hero-badge i { color: var(--secondary); }
+
+.hero-text h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: var(--primary);
+  font-weight: 800;
 }
 
 .hero-text h1 span {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--primary-light);
   display: block;
-  font-size: clamp(1rem, 4vw, 1.8rem);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  margin-top: 8px;
 }
 
 .hero-text p {
-  font-size: clamp(0.85rem, 2vw, 1rem);
-  margin-bottom: 25px;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  margin-bottom: 30px;
+  color: #4a5568;
+  line-height: 1.7;
+  max-width: 550px;
 }
 
-.hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
 
-.hero-stats { display: flex; gap: 25px; margin-top: 35px; flex-wrap: wrap; }
+.hero-buttons .btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.hero-buttons .btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 35px;
+  flex-wrap: wrap;
+  padding-top: 25px;
+  border-top: 2px dashed #cbd5e1;
+}
+
 .hero-stat-item { display: flex; flex-direction: column; }
-.hero-stat-number { font-size: clamp(1.2rem, 4vw, 2rem); font-weight: 800; color: white; }
-.hero-stat-label { font-size: clamp(0.65rem, 2vw, 0.85rem); color: rgba(255, 255, 255, 0.8); }
+
+.hero-stat-number {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.1;
+}
+
+.hero-stat-label {
+  font-size: 0.8rem;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+/* ====== KOLOM KANAN: FOTO BUPATI & WAKIL ====== */
+.hero-leaders {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch; /* ✅ kartu sama tinggi */
+}
+
+.leader-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; /* ✅ isi menempel ke bawah */
+  height: 100%;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.leader-card:hover { transform: translateY(-8px); }
+
+/* Foto: tinggi FIXED agar semua sama */
+.leader-photo {
+  width: 100%;
+  max-width: 260px;
+  height: 340px;                /* ✅ tinggi tetap */
+  background: white;
+  border-radius: 16px 16px 0 0; /* ✅ hanya atas yang rounded */
+  overflow: hidden;
+  box-shadow:
+    0 20px 40px rgba(11, 79, 108, 0.15),
+    0 0 0 4px white,
+    0 0 0 5px rgba(11, 79, 108, 0.08);
+  transition: all 0.4s ease;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.leader-card:hover .leader-photo {
+  box-shadow:
+    0 25px 50px rgba(11, 79, 108, 0.25),
+    0 0 0 4px white,
+    0 0 0 6px var(--secondary);
+}
+
+.leader-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* Nama: tinggi FIXED agar sejajar walau beda baris */
+.leader-name {
+  background: linear-gradient(135deg, #1e3a8a, #1e40af);
+  color: white;
+  font-weight: 700;
+  font-size: clamp(0.7rem, 1.05vw, 0.9rem);
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 0;               /* ✅ sudut datar */
+  letter-spacing: 0.3px;
+  line-height: 1.3;
+  width: 100%;
+  max-width: 260px;
+  min-height: 62px;               /* ✅ tinggi minimal 2 baris */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+}
+
+.leader-title {
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  color: #1e40af;
+  font-weight: 600;
+  font-style: italic;
+  font-size: clamp(0.7rem, 0.95vw, 0.85rem);
+  text-align: center;
+  padding: 10px 16px;
+  border-radius: 0 0 8px 8px;      /* ✅ hanya bawah yang rounded */
+  border: 1px solid #e2e8f0;
+  border-top: none;
+  width: 100%;
+  max-width: 260px;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
 
 /* ============================================ */
 /* ============ PROFIL SECTION ================ */
@@ -1280,7 +1438,6 @@ footer {
 
 @media (max-width: 1200px) {
   section { padding: 60px 5%; }
-
   .nav-link { padding: 0.5rem 0.7rem; font-size: 0.85rem; }
   .nav-menu { gap: 0.4rem; }
 }
@@ -1288,8 +1445,21 @@ footer {
 @media (max-width: 1024px) {
   section { padding: 50px 5%; }
   h2 { font-size: 1.8rem; }
-  .hero-content { grid-template-columns: 1fr; }
-  .hero-image { display: none; }
+
+  /* Hero responsive tablet */
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-text { align-items: center; }
+  .hero-badge { margin-left: auto; margin-right: auto; }
+  .hero-text p { margin-left: auto; margin-right: auto; }
+  .hero-buttons { justify-content: center; }
+  .hero-stats { justify-content: center; }
+  .hero-leaders { max-width: 550px; margin: 0 auto; }
+
   .profil-container { grid-template-columns: 1fr; gap: 35px; }
   .info-grid { grid-template-columns: 1fr; }
   .contact-wrapper { grid-template-columns: 1fr; }
@@ -1343,7 +1513,6 @@ footer {
   }
 
   .social-nav-item::before { display: none; }
-
   .social-nav-icons { gap: 15px; justify-content: center; }
 
   .social-nav-icons .social-icon {
@@ -1364,21 +1533,84 @@ footer {
 @media (max-width: 768px) {
   body { overflow-x: hidden; width: 100%; }
 
-  .hero-bg { min-height: auto; background-attachment: scroll; width: 100%; }
+  /* Hero mobile */
+  .hero-bg {
+    min-height: auto;
+    padding: 40px 16px;
+  }
 
-  .hero-overlay { position: relative; padding: 60px 0 50px; width: 100%; }
-  .hero-overlay .hero-content { padding: 0 16px; width: 100%; }
+  .hero-bg::before,
+  .hero-bg::after { display: none; }
 
-  .hero-text h1 { font-size: 1.6rem; }
-  .hero-text h1 span { font-size: 1.2rem; }
-  .hero-text p { font-size: 0.9rem; }
+  .hero-container { gap: 30px; }
 
-  .hero-buttons { flex-direction: column; gap: 10px; }
-  .hero-buttons .btn { width: 100%; text-align: center; padding: 10px 16px; font-size: 0.85rem; }
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 6px 14px;
+  }
 
-  .hero-stats { gap: 15px; justify-content: space-between; }
-  .hero-stat-number { font-size: 1.4rem; }
-  .hero-stat-label { font-size: 0.7rem; }
+  .hero-text h1 { font-size: 1.5rem; }
+  .hero-text h1 span { font-size: 1.05rem; }
+  .hero-text p { font-size: 0.85rem; margin-bottom: 20px; }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 0.85rem;
+  }
+
+  .hero-stats {
+    gap: 20px;
+    justify-content: space-around;
+    padding-top: 20px;
+    width: 100%;
+  }
+
+  .hero-stat-item { flex: 1; min-width: 80px; align-items: center; }
+  .hero-stat-number { font-size: 1.3rem; }
+  .hero-stat-label { font-size: 0.7rem; text-align: center; }
+
+  /* Foto Bupati & Wakil - tetap tampil di mobile */
+  .hero-leaders {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 100%;
+    align-items: stretch;
+  }
+
+  .leader-photo {
+    max-width: 100%;
+    height: 220px;             /* ✅ tinggi fixed mobile */
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 0;
+  }
+
+  .leader-name {
+    font-size: 0.65rem;
+    padding: 8px 8px;
+    border-radius: 0;
+    line-height: 1.25;
+    max-width: 100%;
+    min-height: 52px;          /* ✅ cukup untuk 2 baris */
+  }
+
+  .leader-title {
+    font-size: 0.65rem;
+    padding: 7px 8px;
+    border-radius: 0 0 10px 10px;
+    max-width: 100%;
+    min-height: 38px;
+  }
+
+  .leader-card:hover { transform: none; }
 
   section { padding: 40px 16px !important; width: 100%; }
 
@@ -1513,6 +1745,28 @@ footer {
   .saran-type-options { flex-direction: column; gap: 10px; }
   section { padding: 30px 12px !important; }
 
+  .hero-text h1 { font-size: 1.25rem; }
+  .hero-text h1 span { font-size: 0.9rem; }
+  .hero-text p { font-size: 0.8rem; }
+  .hero-stat-number { font-size: 1.1rem; }
+  .hero-stat-label { font-size: 0.65rem; }
+
+  /* ✅ Perbaikan foto & nama di mobile kecil */
+  .leader-name { 
+    font-size: 0.6rem; 
+    padding: 6px 6px; 
+    min-height: 48px;
+  }
+  .leader-title { 
+    font-size: 0.6rem; 
+    padding: 6px 6px;
+    min-height: 34px;
+  }
+  .hero-leaders { gap: 8px; }
+  .leader-photo {
+    height: 180px;
+  }
+
   .peta-card { padding: 20px 16px; gap: 14px; }
   .peta-card-icon { width: 50px; height: 50px; }
   .peta-card-icon i { font-size: 1.4rem; }
@@ -1525,12 +1779,27 @@ footer {
   .pemda-title { font-size: 0.9rem; }
   .pemda-sub { font-size: 0.6rem; }
   .nav-link { font-size: 0.9rem; }
-  .hero-text h1 { font-size: 1.4rem; }
-  .hero-text h1 span { font-size: 1rem; }
+  .hero-text h1 { font-size: 1.15rem; }
+  .hero-text h1 span { font-size: 0.85rem; }
   .hero-stat-number { font-size: 1rem; }
   .btn { padding: 8px 12px; font-size: 0.75rem; }
   h2 { font-size: 1.3rem; }
   .info-header i { width: 38px; height: 38px; font-size: 1rem; }
   .info-header h3 { font-size: 0.9rem; }
   section { padding: 25px 10px !important; }
+
+  /* ✅ Perbaikan foto & nama di mobile sangat kecil */
+  .leader-name { 
+    font-size: 0.55rem; 
+    padding: 5px 5px; 
+    min-height: 44px;
+  }
+  .leader-title { 
+    font-size: 0.55rem; 
+    padding: 5px 5px;
+    min-height: 32px;
+  }
+  .leader-photo {
+    height: 160px;
+  }
 }
