@@ -2178,3 +2178,10 @@ footer {
     font-size: 0.75rem;
   }
 }
+
+.foto-pejabat {
+  transition: transform 0.3s ease;
+}
+.foto-pejabat:hover {
+  transform: scale(1.08);
+}
