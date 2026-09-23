@@ -272,35 +272,35 @@ Nomor: ${nomor}
 }
 
 // Tambah tombol cek status
-document.addEventListener('DOMContentLoaded', function() {
-  const formPanel = document.querySelector('.contact-form-panel');
-  if (formPanel) {
-    const cekStatusDiv = document.createElement('div');
-    cekStatusDiv.style.cssText = 'margin-top: 30px; padding: 25px; background: linear-gradient(145deg, #f8f9fc, #ffffff); border-radius: 16px; text-align: center; border: 2px dashed #0B4F6C; box-shadow: 0 8px 20px rgba(0,0,0,0.05);';
+// document.addEventListener('DOMContentLoaded', function() {
+//   const formPanel = document.querySelector('.contact-form-panel');
+//   if (formPanel) {
+//     const cekStatusDiv = document.createElement('div');
+//     cekStatusDiv.style.cssText = 'margin-top: 30px; padding: 25px; background: linear-gradient(145deg, #f8f9fc, #ffffff); border-radius: 16px; text-align: center; border: 2px dashed #0B4F6C; box-shadow: 0 8px 20px rgba(0,0,0,0.05);';
 
-    cekStatusDiv.innerHTML = `
-      <div style="margin-bottom: 15px;">
-        <span style="background: #0B4F6C; color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: 600;">
-          <i class="fas fa-check-circle"></i> SUDAH MENGIRIM?
-        </span>
-      </div>
-      <h4 style="color: #0B4F6C; margin-bottom: 15px; font-size: 1.3rem;">CEK STATUS PENGADUAN</h4>
-      <p style="margin-bottom: 20px; color: #555;">Klik tombol di bawah untuk cek status pengaduan Anda</p>
-      <button onclick="cekStatusPengaduan()" style="background: linear-gradient(145deg, #FDB913, #e5a600); color: #1a1e24; border: none; padding: 14px 35px; border-radius: 50px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.3s; box-shadow: 0 8px 20px rgba(253, 185, 19, 0.3); border: 1px solid rgba(255,255,255,0.3);">
-        <i class="fas fa-search" style="margin-right: 8px;"></i> CEK STATUS SEKARANG
-      </button>
-      <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #e9ecef;">
-        <p style="margin-bottom: 5px; font-size: 0.9rem; color: #666;">
-          <i class="fas fa-phone-alt" style="color: #0B4F6C;"></i> Call Center: 085298604422
-        </p>
-        <p style="font-size: 0.9rem; color: #666;">
-          <i class="fas fa-envelope" style="color: #0B4F6C;"></i> dinasperhubungankonawekab@gmail.com
-        </p>
-      </div>
-    `;
-    formPanel.appendChild(cekStatusDiv);
-  }
-});
+//     cekStatusDiv.innerHTML = `
+//       <div style="margin-bottom: 15px;">
+//         <span style="background: #0B4F6C; color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: 600;">
+//           <i class="fas fa-check-circle"></i> SUDAH MENGIRIM?
+//         </span>
+//       </div>
+//       <h4 style="color: #0B4F6C; margin-bottom: 15px; font-size: 1.3rem;">CEK STATUS PENGADUAN</h4>
+//       <p style="margin-bottom: 20px; color: #555;">Klik tombol di bawah untuk cek status pengaduan Anda</p>
+//       <button onclick="cekStatusPengaduan()" style="background: linear-gradient(145deg, #FDB913, #e5a600); color: #1a1e24; border: none; padding: 14px 35px; border-radius: 50px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.3s; box-shadow: 0 8px 20px rgba(253, 185, 19, 0.3); border: 1px solid rgba(255,255,255,0.3);">
+//         <i class="fas fa-search" style="margin-right: 8px;"></i> CEK STATUS SEKARANG
+//       </button>
+//       <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #e9ecef;">
+//         <p style="margin-bottom: 5px; font-size: 0.9rem; color: #666;">
+//           <i class="fas fa-phone-alt" style="color: #0B4F6C;"></i> Call Center: 085298604422
+//         </p>
+//         <p style="font-size: 0.9rem; color: #666;">
+//           <i class="fas fa-envelope" style="color: #0B4F6C;"></i> dinasperhubungankonawekab@gmail.com
+//         </p>
+//       </div>
+//     `;
+//     formPanel.appendChild(cekStatusDiv);
+//   }
+// });
 
 // ============================================
 // TAHUN OTOMATIS DI FOOTER
