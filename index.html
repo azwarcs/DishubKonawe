@@ -24,57 +24,115 @@
 </head>
 <body>
 
-  <!-- ==================== NAVBAR ==================== -->
-  <nav class="navbar">
+  <!-- ==================== NAVBAR MODERN PREMIUM ==================== -->
+  <nav class="navbar" id="navbar">
     <div class="nav-container">
+
+      <!-- Logo Area -->
       <div class="logo-area">
-        <img src="img/LOGO KONAWE.png" alt="Logo Pemda Konawe" class="logo-konawe" id="logoKonawe">
+        <div class="logo-wrapper">
+          <img src="img/LOGO KONAWE.png" alt="Logo Pemda Konawe" class="logo-konawe" id="logoKonawe">
+        </div>
         <div class="brand-text">
-          <span class="pemda-title">Pemda Konawe</span>
+          <span class="pemda-title">PEMDA KONAWE</span>
           <span class="pemda-sub">Dinas Perhubungan</span>
         </div>
       </div>
 
+      <!-- Toggle Mobile -->
       <button class="nav-toggle" id="navToggle" aria-label="Menu">
         <i class="fas fa-bars"></i>
       </button>
 
+      <!-- Nav Menu -->
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Beranda</a></li>
-        <li><a href="#profil" class="nav-link"><i class="fas fa-building"></i> Profil</a></li>
-        <li><a href="#layanan" class="nav-link"><i class="fas fa-cogs"></i> Layanan</a></li>
-        <li><a href="#info" class="nav-link"><i class="fas fa-info-circle"></i> Informasi</a></li>
-        <li><a href="#galeri" class="nav-link"><i class="fas fa-images"></i> Galeri</a></li>
-        <li><a href="#peta-lokasi" class="nav-link"><i class="fas fa-map-marked-alt"></i> Peta Lokasi</a></li>
-        <li><a href="#kontak" class="nav-link"><i class="fas fa-phone-alt"></i> Pengaduan</a></li>
-        <li><a href="#saran" class="nav-link"><i class="fas fa-comment"></i> Saran</a></li>
-        <li><a href="https://siramal.bikinaplikasi.site/login" class="nav-link"><i class="fas fa-key"></i> login</a></li>
+        <li>
+          <a href="#home" class="nav-link">
+            <i class="fas fa-home"></i>
+            <span>Beranda</span>
+          </a>
+        </li>
+        <li>
+          <a href="#profil" class="nav-link">
+            <i class="fas fa-building"></i>
+            <span>Profil</span>
+          </a>
+        </li>
+        <li>
+          <a href="#layanan" class="nav-link">
+            <i class="fas fa-cogs"></i>
+            <span>Layanan</span>
+          </a>
+        </li>
+        <li>
+          <a href="#info" class="nav-link">
+            <i class="fas fa-info-circle"></i>
+            <span>Informasi</span>
+          </a>
+        </li>
+        <li>
+          <a href="#galeri" class="nav-link">
+            <i class="fas fa-images"></i>
+            <span>Galeri</span>
+          </a>
+        </li>
+        <li>
+          <a href="#peta-lokasi" class="nav-link">
+            <i class="fas fa-map-marked-alt"></i>
+            <span>Peta Lokasi</span>
+          </a>
+        </li>
+        <li>
+          <a href="#kontak" class="nav-link">
+            <i class="fas fa-phone-alt"></i>
+            <span>Pengaduan</span>
+          </a>
+        </li>
+        <li>
+          <a href="#saran" class="nav-link">
+            <i class="fas fa-comment"></i>
+            <span>Saran</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://siramal.bikinaplikasi.site/login" class="nav-link nav-login" target="_blank">
+            <i class="fas fa-key"></i>
+            <span>Login</span>
+          </a>
+        </li>
 
+        <!-- Social Media -->
         <li class="social-nav-item">
           <div class="social-nav-icons">
-            <a href="https://www.facebook.com/profile.php?id=61578593407355" class="social-icon" id="fbIcon" target="_blank" title="Facebook Dinas Perhubungan Konawe">
+            <a href="https://www.facebook.com/profile.php?id=61578593407355" 
+               class="social-icon social-fb" 
+               target="_blank" 
+               title="Facebook Dinas Perhubungan Konawe">
               <i class="fab fa-facebook-f"></i>
               <span class="tooltip">Facebook</span>
             </a>
-            <a href="https://www.instagram.com/dinasperhubungankonawekab/" class="social-icon" id="igIcon" target="_blank" title="Instagram Dinas Perhubungan Konawe">
+            <a href="https://www.instagram.com/dinasperhubungankonawekab/" 
+               class="social-icon social-ig" 
+               target="_blank" 
+               title="Instagram Dinas Perhubungan Konawe">
               <i class="fab fa-instagram"></i>
               <span class="tooltip">Instagram</span>
             </a>
-            <span class="social-icon inactive" title="TikTok Dinas Perhubungan Konawe (Segera Hadir)">
+            <span class="social-icon social-tt inactive" title="TikTok Dinas Perhubungan Konawe (Segera Hadir)">
               <i class="fab fa-tiktok"></i>
               <span class="tooltip">TikTok (Segera)</span>
             </span>
           </div>
         </li>
       </ul>
+
     </div>
   </nav>
 
-  <!-- ==================== HERO SECTION (BUPATI & WAKIL BUPATI) ==================== -->
+  <!-- ==================== HERO SECTION ==================== -->
   <header id="home" class="hero-bg">
     <div class="hero-container">
 
-      <!-- Kolom Kiri: Teks -->
       <div class="hero-text" data-aos="fade-right">
         <span class="hero-badge">
           <i class="fas fa-landmark"></i> Pemerintah Kabupaten Konawe
@@ -106,7 +164,6 @@
         </div>
       </div>
 
-      <!-- Kolom Kanan: Foto Bupati & Wakil Bupati -->
       <div class="hero-leaders" data-aos="fade-left">
         <div class="leader-card">
           <div class="leader-photo">
@@ -195,46 +252,6 @@
   </section>
 
   <!-- ==================== LAYANAN PUBLIK ==================== -->
-  <!-- <section id="layanan" class="bg-light">
-    <div class="section-header" data-aos="fade-up">
-      <h2 class="text-center">LAYANAN PUBLIK</h2>
-      <p class="section-subtitle">Pelayanan prima bidang perhubungan untuk masyarakat Kabupaten Konawe</p>
-    </div>
-
-    <div class="layanan-grid">
-      <div class="layanan-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="layanan-icon"><i class="fas fa-id-card"></i></div>
-        <h3>Uji KIR Kendaraan</h3>
-        <p>Pengujian berkala kendaraan bermotor untuk memenuhi persyaratan teknis dan laik jalan.</p>
-        <div class="layanan-footer">
-          <span class="layanan-tag gratis">Gratis</span>
-          <a href="PelayananUjiKir.html" class="layanan-detail"><i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <div class="layanan-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="layanan-icon"><i class="fas fa-road"></i></div>
-        <h3>Izin Peminjaman Road Barrier</h3>
-        <p>Penerbitan izin Peminjaman Road Barrier/Pembatas Jalan.</p>
-        <div class="layanan-footer">
-          <span class="layanan-tag">Gratis</span>
-          <a href="Barrier.html" class="layanan-detail"><i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <div class="layanan-card" data-aos="fade-up" data-aos-delay="400">
-        <div class="layanan-icon"><i class="fas fa-lightbulb"></i></div>
-        <h3>Layanan Pemeliharaan dan Perbaikan LPJU</h3>
-        <p>Rekomendasi teknis untuk Pemeliharaan dan Perbaikan LPJU.</p>
-        <div class="layanan-footer">
-          <span class="layanan-tag gratis">Gratis</span>
-          <a href="layanan-LPJU.html" class="layanan-detail"><i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-    <!-- ==================== LAYANAN PUBLIK (BARU) ==================== -->
   <section id="layanan" class="bg-light">
     <div class="section-header" data-aos="fade-up">
       <h2 class="text-center">LAYANAN PUBLIK</h2>
@@ -242,7 +259,6 @@
     </div>
 
     <div class="sipaten-grid">
-      <!-- Tombol: Pinjam Barang Inventaris -->
       <a href="https://siramal.bikinaplikasi.site/layanan/peminjaman-barang" 
          target="_blank" 
          rel="noopener noreferrer"
@@ -259,7 +275,6 @@
         </span>
       </a>
 
-      <!-- Tombol: Permintaan Personil -->
       <a href="https://siramal.bikinaplikasi.site/layanan/permintaan-personel" 
          target="_blank" 
          rel="noopener noreferrer"
@@ -277,7 +292,6 @@
       </a>
     </div>
   </section>
-
 
   <!-- ==================== INFORMASI PUBLIK ==================== -->
   <section id="info">
@@ -653,15 +667,15 @@
   </a>
 
   <!-- ==================== MODAL PREVIEW FOTO PEJABAT ==================== -->
-<div class="foto-modal" id="fotoModal">
-  <span class="foto-modal-close" id="fotoModalClose">
-    <i class="fas fa-times"></i>
-  </span>
-  <div class="foto-modal-content">
-    <img src="" alt="Preview Foto Pejabat" id="fotoModalImg">
-    <div class="foto-modal-caption" id="fotoModalCaption"></div>
+  <div class="foto-modal" id="fotoModal">
+    <span class="foto-modal-close" id="fotoModalClose">
+      <i class="fas fa-times"></i>
+    </span>
+    <div class="foto-modal-content">
+      <img src="" alt="Preview Foto Pejabat" id="fotoModalImg">
+      <div class="foto-modal-caption" id="fotoModalCaption"></div>
+    </div>
   </div>
-</div>
 
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

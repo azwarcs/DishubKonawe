@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('scroll', function() {
   const navbar = document.querySelector('.navbar');
   const backToTop = document.getElementById('backToTop');
-  if (window.scrollY > 100) {
+  
+  if (window.scrollY > 50) {
     if (navbar) navbar.classList.add('scrolled');
     if (backToTop) {
       backToTop.style.opacity = '1';
@@ -67,7 +68,7 @@ if (backToTopBtn) {
 }
 
 // ============================================
-// MOBILE MENU TOGGLE (STYLE LPJU)
+// MOBILE MENU TOGGLE
 // ============================================
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
@@ -137,6 +138,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// ============================================
+// ACTIVE LINK NAVIGATION
+// ============================================
+function setActiveNavLink() {
+  const sections = document.querySelectorAll('section[id], header[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  let currentSection = '';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 150;
+    const sectionHeight = section.clientHeight;
+    const scrollY = window.scrollY;
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    const href = link.getAttribute('href');
+    if (href === `#${currentSection}`) {
+      link.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', setActiveNavLink);
+window.addEventListener('load', setActiveNavLink);
 
 // ============================================
 // FORM PENGADUAN
@@ -281,49 +311,6 @@ if (footerYear) {
 }
 
 // ============================================
-// ACTIVE LINK NAVIGATION
-// ============================================
-function setActiveNavLink() {
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
-  let currentSection = '';
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 150;
-    const sectionHeight = section.clientHeight;
-    const scrollY = window.scrollY;
-    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-      currentSection = section.getAttribute('id');
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    const href = link.getAttribute('href');
-    if (href === `#${currentSection}`) {
-      link.classList.add('active');
-    }
-  });
-}
-
-window.addEventListener('scroll', setActiveNavLink);
-window.addEventListener('load', setActiveNavLink);
-
-// ============================================
-// INTERSECTION OBSERVER
-// ============================================
-const observerOptions = { threshold: 0.1, rootMargin: '0px' };
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('aos-animate');
-    }
-  });
-}, observerOptions);
-
-document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
-
-// ============================================
 // FITUR SARAN & MASUKAN
 // ============================================
 let saranCounter = 0;
@@ -446,11 +433,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ============================================
-// KONFIRMASI
+// INTERSECTION OBSERVER
 // ============================================
-console.log('✅✅✅ WEBSITE DISHUB KONAWE SIAP! ✅✅✅');
-console.log('📊 Form pengaduan terhubung ke Google Sheets');
+const observerOptions = { threshold: 0.1, rootMargin: '0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('aos-animate');
+    }
+  });
+}, observerOptions);
 
+document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
 
 // ============================================
 // MODAL PREVIEW FOTO PEJABAT
@@ -463,14 +457,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (!fotoModal || !fotoModalImg) return;
 
-  // Klik foto pejabat → tampilkan modal
   document.querySelectorAll('.foto-pejabat').forEach(function(foto) {
     foto.addEventListener('click', function(e) {
       e.stopPropagation();
       const src = this.getAttribute('src');
       const alt = this.getAttribute('alt') || 'Foto Pejabat';
 
-      // Ambil nama & jabatan dari struktur-item
       const strukturItem = this.closest('.struktur-item');
       let caption = alt;
       if (strukturItem) {
@@ -483,21 +475,18 @@ document.addEventListener('DOMContentLoaded', function() {
       fotoModalImg.setAttribute('alt', alt);
       fotoModalCaption.textContent = caption;
       fotoModal.classList.add('active');
-      document.body.style.overflow = 'hidden'; // lock scroll
+      document.body.style.overflow = 'hidden';
     });
   });
 
-  // Fungsi tutup modal
   function closeModal() {
     fotoModal.classList.remove('active');
     document.body.style.overflow = '';
-    // Kosongkan src setelah animasi selesai
     setTimeout(function() {
       fotoModalImg.setAttribute('src', '');
     }, 300);
   }
 
-  // Tombol close
   if (fotoModalClose) {
     fotoModalClose.addEventListener('click', function(e) {
       e.stopPropagation();
@@ -505,15 +494,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Klik area gelap di luar gambar → tutup
   fotoModal.addEventListener('click', function(e) {
     if (e.target === fotoModal) closeModal();
   });
 
-  // Tekan tombol ESC → tutup
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && fotoModal.classList.contains('active')) {
       closeModal();
     }
   });
 });
+
+// ============================================
+// KONFIRMASI
+// ============================================
+console.log('✅✅✅ WEBSITE DISHUB KONAWE SIAP! ✅✅✅');
+console.log('🎨 Navbar Modern Premium Aktif');
+console.log('📊 Form pengaduan terhubung ke Google Sheets');
