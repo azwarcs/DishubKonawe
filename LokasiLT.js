@@ -7,10 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* ============================================
        1. DATA LAMPU TEMPEL
-       ============================================
-       Kategori kondisi:
-       - "Baik/Menyala"        → kondisi: "baik"
-       - "Mati/Tidak Menyala"  → kondisi: "rusak"
        ============================================ */
     const lampuData = [
         { id: "LT-001", kecamatan: "Sampara", desa: "Andaroa", lampu: "Mercuri", kondisi: "rusak", lat: -3.977851, lng: 122.415548 },
@@ -237,7 +233,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     </span>
                 `;
 
-                // Klik item → buka Google Maps di tab baru
                 div.addEventListener('click', function () {
                     const url = `https://www.google.com/maps/search/?api=1&query=${item.lat},${item.lng}`;
                     window.open(url, '_blank');
@@ -301,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Tutup menu saat klik link
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function () {
-                if (window.innerWidth <= 860) {
+                if (window.innerWidth <= 992) {
                     navMenu.classList.remove('active');
                     const icon = navToggle.querySelector('i');
                     if (icon) {
@@ -314,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Tutup menu saat klik di luar
         document.addEventListener('click', function (e) {
-            if (window.innerWidth <= 860 && navMenu.classList.contains('active')) {
+            if (window.innerWidth <= 992 && navMenu.classList.contains('active')) {
                 if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
                     navMenu.classList.remove('active');
                     const icon = navToggle.querySelector('i');
@@ -328,7 +323,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* ============================================
-       7. FALLBACK LOGO
+       7. NAVBAR SCROLL EFFECT
+       ============================================ */
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    /* ============================================
+       8. FALLBACK LOGO
        ============================================ */
     const logoImg = document.getElementById('logoKonawe');
     if (logoImg) {
@@ -338,7 +345,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (parent && !parent.querySelector('.logo-fallback')) {
                 const fallback = document.createElement('span');
                 fallback.className = 'logo-fallback';
-                fallback.style.cssText = 'background:#fff;padding:10px;border-radius:12px;font-weight:bold;font-size:12px;color:#0b2b3b;';
+                fallback.style.cssText = 'background:#fff;padding:10px;border-radius:8px;font-weight:bold;font-size:12px;color:#0d2233;';
                 fallback.innerText = 'Logo Konawe';
                 this.insertAdjacentElement('afterend', fallback);
             }
@@ -346,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* ============================================
-       8. INISIALISASI
+       9. INISIALISASI
        ============================================ */
     renderLokasi('all', '');
 
