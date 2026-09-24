@@ -1,116 +1,427 @@
-/* RESET & GLOBAL */
+/* ==================== RESET & GLOBAL ==================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --primary: #0b2b3b;
+    --primary-light: #1a4a5f;
+    --secondary: #ffb347;
+    --secondary-dark: #e5a600;
+    --accent: #dc2626;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --dark: #0f172a;
+    --gray: #64748b;
+    --light: #f8fafc;
+    --white: #ffffff;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
+    --shadow-lg: 0 16px 40px rgba(0,0,0,0.15);
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --transition: all 0.3s ease;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8fafc;
-    color: #0f172a;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
     line-height: 1.5;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* ============================================================ */
+/* ============== NAVBAR PROFESIONAL ELEGAN ================== */
+/* ============================================================ */
 .navbar {
-    background: linear-gradient(135deg, #0b2b3b 0%, #1a4a5f 100%);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: #0d2233;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    width: 100%;
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
 }
 
+.navbar.scrolled {
+    background: #0a1a26;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== CONTAINER 1 BARIS ===== */
 .nav-container {
-    max-width: 1280px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0.8rem 2rem;
+    padding: 0.7rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    transition: all 0.3s ease;
 }
 
+.navbar.scrolled .nav-container {
+    padding: 0.55rem 1.5rem;
+}
+
+/* ===== LOGO AREA ===== */
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    gap: 0.75rem;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
 }
 
 .logo-konawe {
-    height: 55px;
+    height: 42px;
     width: auto;
     object-fit: contain;
     background: white;
-    border-radius: 12px;
-    padding: 5px;
-    background-color: #9ec289;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.logo-konawe:hover {
+    transform: scale(1.04);
 }
 
 .brand-text {
     display: flex;
     flex-direction: column;
+    line-height: 1.15;
 }
 
-.dishub-title {
+.pemda-title {
     font-weight: 700;
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-    color: #ffd966;
+    font-size: 0.95rem;
+    letter-spacing: 1.2px;
+    color: #ffffff;
+    white-space: nowrap;
+    transition: color 0.3s ease;
 }
 
-.dishub-sub {
-    font-size: 0.75rem;
-    color: #e2e8f0;
+.pemda-sub {
+    font-size: 0.62rem;
+    color: #8b9cb3;
     font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 2px;
+    white-space: nowrap;
+    transition: color 0.3s ease;
 }
 
-/* NAV MENU */
+.logo-area:hover .pemda-sub {
+    color: #ffffff;
+}
+
+/* ===== NAV MENU ===== */
 .nav-menu {
     display: flex;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 0.2rem;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+    flex-shrink: 1;
+    min-width: 0;
     transition: all 0.3s ease;
 }
 
-.nav-link {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    border-radius: 30px;
-    transition: 0.2s;
+.nav-menu > li {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 1rem;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* Nav Link */
+.nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    position: relative;
 }
 
 .nav-link i {
-    font-size: 1.1rem;
+    font-size: 0.82rem;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
 }
 
-.nav-link:hover, .nav-link.active {
-    background-color: #ffb347;
-    color: #0a2f3b;
-    transform: translateY(-2px);
+.nav-link:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
 }
 
+.nav-link:hover i {
+    opacity: 1;
+}
+
+.nav-link.active {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 2px;
+    background: #4a9dbf;
+    border-radius: 2px;
+}
+
+/* ===== NAV TOGGLE (MOBILE) ===== */
 .nav-toggle {
     display: none;
-    background: transparent;
-    border: none;
-    font-size: 1.8rem;
-    color: white;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 1.1rem;
+    color: #ffffff;
     cursor: pointer;
+    padding: 0.5rem 0.7rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
 }
 
-/* MAIN CONTENT */
+.nav-toggle:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ============================================================ */
+/* ===== RESPONSIVE NAVBAR ==================================== */
+/* ============================================================ */
+
+/* Laptop kecil */
+@media (max-width: 1400px) {
+    .nav-container {
+        padding: 0.65rem 1.2rem;
+        gap: 0.7rem;
+    }
+    .nav-link {
+        padding: 0.45rem 0.6rem;
+        font-size: 0.76rem;
+        gap: 5px;
+    }
+    .nav-link i {
+        font-size: 0.78rem;
+    }
+    .nav-menu {
+        gap: 0.1rem;
+    }
+    .logo-konawe {
+        height: 38px;
+    }
+    .pemda-title {
+        font-size: 0.88rem;
+    }
+    .pemda-sub {
+        font-size: 0.58rem;
+    }
+}
+
+/* Tablet besar */
+@media (max-width: 1250px) {
+    .nav-container {
+        padding: 0.6rem 1rem;
+        gap: 0.5rem;
+    }
+    .nav-link {
+        padding: 0.45rem 0.55rem;
+        font-size: 0.74rem;
+        gap: 4px;
+    }
+    .nav-link i {
+        font-size: 0.75rem;
+    }
+    .logo-konawe {
+        height: 36px;
+        padding: 3px;
+    }
+    .pemda-title {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+    .pemda-sub {
+        font-size: 0.55rem;
+        letter-spacing: 1.2px;
+    }
+}
+
+/* Tablet - Sembunyikan brand text */
+@media (max-width: 1150px) {
+    .nav-container {
+        padding: 0.55rem 0.9rem;
+    }
+    .brand-text {
+        display: none;
+    }
+    .nav-link {
+        padding: 0.42rem 0.5rem;
+        font-size: 0.72rem;
+        gap: 4px;
+    }
+    .nav-link i {
+        font-size: 0.73rem;
+    }
+}
+
+/* Mobile & Tablet landscape (≤992px) */
+@media (max-width: 992px) {
+    .nav-container {
+        padding: 0.65rem 1rem;
+        flex-wrap: wrap;
+    }
+    .logo-konawe {
+        height: 40px;
+    }
+    .brand-text {
+        display: flex;
+    }
+    .pemda-title {
+        font-size: 0.95rem;
+    }
+    .pemda-sub {
+        font-size: 0.6rem;
+    }
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 56px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 56px);
+        background: #0a1a26;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        padding: 1.5rem 1.2rem;
+        gap: 0.4rem;
+        transition: left 0.3s ease;
+        z-index: 999;
+        overflow-y: auto;
+        flex-wrap: nowrap;
+        border-top: none;
+        margin: 0;
+        border-radius: 0;
+        max-width: 100%;
+        box-shadow: none;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu > li {
+        width: 100%;
+        justify-content: stretch;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+        width: 100%;
+        justify-content: flex-start;
+        border-radius: 8px;
+        gap: 10px;
+    }
+
+    .nav-link i {
+        font-size: 0.95rem;
+    }
+
+    .nav-link.active::after {
+        display: none;
+    }
+}
+
+/* Mobile Small (≤520px) */
+@media (max-width: 520px) {
+    .nav-container {
+        padding: 0.6rem 0.9rem;
+    }
+    .logo-konawe {
+        height: 38px;
+        padding: 3px;
+        border-radius: 7px;
+    }
+    .pemda-title {
+        font-size: 0.9rem;
+    }
+    .pemda-sub {
+        font-size: 0.56rem;
+        letter-spacing: 1.2px;
+    }
+
+    .nav-menu {
+        top: 54px;
+        height: calc(100vh - 54px);
+        padding: 1.2rem 1rem;
+    }
+    .nav-link {
+        font-size: 0.88rem;
+        padding: 0.7rem 0.9rem;
+    }
+}
+
+/* Mobile Very Small (≤380px) */
+@media (max-width: 380px) {
+    .logo-konawe {
+        height: 34px;
+        padding: 3px;
+        border-radius: 6px;
+    }
+    .pemda-title {
+        font-size: 0.82rem;
+        letter-spacing: 0.8px;
+    }
+    .pemda-sub {
+        font-size: 0.52rem;
+        letter-spacing: 1px;
+    }
+    .nav-link {
+        font-size: 0.85rem;
+    }
+}
+
+/* ==================== MAIN CONTENT ==================== */
 .inspeksi-container {
     max-width: 1280px;
     margin: 2rem auto;
@@ -141,7 +452,7 @@ body {
     color: #2c3e4e;
 }
 
-/* NEWS GRID (Card Responsif) - SAMA DENGAN LPJU */
+/* NEWS GRID - SAMA DENGAN LPJU */
 .news-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -255,53 +566,16 @@ body {
     font-size: 0.85rem;
 }
 
-/* RESPONSIVE DESIGN */
-@media screen and (max-width: 860px) {
-    .nav-container {
-        padding: 0.8rem 1.2rem;
-    }
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 75px;
-        flex-direction: column;
-        background-color: #0f3b4b;
-        width: 80%;
-        max-width: 300px;
-        height: calc(100% - 75px);
-        padding: 2rem 1.5rem;
-        gap: 1.8rem;
-        border-radius: 0 24px 24px 0;
-        transition: left 0.3s ease;
-        box-shadow: 5px 0 20px rgba(0,0,0,0.2);
-        z-index: 99;
-    }
-    .nav-menu.active {
-        left: 0;
-    }
-    .nav-toggle {
-        display: block;
-    }
-    .logo-area {
-        gap: 0.7rem;
-    }
-    .dishub-title {
-        font-size: 1rem;
-    }
-    .dishub-sub {
-        font-size: 0.65rem;
-    }
-    .hero-section h1 {
-        font-size: 1.6rem;
-    }
-}
-
+/* RESPONSIVE MAIN CONTENT */
 @media screen and (max-width: 520px) {
     .inspeksi-container {
         padding: 0 1rem;
     }
     .hero-section {
         padding: 1.2rem;
+    }
+    .hero-section h1 {
+        font-size: 1.4rem;
     }
     .news-grid {
         grid-template-columns: 1fr;
