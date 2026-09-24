@@ -3,8 +3,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // ========== DATA TITIK PEMBERHENTIAN ==========
-    // Koordinat menggunakan perkiraan lokasi di Kabupaten Konawe, Sulawesi Tenggara
-    // Anda bisa menyesuaikan koordinat sesuai dengan lokasi sebenarnya
     const busStops = [
         { id: 1, name: "Adipura Kab. Konawe", address: "Pusat Kabupaten Konawe", lat: -3.8628415069004967, lng: 122.05224480274089, type: "start", 
           photo: "img/TUGU ADIPURA.png", description: "Titik keberangkatan bus sekolah. Bus mulai berangkat menjemput anak sekolah pukul 06.00 WITA" },
@@ -31,13 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     // ========== INISIALISASI PETA ==========
-    // Menggunakan koordinat pusat Unaaha, Konawe
     const map = L.map('busMap').setView([-3.8628415069004967, 122.05224480274089], 14);
 
-    // Tile layer (peta dasar)
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
+    // ✅ TILE LAYER BARU: OpenStreetMap (100% gratis, tanpa API key)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 19,
         minZoom: 10
     }).addTo(map);
@@ -45,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========== MENAMBAHKAN MARKER & POPUP FOTO ==========
     const markers = [];
     
-    // Warna marker berdasarkan tipe
     function getMarkerIcon(type) {
         let color = type === 'start' ? '#22c55e' : (type === 'end' ? '#ef4444' : '#f59e0b');
         return L.divIcon({
@@ -71,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
             `);
         
         marker.on('popupopen', function() {
-            // Tambahkan event listener setelah popup terbuka
             setTimeout(() => {
                 const popupContent = document.querySelector('.leaflet-popup-content');
                 if(popupContent) {
@@ -105,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         
         stopDiv.addEventListener('click', () => {
-            // Klik daftar: center peta ke marker dan buka popup
             const markerData = markers.find(m => m.stop.id === stop.id);
             if(markerData) {
                 map.setView([stop.lat, stop.lng], 16);
@@ -127,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.showStopPhoto = function(stopId) {
         const stop = busStops.find(s => s.id === stopId);
         if(stop) {
-            // Gunakan gambar placeholder jika file belum ada
             const imgSrc = stop.photo;
             modalPhoto.src = imgSrc;
             modalPhoto.onerror = function() {
@@ -145,7 +137,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // Tutup modal
     modalClose.onclick = function() {
         modal.style.display = 'none';
     };
@@ -176,13 +167,25 @@ document.addEventListener('DOMContentLoaded', function() {
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                if(window.innerWidth <= 860) {
+                if(window.innerWidth <= 992) {
                     navMenu.classList.remove('active');
                     const icon = navToggle.querySelector('i');
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
                 }
             });
+        });
+    }
+
+    // ========== NAVBAR SCROLL EFFECT ==========
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
     }
     
@@ -197,9 +200,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 fallbackSpan.className = 'logo-fallback';
                 fallbackSpan.style.backgroundColor = '#fff';
                 fallbackSpan.style.padding = '10px';
-                fallbackSpan.style.borderRadius = '12px';
+                fallbackSpan.style.borderRadius = '8px';
                 fallbackSpan.style.fontWeight = 'bold';
                 fallbackSpan.style.fontSize = '12px';
+                fallbackSpan.style.color = '#0d2233';
                 fallbackSpan.innerText = 'Logo Konawe';
                 this.insertAdjacentElement('afterend', fallbackSpan);
             }
@@ -208,9 +212,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Halaman Rute Bus Sekolah - Kabupaten Konawe siap');
     
-    // Gambar garis rute (polyline) menghubungkan semua titik berurutan
+    // Garis rute (polyline) menghubungkan semua titik berurutan
     const routeCoordinates = busStops.map(stop => [stop.lat, stop.lng]);
-    const routeLine = L.polyline(routeCoordinates, {
+    L.polyline(routeCoordinates, {
         color: '#f59e0b',
         weight: 4,
         opacity: 0.7,
