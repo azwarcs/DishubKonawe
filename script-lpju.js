@@ -1,14 +1,19 @@
-// LPJU.js - Navigasi dan penguatan responsif
+/* ============================================================
+   script-lpju.js - Navbar & Interaksi Halaman LPJU
+   Dinas Perhubungan Kabupaten Konawe
+   ============================================================ */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
+
+    /* ============================================
+       1. MOBILE MENU TOGGLE
+       ============================================ */
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
-    
+
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
-            // Ubah icon hamburger menjadi X jika perlu (opsional)
             const icon = navToggle.querySelector('i');
             if (navMenu.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
@@ -18,53 +23,87 @@ document.addEventListener('DOMContentLoaded', function() {
                 icon.classList.add('fa-bars');
             }
         });
-        
-        // Tutup menu ketika klik link di mobile
+
+        // Tutup menu saat klik link (mobile)
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                if (window.innerWidth <= 860) {
+                if (window.innerWidth <= 992) {
                     navMenu.classList.remove('active');
                     const icon = navToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
                 }
             });
         });
+
+        // Tutup menu saat klik di luar
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 992 && navMenu.classList.contains('active')) {
+                if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    const icon = navToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            }
+        });
     }
-    
-    // Validasi gambar (Jika gambar gagal dimuat, fallback sudah dari HTML onerror)
-    // Memberikan efek smooth pada card
+
+    /* ============================================
+       2. NAVBAR SCROLL EFFECT
+       ============================================ */
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
+
+    /* ============================================
+       3. EFEK SMOOTH PADA CARD BERITA
+       ============================================ */
     const cards = document.querySelectorAll('.news-card');
     cards.forEach(card => {
         card.addEventListener('click', (e) => {
-            // Hanya untuk efek, tidak mengganggu jika ada link di dalam
-            if(e.target.tagName === 'A') return;
+            if (e.target.tagName === 'A') return;
             console.log('Klik card berita');
         });
     });
-    
-    // Optional: Menampilkan pesan sambutan ringan di console
-    console.log('Halaman LPJU - Dinas Perhubungan Kabupaten Konawe siap digunakan');
-    
-    // Deteksi jika logo tidak ada, beri placeholder (tapi lebih baik Anda pasang file logo sendiri)
+
+    /* ============================================
+       4. FALLBACK LOGO
+       ============================================ */
     const logoImg = document.getElementById('logoKonawe');
-    if(logoImg) {
+    if (logoImg) {
         logoImg.addEventListener('error', function() {
             this.style.display = 'none';
-            // Anda bisa menambahkan text fallback jika logo tidak ditemukan
             const parent = this.closest('.logo-area');
-            if(parent && !parent.querySelector('.logo-fallback')) {
+            if (parent && !parent.querySelector('.logo-fallback')) {
                 const fallbackSpan = document.createElement('span');
                 fallbackSpan.className = 'logo-fallback';
                 fallbackSpan.style.backgroundColor = '#fff';
                 fallbackSpan.style.padding = '10px';
-                fallbackSpan.style.borderRadius = '12px';
+                fallbackSpan.style.borderRadius = '8px';
                 fallbackSpan.style.fontWeight = 'bold';
                 fallbackSpan.style.fontSize = '12px';
+                fallbackSpan.style.color = '#0d2233';
                 fallbackSpan.innerText = 'Logo Konawe';
                 this.insertAdjacentElement('afterend', fallbackSpan);
             }
         });
     }
+
+    /* ============================================
+       5. LOG KONFIRMASI
+       ============================================ */
+    console.log('✅ Halaman LPJU - Dinas Perhubungan Kabupaten Konawe siap digunakan');
 });
