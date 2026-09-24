@@ -1,4 +1,4 @@
-// rute-bus-sekolah.js - Peta dan interaksi titik pemberhentian
+// rute-bus-sekolah-siang.js - Peta dan interaksi titik pemberhentian
 
 document.addEventListener('DOMContentLoaded', function() {
             
@@ -30,10 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========== INISIALISASI PETA ==========
     const map = L.map('busMap').setView([-3.8628415069004967, 122.05224480274089], 14);
 
-    // Tile layer (peta dasar)
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
+    // ✅ TILE LAYER BARU: OpenStreetMap (100% gratis, tanpa API key)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 19,
         minZoom: 10
     }).addTo(map);
@@ -167,13 +166,25 @@ document.addEventListener('DOMContentLoaded', function() {
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                if(window.innerWidth <= 860) {
+                if(window.innerWidth <= 992) {
                     navMenu.classList.remove('active');
                     const icon = navToggle.querySelector('i');
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
                 }
             });
+        });
+    }
+
+    // ========== NAVBAR SCROLL EFFECT ==========
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
     }
     
@@ -188,20 +199,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 fallbackSpan.className = 'logo-fallback';
                 fallbackSpan.style.backgroundColor = '#fff';
                 fallbackSpan.style.padding = '10px';
-                fallbackSpan.style.borderRadius = '12px';
+                fallbackSpan.style.borderRadius = '8px';
                 fallbackSpan.style.fontWeight = 'bold';
                 fallbackSpan.style.fontSize = '12px';
+                fallbackSpan.style.color = '#0d2233';
                 fallbackSpan.innerText = 'Logo Konawe';
                 this.insertAdjacentElement('afterend', fallbackSpan);
             }
         });
     }
     
-    console.log('Halaman Rute Bus Sekolah - Kabupaten Konawe siap');
+    console.log('Halaman Rute Bus Sekolah Siang - Kabupaten Konawe siap');
     
-    // Gambar garis rute (polyline) menghubungkan semua titik berurutan
+    // Garis rute (polyline) menghubungkan semua titik berurutan
     const routeCoordinates = busStops.map(stop => [stop.lat, stop.lng]);
-    const routeLine = L.polyline(routeCoordinates, {
+    L.polyline(routeCoordinates, {
         color: '#f59e0b',
         weight: 4,
         opacity: 0.7,
