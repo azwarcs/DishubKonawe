@@ -135,7 +135,6 @@ section {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* ===== CONTAINER 1 BARIS ===== */
 .nav-container {
   max-width: 100%;
   margin: 0 auto;
@@ -152,7 +151,6 @@ section {
   padding: 0.55rem 1.5rem;
 }
 
-/* ===== LOGO AREA ===== */
 .logo-area {
   display: flex;
   align-items: center;
@@ -212,7 +210,6 @@ section {
   color: #ffffff;
 }
 
-/* ===== NAV MENU ===== */
 .nav-menu {
   display: flex;
   align-items: center;
@@ -232,7 +229,6 @@ section {
   flex-shrink: 0;
 }
 
-/* Nav Link - Clean & Elegant */
 .nav-link {
   color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
@@ -254,7 +250,6 @@ section {
   transition: opacity 0.2s ease;
 }
 
-/* Hover Effect - Simple & Professional */
 .nav-link:hover {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.06);
@@ -264,7 +259,6 @@ section {
   opacity: 1;
 }
 
-/* Active State - Underline halus */
 .nav-link.active {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.08);
@@ -282,7 +276,6 @@ section {
   border-radius: 2px;
 }
 
-/* ===== LOGIN BUTTON - Outline Elegant ===== */
 .nav-link.nav-login {
   background: transparent;
   color: #ffffff;
@@ -302,7 +295,6 @@ section {
   opacity: 1;
 }
 
-/* ===== SOCIAL MEDIA ICONS - Minimalis ===== */
 .social-nav-item {
   display: flex;
   align-items: center;
@@ -369,7 +361,6 @@ section {
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* Tooltip Sederhana */
 .social-nav-icons .social-icon .tooltip {
   position: absolute;
   bottom: calc(100% + 8px);
@@ -407,7 +398,6 @@ section {
   transform: translateX(-50%) translateY(0);
 }
 
-/* ===== NAV TOGGLE (MOBILE) ===== */
 .nav-toggle {
   display: none;
   background: rgba(255, 255, 255, 0.06);
@@ -426,149 +416,53 @@ section {
   border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* ============================================================ */
-/* ===== RESPONSIVE NAVBAR ==================================== */
-/* ============================================================ */
-
-/* Laptop kecil */
+/* ============ RESPONSIVE NAVBAR ============ */
 @media (max-width: 1400px) {
-  .nav-container {
-    padding: 0.65rem 1.2rem;
-    gap: 0.7rem;
-  }
-  .nav-link {
-    padding: 0.45rem 0.6rem;
-    font-size: 0.76rem;
-    gap: 5px;
-  }
-  .nav-link i {
-    font-size: 0.78rem;
-  }
-  .nav-menu {
-    gap: 0.1rem;
-  }
-  .logo-konawe {
-    height: 38px;
-  }
-  .pemda-title {
-    font-size: 0.88rem;
-  }
-  .pemda-sub {
-    font-size: 0.58rem;
-  }
-  .social-nav-icons .social-icon {
-    width: 30px;
-    height: 30px;
-    font-size: 0.75rem;
-  }
-  .social-nav-icons .social-icon i {
-    font-size: 0.75rem;
-  }
-  .social-nav-item {
-    margin-left: 8px !important;
-  }
-  .social-nav-item::before {
-    margin-right: 10px;
-  }
+  .nav-container { padding: 0.65rem 1.2rem; gap: 0.7rem; }
+  .nav-link { padding: 0.45rem 0.6rem; font-size: 0.76rem; gap: 5px; }
+  .nav-link i { font-size: 0.78rem; }
+  .nav-menu { gap: 0.1rem; }
+  .logo-konawe { height: 38px; }
+  .pemda-title { font-size: 0.88rem; }
+  .pemda-sub { font-size: 0.58rem; }
+  .social-nav-icons .social-icon { width: 30px; height: 30px; font-size: 0.75rem; }
+  .social-nav-icons .social-icon i { font-size: 0.75rem; }
+  .social-nav-item { margin-left: 8px !important; }
+  .social-nav-item::before { margin-right: 10px; }
 }
 
-/* Tablet besar */
 @media (max-width: 1250px) {
-  .nav-container {
-    padding: 0.6rem 1rem;
-    gap: 0.5rem;
-  }
-  .nav-link {
-    padding: 0.45rem 0.55rem;
-    font-size: 0.74rem;
-    gap: 4px;
-  }
-  .nav-link i {
-    font-size: 0.75rem;
-  }
-  .logo-konawe {
-    height: 36px;
-    padding: 3px;
-  }
-  .pemda-title {
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-  }
-  .pemda-sub {
-    font-size: 0.55rem;
-    letter-spacing: 1.2px;
-  }
-  .nav-link.nav-login {
-    padding: 0.42rem 0.8rem;
-  }
-  .social-nav-icons .social-icon {
-    width: 28px;
-    height: 28px;
-    font-size: 0.72rem;
-  }
-  .social-nav-icons .social-icon i {
-    font-size: 0.72rem;
-  }
+  .nav-container { padding: 0.6rem 1rem; gap: 0.5rem; }
+  .nav-link { padding: 0.45rem 0.55rem; font-size: 0.74rem; gap: 4px; }
+  .nav-link i { font-size: 0.75rem; }
+  .logo-konawe { height: 36px; padding: 3px; }
+  .pemda-title { font-size: 0.85rem; letter-spacing: 1px; }
+  .pemda-sub { font-size: 0.55rem; letter-spacing: 1.2px; }
+  .nav-link.nav-login { padding: 0.42rem 0.8rem; }
+  .social-nav-icons .social-icon { width: 28px; height: 28px; font-size: 0.72rem; }
+  .social-nav-icons .social-icon i { font-size: 0.72rem; }
 }
 
-/* Tablet - Sembunyikan brand text */
 @media (max-width: 1150px) {
-  .nav-container {
-    padding: 0.55rem 0.9rem;
-  }
-  .brand-text {
-    display: none;
-  }
-  .nav-link {
-    padding: 0.42rem 0.5rem;
-    font-size: 0.72rem;
-    gap: 4px;
-  }
-  .nav-link i {
-    font-size: 0.73rem;
-  }
-  .nav-link.nav-login {
-    padding: 0.42rem 0.75rem;
-  }
-  .social-nav-icons .social-icon {
-    width: 26px;
-    height: 26px;
-    font-size: 0.68rem;
-  }
-  .social-nav-icons .social-icon i {
-    font-size: 0.68rem;
-  }
-  .social-nav-item {
-    margin-left: 6px !important;
-  }
-  .social-nav-item::before {
-    margin-right: 8px;
-  }
+  .nav-container { padding: 0.55rem 0.9rem; }
+  .brand-text { display: none; }
+  .nav-link { padding: 0.42rem 0.5rem; font-size: 0.72rem; gap: 4px; }
+  .nav-link i { font-size: 0.73rem; }
+  .nav-link.nav-login { padding: 0.42rem 0.75rem; }
+  .social-nav-icons .social-icon { width: 26px; height: 26px; font-size: 0.68rem; }
+  .social-nav-icons .social-icon i { font-size: 0.68rem; }
+  .social-nav-item { margin-left: 6px !important; }
+  .social-nav-item::before { margin-right: 8px; }
 }
 
-/* ===== MOBILE & TABLET LANDSCAPE (≤992px) ===== */
 @media (max-width: 992px) {
-  .nav-container {
-    padding: 0.65rem 1rem;
-    flex-wrap: wrap;
-  }
-  .logo-konawe {
-    height: 40px;
-  }
-  .brand-text {
-    display: flex;
-  }
-  .pemda-title {
-    font-size: 0.95rem;
-  }
-  .pemda-sub {
-    font-size: 0.6rem;
-  }
-  .nav-toggle {
-    display: block;
-  }
+  .nav-container { padding: 0.65rem 1rem; flex-wrap: wrap; }
+  .logo-konawe { height: 40px; }
+  .brand-text { display: flex; }
+  .pemda-title { font-size: 0.95rem; }
+  .pemda-sub { font-size: 0.6rem; }
+  .nav-toggle { display: block; }
 
-  /* ✅ FIX: top = 56px (pas dengan tinggi navbar mobile, tanpa gap) */
   .nav-menu {
     position: fixed;
     top: 56px;
@@ -585,132 +479,43 @@ section {
     z-index: 999;
     overflow-y: auto;
     flex-wrap: nowrap;
-    border-top: none;              /* ✅ hilangkan border yang bikin garis */
-    margin: 0;                     /* ✅ hilangkan margin */
+    border-top: none;
+    margin: 0;
+    border-radius: 0;
+    max-width: 100%;
+    box-shadow: none;
   }
 
-  .nav-menu.active {
-    left: 0;
-  }
-
-  .nav-menu > li {
-    width: 100%;
-    justify-content: stretch;
-  }
-
-  .nav-link {
-    font-size: 0.9rem;
-    padding: 0.75rem 1rem;
-    width: 100%;
-    justify-content: flex-start;
-    border-radius: 8px;
-    gap: 10px;
-  }
-
-  .nav-link i {
-    font-size: 0.95rem;
-  }
-
-  .nav-link.active::after {
-    display: none;
-  }
-
-  .nav-link.nav-login {
-    margin-top: 8px;
-    margin-left: 0;
-    padding: 0.75rem 1rem;
-    justify-content: center;
-    border: 1.5px solid rgba(255, 255, 255, 0.35);
-  }
-
-  .social-nav-item {
-    width: 100%;
-    justify-content: center;
-    padding-top: 16px !important;
-    margin: 12px 0 0 0 !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .social-nav-item::before {
-    display: none;
-  }
-
-  .social-nav-icons {
-    gap: 10px;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .social-nav-icons .social-icon {
-    width: 42px;
-    height: 42px;
-    font-size: 1rem;
-  }
-
-  .social-nav-icons .social-icon i {
-    font-size: 1rem;
-  }
-
-  .social-nav-icons .social-icon .tooltip {
-    display: none;
-  }
+  .nav-menu.active { left: 0; }
+  .nav-menu > li { width: 100%; justify-content: stretch; }
+  .nav-link { font-size: 0.9rem; padding: 0.75rem 1rem; width: 100%; justify-content: flex-start; border-radius: 8px; gap: 10px; }
+  .nav-link i { font-size: 0.95rem; }
+  .nav-link.active::after { display: none; }
+  .nav-link.nav-login { margin-top: 8px; margin-left: 0; padding: 0.75rem 1rem; justify-content: center; border: 1.5px solid rgba(255, 255, 255, 0.35); }
+  .social-nav-item { width: 100%; justify-content: center; padding-top: 16px !important; margin: 12px 0 0 0 !important; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+  .social-nav-item::before { display: none; }
+  .social-nav-icons { gap: 10px; justify-content: center; width: 100%; }
+  .social-nav-icons .social-icon { width: 42px; height: 42px; font-size: 1rem; }
+  .social-nav-icons .social-icon i { font-size: 1rem; }
+  .social-nav-icons .social-icon .tooltip { display: none; }
 }
 
-/* Mobile Kecil (≤520px) */
 @media (max-width: 520px) {
-  .nav-container {
-    padding: 0.6rem 0.9rem;
-  }
-  .logo-konawe {
-    height: 38px;
-    padding: 3px;
-    border-radius: 7px;
-  }
-  .pemda-title {
-    font-size: 0.9rem;
-  }
-  .pemda-sub {
-    font-size: 0.56rem;
-    letter-spacing: 1.2px;
-  }
-
-  /* ✅ FIX: top = 54px, pas untuk layar kecil */
-  .nav-menu {
-    top: 54px;
-    height: calc(100vh - 54px);
-    padding: 1.2rem 1rem;
-  }
-  .nav-link {
-    font-size: 0.88rem;
-    padding: 0.7rem 0.9rem;
-  }
-  .social-nav-icons .social-icon {
-    width: 40px;
-    height: 40px;
-  }
-  .social-nav-icons .social-icon i {
-    font-size: 0.95rem;
-  }
+  .nav-container { padding: 0.6rem 0.9rem; }
+  .logo-konawe { height: 38px; padding: 3px; border-radius: 7px; }
+  .pemda-title { font-size: 0.9rem; }
+  .pemda-sub { font-size: 0.56rem; letter-spacing: 1.2px; }
+  .nav-menu { top: 54px; height: calc(100vh - 54px); padding: 1.2rem 1rem; }
+  .nav-link { font-size: 0.88rem; padding: 0.7rem 0.9rem; }
+  .social-nav-icons .social-icon { width: 40px; height: 40px; }
+  .social-nav-icons .social-icon i { font-size: 0.95rem; }
 }
 
-/* Mobile Sangat Kecil (≤380px) */
 @media (max-width: 380px) {
-  .logo-konawe {
-    height: 34px;
-    padding: 3px;
-    border-radius: 6px;
-  }
-  .pemda-title {
-    font-size: 0.82rem;
-    letter-spacing: 0.8px;
-  }
-  .pemda-sub {
-    font-size: 0.52rem;
-    letter-spacing: 1px;
-  }
-  .nav-link {
-    font-size: 0.85rem;
-  }
+  .logo-konawe { height: 34px; padding: 3px; border-radius: 6px; }
+  .pemda-title { font-size: 0.82rem; letter-spacing: 0.8px; }
+  .pemda-sub { font-size: 0.52rem; letter-spacing: 1px; }
+  .nav-link { font-size: 0.85rem; }
 }
 
 /* ============================================ */
@@ -763,10 +568,7 @@ section {
   align-items: center;
 }
 
-.hero-text {
-  display: flex;
-  flex-direction: column;
-}
+.hero-text { display: flex; flex-direction: column; }
 
 .hero-badge {
   display: inline-flex;
@@ -849,7 +651,6 @@ section {
   font-weight: 500;
 }
 
-/* ====== FOTO BUPATI & WAKIL ====== */
 .hero-leaders {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -875,20 +676,14 @@ section {
   background: white;
   border-radius: 16px 16px 0 0;
   overflow: hidden;
-  box-shadow:
-    0 20px 40px rgba(11, 79, 108, 0.15),
-    0 0 0 4px white,
-    0 0 0 5px rgba(11, 79, 108, 0.08);
+  box-shadow: 0 20px 40px rgba(11, 79, 108, 0.15), 0 0 0 4px white, 0 0 0 5px rgba(11, 79, 108, 0.08);
   transition: all 0.4s ease;
   margin-bottom: 0;
   flex-shrink: 0;
 }
 
 .leader-card:hover .leader-photo {
-  box-shadow:
-    0 25px 50px rgba(11, 79, 108, 0.25),
-    0 0 0 4px white,
-    0 0 0 6px var(--secondary);
+  box-shadow: 0 25px 50px rgba(11, 79, 108, 0.25), 0 0 0 4px white, 0 0 0 6px var(--secondary);
 }
 
 .leader-photo img {
@@ -965,7 +760,6 @@ section {
 
 .visi-icon { background: var(--primary-light); }
 .visi-icon i { color: white; font-size: 1.3rem; }
-
 .misi-icon { background: var(--secondary); }
 .misi-icon i { color: var(--dark); font-size: 1.3rem; }
 
@@ -1022,88 +816,7 @@ section {
 .struktur-item .nama { font-size: 0.8rem; opacity: 0.9; }
 
 /* ============================================ */
-/* ============ LAYANAN ======================= */
-/* ============================================ */
-.layanan-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  padding: 40px 0;
-}
-
-.layanan-card {
-  background: white;
-  border-radius: 15px;
-  padding: 25px 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #f0f0f0;
-  display: flex;
-  flex-direction: column;
-}
-
-.layanan-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(102,126,234,0.15);
-  border-color: #667eea;
-}
-
-.layanan-icon {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  transition: transform 0.5s ease;
-}
-
-.layanan-card:hover .layanan-icon { transform: rotate(360deg); }
-.layanan-icon i { font-size: 26px; color: white; }
-
-.layanan-card h3 { font-size: 1.2rem; font-weight: 600; color: #333; margin-bottom: 12px; }
-.layanan-card p { color: #666; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; flex-grow: 1; }
-
-.layanan-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
-  border-top: 1px solid #f0f0f0;
-  padding-top: 15px;
-}
-
-.layanan-tag {
-  display: inline-block;
-  padding: 5px 12px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-  border-radius: 50px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.layanan-tag.gratis { background: linear-gradient(135deg, #28a745, #20c997); }
-
-.layanan-detail {
-  width: 35px;
-  height: 35px;
-  background: #f8f9fa;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #667eea;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.layanan-detail:hover { background: #667eea; color: white; transform: translateX(5px); }
-
-/* ============================================ */
-/* ===== SIPATEN (LAYANAN PUBLIK BARU) ======== */
+/* ===== SIPATEN (LAYANAN PUBLIK) ============= */
 /* ============================================ */
 .sipaten-grid {
   display: grid;
@@ -1172,25 +885,12 @@ section {
   transition: transform 0.4s ease;
 }
 
-.sipaten-card:hover .sipaten-icon {
-  transform: scale(1.1) rotate(-5deg);
-}
+.sipaten-card:hover .sipaten-icon { transform: scale(1.1) rotate(-5deg); }
+.sipaten-card:hover .sipaten-icon i { transform: scale(1.1); }
 
-.sipaten-card:hover .sipaten-icon i {
-  transform: scale(1.1);
-}
-
-.sipaten-card-barang .sipaten-icon {
-  background: linear-gradient(135deg, #0B4F6C, #1A759F);
-}
-
-.sipaten-card-personil .sipaten-icon {
-  background: linear-gradient(135deg, #FDB913, #e5a600);
-}
-
-.sipaten-card-personil .sipaten-icon i {
-  color: var(--dark);
-}
+.sipaten-card-barang .sipaten-icon { background: linear-gradient(135deg, #0B4F6C, #1A759F); }
+.sipaten-card-personil .sipaten-icon { background: linear-gradient(135deg, #FDB913, #e5a600); }
+.sipaten-card-personil .sipaten-icon i { color: var(--dark); }
 
 .sipaten-card-barang::before { background: #0B4F6C; }
 .sipaten-card-personil::before { background: #FDB913; }
@@ -1242,18 +942,9 @@ section {
   box-shadow: 0 8px 20px rgba(253, 185, 19, 0.4);
 }
 
-.sipaten-btn i {
-  font-size: 0.85rem;
-  transition: transform 0.3s ease;
-}
-
-.sipaten-card:hover .sipaten-btn {
-  transform: translateY(-2px);
-}
-
-.sipaten-card:hover .sipaten-btn i {
-  transform: translate(3px, -3px);
-}
+.sipaten-btn i { font-size: 0.85rem; transition: transform 0.3s ease; }
+.sipaten-card:hover .sipaten-btn { transform: translateY(-2px); }
+.sipaten-card:hover .sipaten-btn i { transform: translate(3px, -3px); }
 
 /* ============================================ */
 /* ============ INFO SECTION ================== */
@@ -1296,14 +987,7 @@ section {
 
 .info-header h3 { font-size: 1.3rem; font-weight: 700; margin: 0; color: white; }
 
-.info-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+.info-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
 
 .info-list li {
   background: rgba(255,255,255,0.08);
@@ -1416,11 +1100,8 @@ section {
 }
 
 .statistik-item { padding: 15px; }
-
 .statistik-icon { font-size: 2.5rem; color: var(--secondary); margin-bottom: 12px; }
-
 .statistik-angka { font-size: 2.5rem; font-weight: 800; margin-bottom: 5px; }
-
 .statistik-item p { font-size: 0.95rem; }
 
 /* ============================================ */
@@ -1453,7 +1134,6 @@ section {
 }
 
 .galeri-placeholder i { font-size: 2.5rem; margin-bottom: 12px; }
-
 .galeri-item:hover .galeri-placeholder { transform: scale(1.05); }
 
 .galeri-caption {
@@ -1469,7 +1149,6 @@ section {
 }
 
 .galeri-item:hover .galeri-caption { transform: translateY(0); }
-
 .galeri-caption h4 { font-size: 0.9rem; margin-bottom: 4px; }
 .galeri-caption p { font-size: 0.75rem; opacity: 0.8; }
 .galeri-link { text-decoration: none; }
@@ -1642,80 +1321,233 @@ section {
 .info-jam-layanan i { color: var(--accent); margin-right: 8px; }
 
 /* ============================================ */
-/* ============ MAP SECTION ================== */
+/* ===== PETA LOKASI KANTOR (PROFESIONAL) ===== */
 /* ============================================ */
-.map-section { margin-top: 45px; padding: 0 15px; }
-
-.map-container {
-  width: 100%;
-  height: 350px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  margin-bottom: 25px;
-  border: 4px solid white;
+.map-section {
+  margin-top: 50px;
+  padding: 0;
 }
 
-.map-container iframe { width: 100%; height: 100%; display: block; }
-
-.map-info {
+.map-header {
   display: flex;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: flex-end;
   gap: 20px;
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.map-info i {
-  font-size: 2rem;
-  color: #4CAF50;
-  background: #E8F5E9;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.map-info h3 { font-size: 1.1rem; color: #333; margin-bottom: 8px; }
-.map-info p { color: #666; margin-bottom: 12px; font-size: 0.85rem; }
-
-.coordinates {
-  display: flex;
-  gap: 15px;
-  background: #f5f5f5;
-  padding: 10px 12px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  font-family: monospace;
+  margin-bottom: 24px;
   flex-wrap: wrap;
 }
 
-.coordinates span { display: flex; align-items: center; gap: 5px; color: #555; font-size: 0.8rem; }
-.coordinates i { font-size: 0.9rem; width: auto; height: auto; background: transparent; color: var(--primary); }
+.map-header-left {
+  flex: 1;
+  min-width: 280px;
+}
 
-.btn-map {
+.map-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--primary);
+  background: linear-gradient(135deg, #0B4F6C, #1A759F);
   color: white;
-  padding: 10px 20px;
+  padding: 6px 16px;
   border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(11, 79, 108, 0.25);
+}
+
+.map-badge i { font-size: 0.8rem; }
+
+.map-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+.map-title::after { display: none; }
+
+.map-subtitle {
+  font-size: 0.95rem;
+  color: var(--gray);
+  margin: 0;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+.map-header-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #0B4F6C, #1A759F);
+  color: white;
   text-decoration: none;
-  font-weight: 500;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
-  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(11, 79, 108, 0.3);
+  border: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.map-header-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(11, 79, 108, 0.4);
+  background: linear-gradient(135deg, #083b4f, #0B4F6C);
+}
+
+.map-header-btn i { font-size: 0.95rem; }
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(11, 79, 108, 0.25), 0 0 0 1px rgba(11, 79, 108, 0.08);
+  background: #e9f0f5;
+}
+
+.map-embed {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.map-embed iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: saturate(0.95) contrast(1.02);
+}
+
+.map-overlay-card {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 380px;
+  max-width: calc(100% - 48px);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.8);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.map-overlay-card:hover {
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+.overlay-icon {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #0B4F6C, #1A759F);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 20px rgba(11, 79, 108, 0.3);
+}
+
+.overlay-icon i { font-size: 1.5rem; color: white; }
+
+.overlay-content h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+}
+
+.overlay-address {
+  font-size: 0.85rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0 0 18px 0;
+  padding-left: 22px;
+  position: relative;
+}
+
+.overlay-address i {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  color: var(--secondary-dark);
   font-size: 0.85rem;
 }
 
-.btn-map:hover { background: var(--secondary); transform: translateY(-2px); color: var(--dark); }
+.overlay-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.overlay-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.overlay-btn-primary {
+  background: linear-gradient(135deg, #0B4F6C, #1A759F);
+  color: white;
+  box-shadow: 0 6px 15px rgba(11, 79, 108, 0.3);
+}
+
+.overlay-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(11, 79, 108, 0.4);
+}
+
+.overlay-btn-secondary {
+  background: #f1f5f9;
+  color: var(--primary);
+  border: 1.5px solid #e2e8f0;
+}
+
+.overlay-btn-secondary:hover {
+  background: #e2e8f0;
+  transform: translateY(-2px);
+  border-color: var(--primary-light);
+}
+
+.overlay-btn i { font-size: 0.75rem; }
+
+.overlay-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.75rem;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+.overlay-footer span { display: inline-flex; align-items: center; gap: 5px; }
+.overlay-footer i { color: var(--secondary-dark); }
 
 /* ============================================ */
 /* ============ SARAN ======================== */
@@ -1968,14 +1800,8 @@ footer {
 }
 
 @keyframes zoomIn {
-  from {
-    transform: scale(0.7);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 #fotoModalImg {
@@ -1991,7 +1817,6 @@ footer {
 
 .foto-modal-caption {
   margin-top: 18px;
-  color: white;
   text-align: center;
   font-size: 1rem;
   font-weight: 600;
@@ -2031,22 +1856,11 @@ footer {
   box-shadow: 0 0 25px rgba(211, 47, 47, 0.6);
 }
 
-.foto-modal-close i {
-  font-size: 1.4rem;
-  line-height: 1;
-}
+.foto-modal-close i { font-size: 1.4rem; line-height: 1; }
 
-.foto-pejabat,
-.foto-wrapper {
-  cursor: zoom-in;
-}
-
-.foto-pejabat {
-  transition: transform 0.3s ease;
-}
-.foto-pejabat:hover {
-  transform: scale(1.08);
-}
+.foto-pejabat, .foto-wrapper { cursor: zoom-in; }
+.foto-pejabat { transition: transform 0.3s ease; }
+.foto-pejabat:hover { transform: scale(1.08); }
 
 /* ============================================ */
 /* ============ RESPONSIVE SECTION =========== */
@@ -2060,12 +1874,7 @@ footer {
   section { padding: 50px 5%; }
   h2 { font-size: 1.8rem; }
 
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
-  }
-
+  .hero-container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
   .hero-text { align-items: center; }
   .hero-badge { margin-left: auto; margin-right: auto; }
   .hero-text p { margin-left: auto; margin-right: auto; }
@@ -2081,6 +1890,12 @@ footer {
   .saran-info-icon { margin-left: auto; margin-right: auto; }
   .saran-stats { justify-content: center; }
   .testimoni-author { justify-content: center; }
+
+  /* Map responsive */
+  .map-header { flex-direction: column; align-items: flex-start; }
+  .map-header-btn { width: 100%; justify-content: center; }
+  .map-wrapper { height: 500px; }
+  .map-overlay-card { width: calc(100% - 48px); max-width: 400px; }
 }
 
 @media (max-width: 900px) {
@@ -2090,92 +1905,35 @@ footer {
 @media (max-width: 768px) {
   body { overflow-x: hidden; width: 100%; }
 
-  .hero-bg {
-    min-height: auto;
-    padding: 40px 16px;
-  }
-
-  .hero-bg::before,
-  .hero-bg::after { display: none; }
-
+  .hero-bg { min-height: auto; padding: 40px 16px; }
+  .hero-bg::before, .hero-bg::after { display: none; }
   .hero-container { gap: 30px; }
-
-  .hero-badge {
-    font-size: 0.7rem;
-    padding: 6px 14px;
-  }
-
+  .hero-badge { font-size: 0.7rem; padding: 6px 14px; }
   .hero-text h1 { font-size: 1.5rem; }
   .hero-text h1 span { font-size: 1.05rem; }
   .hero-text p { font-size: 0.85rem; margin-bottom: 20px; }
 
-  .hero-buttons {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    margin-bottom: 25px;
-  }
+  .hero-buttons { flex-direction: column; gap: 10px; width: 100%; margin-bottom: 25px; }
+  .hero-buttons .btn { width: 100%; justify-content: center; padding: 12px 20px; font-size: 0.85rem; }
 
-  .hero-buttons .btn {
-    width: 100%;
-    justify-content: center;
-    padding: 12px 20px;
-    font-size: 0.85rem;
-  }
-
-  .hero-stats {
-    gap: 20px;
-    justify-content: space-around;
-    padding-top: 20px;
-    width: 100%;
-  }
-
+  .hero-stats { gap: 20px; justify-content: space-around; padding-top: 20px; width: 100%; }
   .hero-stat-item { flex: 1; min-width: 80px; align-items: center; }
   .hero-stat-number { font-size: 1.3rem; }
   .hero-stat-label { font-size: 0.7rem; text-align: center; }
 
-  .hero-leaders {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    max-width: 100%;
-    align-items: stretch;
-  }
-
-  .leader-photo {
-    max-width: 100%;
-    height: 220px;
-    border-radius: 10px 10px 0 0;
-    margin-bottom: 0;
-  }
-
-  .leader-name {
-    font-size: 0.65rem;
-    padding: 8px 8px;
-    border-radius: 0;
-    line-height: 1.25;
-    max-width: 100%;
-    min-height: 52px;
-  }
-
-  .leader-title {
-    font-size: 0.65rem;
-    padding: 7px 8px;
-    border-radius: 0 0 10px 10px;
-    max-width: 100%;
-    min-height: 38px;
-  }
-
+  .hero-leaders { grid-template-columns: 1fr 1fr; gap: 12px; max-width: 100%; align-items: stretch; }
+  .leader-photo { max-width: 100%; height: 220px; border-radius: 10px 10px 0 0; margin-bottom: 0; }
+  .leader-name { font-size: 0.65rem; padding: 8px 8px; border-radius: 0; line-height: 1.25; max-width: 100%; min-height: 52px; }
+  .leader-title { font-size: 0.65rem; padding: 7px 8px; border-radius: 0 0 10px 10px; max-width: 100%; min-height: 38px; }
   .leader-card:hover { transform: none; }
 
   section { padding: 40px 16px !important; width: 100%; }
-
   h2 { font-size: 1.5rem; }
   h2:after { width: 50px; height: 3px; bottom: -8px; }
   .section-subtitle { font-size: 0.85rem; padding: 0 10px; }
 
   .profil-container { gap: 25px; }
   .profil-desc { font-size: 0.9rem; }
-
   .visi-box, .misi-box { flex-direction: column; text-align: center; align-items: center; }
   .visi-icon, .misi-icon { width: 50px; height: 50px; }
   .misi-list { text-align: left; }
@@ -2186,13 +1944,6 @@ footer {
   .foto-wrapper { width: 90px; height: 90px; }
   .struktur-item .jabatan { font-size: 0.8rem; }
   .struktur-item .nama { font-size: 0.75rem; }
-
-  .layanan-grid { gap: 20px; padding: 20px 0; }
-  .layanan-card { padding: 18px 15px; }
-  .layanan-icon { width: 50px; height: 50px; }
-  .layanan-icon i { font-size: 22px; }
-  .layanan-card h3 { font-size: 1.1rem; }
-  .layanan-card p { font-size: 0.85rem; }
 
   .info-card { padding: 20px; }
   .info-header { gap: 12px; margin-bottom: 20px; }
@@ -2244,13 +1995,18 @@ footer {
   .info-jam-layanan { padding: 15px; }
   .info-jam-layanan p { font-size: 0.8rem; }
 
-  .map-section { margin-top: 30px; padding: 0 12px; }
-  .map-container { height: 250px; }
-  .map-info { flex-direction: column; text-align: center; padding: 18px; }
-  .map-info i { margin: 0 auto; }
-  .coordinates { flex-direction: column; gap: 8px; }
-  .coordinates span { justify-content: center; }
-  .btn-map { width: 100%; justify-content: center; }
+  /* Map mobile */
+  .map-section { margin-top: 35px; }
+  .map-title { font-size: 1.35rem; }
+  .map-subtitle { font-size: 0.85rem; }
+  .map-wrapper { height: 560px; border-radius: 20px; }
+  .map-overlay-card { top: auto; bottom: 20px; left: 16px; right: 16px; width: auto; max-width: none; padding: 20px; }
+  .overlay-icon { width: 44px; height: 44px; margin-bottom: 12px; }
+  .overlay-icon i { font-size: 1.25rem; }
+  .overlay-content h3 { font-size: 1rem; }
+  .overlay-address { font-size: 0.78rem; margin-bottom: 14px; }
+  .overlay-btn { font-size: 0.75rem; padding: 9px 12px; }
+  .overlay-footer { font-size: 0.7rem; }
 
   .saran-form-panel { padding: 25px 20px; }
   .form-row-2 { grid-template-columns: 1fr; gap: 0; }
@@ -2266,11 +2022,7 @@ footer {
 
   .back-to-top { bottom: 15px; right: 15px; width: 40px; height: 40px; font-size: 1rem; }
 
-  .sipaten-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 25px 0 15px;
-  }
+  .sipaten-grid { grid-template-columns: 1fr; gap: 20px; padding: 25px 0 15px; }
   .sipaten-card { padding: 35px 25px 28px; border-radius: 20px; }
   .sipaten-icon { width: 80px; height: 80px; border-radius: 20px; margin-bottom: 18px; }
   .sipaten-icon i { font-size: 2.2rem; }
@@ -2289,7 +2041,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .layanan-grid { grid-template-columns: 1fr; }
+  .sipaten-grid { grid-template-columns: 1fr; }
   .statistik-grid { grid-template-columns: 1fr; gap: 20px; }
   .hero-buttons .btn { font-size: 0.8rem; padding: 8px 14px; }
   .info-header h3 { font-size: 1rem; }
@@ -2303,20 +2055,10 @@ footer {
   .hero-text h1 span { font-size: 0.9rem; }
   .hero-text p { font-size: 0.8rem; }
 
-  .leader-name { 
-    font-size: 0.6rem; 
-    padding: 6px 6px; 
-    min-height: 48px;
-  }
-  .leader-title { 
-    font-size: 0.6rem; 
-    padding: 6px 6px;
-    min-height: 34px;
-  }
+  .leader-name { font-size: 0.6rem; padding: 6px 6px; min-height: 48px; }
+  .leader-title { font-size: 0.6rem; padding: 6px 6px; min-height: 34px; }
   .hero-leaders { gap: 8px; }
-  .leader-photo {
-    height: 180px;
-  }
+  .leader-photo { height: 180px; }
 
   .peta-card { padding: 20px 16px; gap: 14px; }
   .peta-card-icon { width: 50px; height: 50px; }
@@ -2330,6 +2072,16 @@ footer {
   .sipaten-card h3 { font-size: 1.1rem; }
   .sipaten-card p { font-size: 0.8rem; }
   .sipaten-btn { padding: 11px 20px; font-size: 0.8rem; }
+
+  .map-wrapper { height: 620px; }
+  .map-header-left { min-width: 100%; }
+  .map-title { font-size: 1.2rem; }
+  .map-badge { font-size: 0.65rem; padding: 5px 12px; }
+  .map-header-btn { font-size: 0.82rem; padding: 10px 18px; }
+  .map-overlay-card { padding: 16px; }
+  .overlay-actions { flex-direction: column; }
+  .overlay-btn { width: 100%; }
+  .overlay-footer { flex-direction: column; gap: 6px; align-items: flex-start; }
 
   .foto-modal-close { width: 38px; height: 38px; font-size: 1.1rem; }
   .foto-modal-caption { font-size: 0.75rem; }
@@ -2345,17 +2097,7 @@ footer {
   .info-header h3 { font-size: 0.9rem; }
   section { padding: 25px 10px !important; }
 
-  .leader-name { 
-    font-size: 0.55rem; 
-    padding: 5px 5px; 
-    min-height: 44px;
-  }
-  .leader-title { 
-    font-size: 0.55rem; 
-    padding: 5px 5px;
-    min-height: 32px;
-  }
-  .leader-photo {
-    height: 160px;
-  }
+  .leader-name { font-size: 0.55rem; padding: 5px 5px; min-height: 44px; }
+  .leader-title { font-size: 0.55rem; padding: 5px 5px; min-height: 32px; }
+  .leader-photo { height: 160px; }
 }
